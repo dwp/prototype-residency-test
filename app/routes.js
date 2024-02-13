@@ -7,8 +7,26 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
+ // route for "do you know your postcode" update-address-v1a/postcode
+ router.post('/postcode-answer', function(request, response) {
 
+  var postcode = request.session.data['postcode']
+  if (postcode == "yespostcode"){
+      response.redirect("/address-update-citizen/update-address-v1a/postcode-results-pagination")
+  } else {
+      response.redirect("/address-update-citizen/update-address-v1a/manual-entry")
+  }
+})
+ // route for "do you know your postcode" update-address-v1a/postcode
+ router.post('/postcode-answerb', function(request, response) {
 
+  var postcode = request.session.data['postcodeb']
+  if (postcode == "yespostcodeb"){
+      response.redirect("/address-update-citizen/update-address-v1b/addresses-found.html")
+  } else {
+      response.redirect("/address-update-citizen/update-address-v1b/manual-entry.html")
+  }
+})
 // GET SPRINT NAME - useful for relative templates
 router.use('/', (req, res, next) => {
   res.locals.currentURL = req.originalUrl; //current screen
