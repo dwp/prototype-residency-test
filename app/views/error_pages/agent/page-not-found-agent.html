@@ -4,10 +4,17 @@
     Page not found
 {% endblock %}
 
+{% block beforeContent %}
 
+    {{ super() }}
+
+{% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Page not found</h1>
         <p class="govuk-body">
@@ -16,7 +23,8 @@
         <p class="govuk-body">
           If you pasted the web address, check you copied the entire address.
         </p>
-
+        <p class="govuk-body">
+          Please try again.</p>
     </div>
   </div>
 {% endblock %}

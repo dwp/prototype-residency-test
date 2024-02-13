@@ -8,6 +8,17 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
     {{ super() }}
 
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
 {% endblock %}
 
 {% block content %}
@@ -34,7 +45,7 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
 <div class="govuk-panel govuk-panel--confirmation">
   <h1 class="govuk-panel__title">
-    Habitual residency details complete
+    Customer details submitted
   </h1>
   <div class="govuk-panel__body">
     Case reference number<br><strong>HDJ2123F</strong>
@@ -43,6 +54,15 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 <br>
 <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
 <h2 class="govuk-heading-m">What to do next</h2>
+<p class="govuk-body">
+  Send the case to a decision maker to review the customer's details.
+</p>
+
+{{ govukButton({
+  text: "Send case",
+href: "/agent/hrt-v4/outcome/end-processing-agent-1.html"
+
+}) }}
 
 <p class="govuk-body">
   Ask the customer to provide proof of the following: 
@@ -52,29 +72,22 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 <ul class="govuk-list govuk-list--bullet">
   <li>nationality</li>
   <li>immigration status</li>
-  <li>presence in the UK, Isle of Man or Channel Islands</li>
+  <li>presence in the UK</li>
   <li>travel abroad</li>
 
 </ul>
+</fieldset>
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 <div class="govuk-button-group">
 
   {{ govukButton({
-    text: "Copy list of evidence required",
+    text: "Generate list of evidence required",
     classes: "govuk-button--secondary",
     href: "#"
   }) }}
 </div>
-
-<p class="govuk-body">
-  You can continue processing the rest of the claim until a decision is needed on the customer’s habitual residency.
-</p>
-
-<p class="govuk-body govuk-!-margin-bottom-0"><a href="/agent/hrt-v4/outcome/check-decision-maker.html" class="govuk-link">Make a decision on this case</a></p>
-
-</fieldset>
 
              <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
   Continue

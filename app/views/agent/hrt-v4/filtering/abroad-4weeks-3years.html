@@ -6,6 +6,17 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
 {% block beforeContent %}
 
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
     {{ super() }}
 
     {{ govukBackLink ({
@@ -31,18 +42,18 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
     </legend>
     
    <div id="nationality-hint" class="govuk-hint">
-    Abroad means outside the UK, Isle of Man or Channel Islands. </div>
+    Abroad means outside the UK, the Isle of Man or the Channel Islands. </div>
     
     <div class="govuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="abroad-yes" name="abroad" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="abroad-yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="abroad-no" name="abroad" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="abroad-no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
           No
         </label>
       </div>
@@ -59,7 +70,7 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
 <div class="govuk-button-group">
   <button class="govuk-button" data-module="govuk-button" onclick="check1()">
-    Continue
+    Save and continue
   </button>
   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Save and come back later

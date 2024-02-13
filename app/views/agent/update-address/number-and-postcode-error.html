@@ -1,12 +1,23 @@
 {% extends 'layout-agent.html' %}
 
 {% block pageTitle %}
-Error - Find address
+Error - UK address
 {% endblock %}
 
 {% block beforeContent %}
 
 {{ super() }}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -17,39 +28,37 @@ Error - Find address
 
 {% block content %}
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#address-postcode">Enter a valid UK postcode</a>
+        </li>
+        <li>
+          <a href="#address-number">Enter a UK building number or name</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-      <h2 class="govuk-error-summary__title" id="error-summary-title">
-        There is a problem
-      </h2>
-      <div class="govuk-error-summary__body">
-        <ul class="govuk-list govuk-error-summary__list">
-          <li>
-            <a href="#address-postcode">Enter a full UK, Isle of Man or Channel Islands postcode, for example, AA3 1AB</a>
-          </li>
-          <li>
-            <a href="#address-number">Enter a building number or name</a>
-          </li>
-        </ul>
-      </div>
-      </div>
-
-    <div class="govuk-form-group govuk-form-group--error">
 <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <div>
     <h1 class="govuk-fieldset__heading">
-      Find the new permanent address
+      Find the new permanent UK address
     </h1>
   </div>
   </legend>
+<br>  
 
-  <div id="find-address-hint" class="govuk-hint">
-    This address must be in the UK, Isle of Man or Channel Islands.
-</div>
+<div class="govuk-form-group govuk-form-group--error">
 
   <label class="govuk-label" for="address-postcode">
     Postcode
@@ -58,7 +67,7 @@ Error - Find address
     For example, AA3 1AB.
 </div>
   <p id="address-postcode-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter a full UK, Isle of Man or Channel Islands postcode, for example, AA3 1AB
+    <span class="govuk-visually-hidden">Error:</span> Enter a valid UK postcode
   </p>
   <input class="govuk-input govuk-input--width-5 govuk-input--error" id="address-postcode" name="address-postcode" type="text" aria-describedby="address-postcode-error" autocomplete="address-postcode">
 
@@ -69,7 +78,7 @@ Error - Find address
     For example, 15 or Prospect Cottage.
 </div>
   <p id="address-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter a building number or name
+    <span class="govuk-visually-hidden">Error:</span> Enter a UK building number or name
   </p>
   <input class="govuk-input govuk-input--width-10 govuk-input--error" id="address-number" name="address-number" type="text" aria-describedby="address-number-error" autocomplete="address-number">
 

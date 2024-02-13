@@ -7,6 +7,17 @@
 {% block beforeContent %}
 
     {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
     
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -28,62 +39,53 @@
 
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
 
-<table class="govuk-table" id="addresses">
-  <caption class="govuk-table__caption govuk-table__caption--l">Customer’s past addresses</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date</th>
-      <th scope="col" class="govuk-table__header"> Address</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-third"> More details </th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> 12 Dec 2018 to 4 Jan 2021 </td>
-      <td class="govuk-table__cell"> 23 Rose Cottage <br> Fair Street <br> Telford <br> TY3 4HN  <br> England </td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-          Permanent residential
-        </strong>
-        <p style="margin-top: 5px">Updated 14 Dec 2018</p>
-        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> 4 Oct 2018 to 11 Dec 2018 </td>
-      <td class="govuk-table__cell"> Hampton Court Bloomcare <br> 34 Scarisbrick <br> New Road <br> Southport <br> PR8 6Q <br> England</td>
-      <td class="govuk-table__cell">
-      <strong class="govuk-tag govuk-tag--blue" style="max-width: none;">
-        Temporary care home
-      </strong>
-      <p style="margin-top: 5px">Updated 5 Oct 2018 </p>
-        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 3</a></b>.  -->
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> 25 Oct 2017 to 3 Oct 2018 </td>
-      <td class="govuk-table__cell">4 Purple Dream <br> Main Court <br> Manchester <br> MY3 4HN <br> England</td>
-      <td class="govuk-table__cell"> 
-        <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-          Permanent residential
-        </strong>
-      <p style="margin-top: 5px">Updated 30 Oct 2017  </p>
-        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 1</a></b>.  -->
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> 20 Jan 2015 to 24 Oct 2017 </td>
-      <td class="govuk-table__cell">9 Lilly House <br> Main Steet <br> Brighton <br> BR3 8MK <br> England</td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-          Permanent residential
-        </strong>
-      <p style="margin-top: 5px">Updated 30 Jan 2015 </p>
-        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
-      </td>
-    </tr>       
-  </tbody>
-</table>
+    <table class="govuk-table" id="addresses">
+      <caption class="govuk-table__caption govuk-table__caption--l">Customer’s past addresses</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"> Address information </th>
+          <th scope="col" class="govuk-table__header"> More details </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 23 Rose Cottage, Fair Street, <br> Telford, TY3 4HN <br> 12 Dec 2018 to 4 Jan 2021 </td>
+          <td class="govuk-table__cell">{{govukTag({
+            text: "Permanent Residential",
+            classes: "govuk-tag--green"
+          })}} <br> Updated 14 Dec 2018
+            <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Hampton Court Bloomcare, 34 Scarisbrick, <br> New Road, Southport, PR8 6Q <br> 4 Oct 2018 to 11 Dec 2018 </td>
+          <td class="govuk-table__cell">{{govukTag({
+            text: "Temporary Care home",
+            classes: "govuk-tag--blue"
+          })}} <br> Updated 5 Oct 2018 
+            <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 3</a></b>.  -->
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">4 Purple Dream, Main Court, <br> Manchester, MY3 4HN <br> 25 Oct 2017 to 3 Oct 2018 </td>
+          <td class="govuk-table__cell"> {{govukTag({
+            text: "Permanent Residential",
+            classes: "govuk-tag--green"
+          })}} <br> Updated 30 Oct 2017 
+            <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 1</a></b>.  -->
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">9 Lilly House, Main Steet, <br> Brighton, BR3 8MK <br> 20 Jan 2015 to 24 Oct 2017 </td>
+          <td class="govuk-table__cell">{{govukTag({
+            text: "Permanent Residential",
+            classes: "govuk-tag--green"
+          })}} <br> Updated 30 Jan 2015 
+            <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
+          </td>
+        </tr>       
+      </tbody>
+    </table>
 
     
     <nav class="govuk-pagination" role="navigation" aria-label="results">

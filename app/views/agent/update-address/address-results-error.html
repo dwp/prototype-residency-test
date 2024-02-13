@@ -8,15 +8,25 @@ Error - Select address
 
 {{ super() }}
 
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
+<!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+  <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+  
 {% endblock %}
 
 {% block content %}
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-two-thirds">
 
 <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
   <h2 class="govuk-error-summary__title" id="error-summary-title">
@@ -30,6 +40,10 @@ Error - Select address
     </ul>
   </div>
   </div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
     
 <div class="govuk-radios" data-module="govuk-radios">
 
@@ -41,93 +55,39 @@ Error - Select address
       </h1>
     </legend>
     <legend class="govuk-fieldset__legend">
-      15 addresses found for <b>NE3 1YL</b> and <b>5</b>.
+      2 addresses found for <b>NE3 1YL</b> and <b>5</b>.
     </legend>
     <p id="where-do-you-live-error" class="govuk-error-message">
       <span class="govuk-visually-hidden">Error:</span> Select an address to continue
     </p>
-    <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios" data-module="govuk-radios">
+
+
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england" >
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="true">
         <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-          5 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL, England <br>
+          5 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL <br>
           <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green" style="margin-top: 5px">
-        Residential
-      </strong>
-          </td>      
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england" >
-        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-          15 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL, England <br>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green" style="margin-top: 5px">
-        Residential
-      </strong>
-          </td>      
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="england-2" >
-        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-          25 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL, England <br>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green" style="margin-top: 5px">
-       Care home
+            <strong class="govuk-tag govuk-tag--green">
+      Residential
     </strong>
           </td>
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england" >
-        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-          35 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL, England <br>
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="false">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+          51 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL <br>
           <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green" style="margin-top: 5px">
-        Residential
+            <strong class="govuk-tag govuk-tag--green">
+      Care home
       </strong>
-          </td>      
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england" >
-        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-          45 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL, England <br>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green" style="margin-top: 5px">
-        Residential
-      </strong>
-          </td>      
+          </td>
         </label>
       </div>
     </div>
   </fieldset>
 </div>
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-
-{{ govukPagination({
-  next: {
-    href: "update-address-results-2.html"
-  },
-  items: [
-    {
-      number: 1,
-      current: true,
-      href: "update-address-results.html"
-    },
-    {
-      number: 2,
-      href: "update-address-results-2.html"
-    },
-    {
-      number: 3,
-      href: "update-address-results-3.html"
-    }
-  ]
-}) }}
 
 <div class="govuk-button-group">
   <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()" >Use this address</button>
@@ -157,7 +117,7 @@ Error - Select address
 <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Customer’s address is not listed
+      Customer's address is not listed
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -170,7 +130,7 @@ Error - Select address
         how any flat numbers are displayed, for example Flat 2/2 could also be known as Flat 4
       </li>
     </ul>
-    If the customer’s address is still not listed you can <a href="/agent/update-address/update-address-manual-entry.html">enter the customer’s address details manually</a> instead, but this may make it more difficult to search for the address in future.
+    If the customer's address is still not listed you can <a href="/agent/update-address/update-address-manual-entry.html">enter the customer's address details manually</a> instead, but this may make it more difficult to search for the address in future.
   </div>
 </details>
 

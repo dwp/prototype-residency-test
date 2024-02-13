@@ -6,6 +6,17 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
 {% block beforeContent %}
 
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
     {{ super() }}
 
     {{ govukBackLink ({
@@ -26,23 +37,23 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
   <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h2 class="govuk-fieldset__heading">
-        Have they been in the UK, Isle of Man or Channel Islands for at least 104 of the last 156 weeks?
+        Have they been abroad for more than 104 weeks in the last 156 weeks?
       </h2>
     </legend>
     
    <div id="nationality-hint" class="govuk-hint">
-    In years, this means for at least 2 of the last 3 years. </div>
+    Abroad means outside the UK, the Isle of Man or the Channel Islands. </div>
     
     <div class="govuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="abroad-yes" name="abroad" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="abroad-yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="abroad-no" name="abroad" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="abroad-no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
           No
         </label>
       </div>
@@ -58,33 +69,19 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 <br>
 
 <div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue",
-    href: "/agent/hrt-v4/filtering/abroad-4weeks-3years.html"
-
-  }) }}
-
-  {{ govukButton({
-    text: "Save and come back later",
-    classes: "govuk-button--secondary",
-    href: "#"
-  }) }}
-</div>
-
-<!-- <div class="govuk-button-group">
   <button class="govuk-button" data-module="govuk-button" onclick="check1()">
     Save and continue
   </button>
   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Save and come back later
   </button>
-</div> -->
+</div>
 
 </div>
                   
             </form>
 
-<!-- <script>
+<script>
 function check1() {
   console.log('in function')
   var radios = document.getElementsByName("abroad");
@@ -102,7 +99,7 @@ function check1() {
       } else {
         window.location.href = "/agent/hrt-v4/filtering/exemptions.html.html"
       }}}
-</script> -->
+</script>
 
         </div>
       </div>

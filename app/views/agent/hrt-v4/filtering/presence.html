@@ -6,6 +6,16 @@ Presence
 
 {% block beforeContent %}
 
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
 
     {{ super() }}
 
@@ -48,13 +58,13 @@ Presence
     <div class="govuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="presence-yes" name="presence" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="presence-yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="presence-no" name="presence" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="presence-no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
           No
         </label>
       </div>
@@ -65,10 +75,8 @@ Presence
 
   <div class="govuk-button-group">
     {{ govukButton({
-
       text: "Save and continue",
-
-      href: "/agent/hrt-v4/filtering/abroad-2years-3years.html"
+      href: "/agent/hrt-v4/filtering/abroad-4weeks-3years.html"
   
     }) }}
   

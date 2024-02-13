@@ -7,8 +7,19 @@
 {% block beforeContent %}
 
     {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
     
-    <!-- <a href="javascript:history.back()" class="govuk-back-link">Back</a> -->
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
     <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
       <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
@@ -32,7 +43,7 @@ data-module="govuk-notification-banner">
   <h3 class="govuk-notification-banner__heading">
     Address update complete
   </h3>
-  <p class="govuk-body">You have updated <strong>John Smith</strong>’s address.</p>
+  <p class="govuk-body">You have updated <strong>John Smith</strong>'s address.</p>
 </div>
 </div>
 
@@ -41,7 +52,7 @@ data-module="govuk-notification-banner">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Customer’s address information
+                  Customer's address information
                 </h1>
               </legend>
 
@@ -51,62 +62,75 @@ data-module="govuk-notification-banner">
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                <dt class="govuk-summary-list__key">
                  Current address
                 </dt>
+                <dd class="govuk-summary-list__actions">
+                </dd> 
                 <dd class="govuk-summary-list__value">
-                  5 Wellington House <br> Windsor Street <br> South Gosforth<br> Newcastle upon Tyne <br> NE3 1YL <br> England
+                  5 Wellington House, Windsor Street, <br> South Gosforth, Newcastle upon Tyne, <br> NE3 1YL
                   </dd>
-                  <!-- <dd class="govuk-summary-list__actions">
-                  </dd>  -->
                   
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Start date
                 </dt>
+                <dd class="govuk-summary-list__actions">
+                </dd> 
                 <dd class="govuk-summary-list__value">
                   20 May 2023
                 </dd>
-                  <!-- <dd class="govuk-summary-list__actions">
-                </dd>  -->
               
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Address type
                 </dt>
+                <dd class="govuk-summary-list__actions">
+                </dd> 
                 <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-                    Permanent residential
-                  </strong>
+                  {{govukTag({
+                    text: "Permanent residential",
+                    classes: "govuk-tag--green"
+                  })}}
                 </dd>
-                <!-- <dd class="govuk-summary-list__actions">
-                </dd>  -->
                 
               </div>
-              <div class="govuk-summary-list__row">
+              <!-- <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Address reason
                 </dt>
+                <dd class="govuk-summary-list__actions">
+                </dd> 
                 <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--grey" style="max-width: none;">
-                    Residential
-                  </strong>
+                  {{govukTag({
+                    text: "Residential",
+                    classes: "govuk-tag--grey"
+                  })}}
                 </dd>
-                <!-- <dd class="govuk-summary-list__actions">
-                </dd>  -->
                 
-              </div>
+              </div> -->
+              <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Building type
+                </dt>
+                <dd class="govuk-summary-list__actions">
+                </dd> 
+                <dd class="govuk-summary-list__value">
+                
+                </dd>
+                
+              </div> -->
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Updated
                 </dt>
+                <dd class="govuk-summary-list__actions">
+                </dd> 
                 <dd class="govuk-summary-list__value">
                   24 May 2023
                 </dd>
-                <!-- <dd class="govuk-summary-list__actions">
-                </dd>  -->
               
               </div>
               </dl>

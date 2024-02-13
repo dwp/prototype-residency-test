@@ -8,6 +8,17 @@
 
     {{ super() }}
 
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
 {% endblock %}
@@ -15,21 +26,11 @@
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-width-container">
   <h1 class="govuk-heading-l">No address found</h1>
-  <p>We could not find an address that matches <b>NE3 1YL</b> and <b>5</b>.</p>
-  <p>
-    Follow these steps:
-    <ol class="govuk-list govuk-list--number">
-      <li>Check the format of any flat numbers - for example, Flat 2/2 may be known as Flat 4.</li>
-      <li>Confirm the postcode and building number or name - if any are incorrect, <a href="/agent/update-address/update-address-1.html">search again</a>.</li>
-      <li>If you have done the first 2 steps, and the address is still not listed, then you can <a href="/agent/update-address/update-address-manual-entry.html">enter the address manually</a>.</li>
-    </ol>
-  </p>
-
-  <!-- <p><a href="/agent/update-address/update-address-1.html">Search again</a></p> -->
-  <!-- <details class="govuk-details" data-module="govuk-details">
+  <p>We could not find an address that matches <b>NE3 1YL</b> and <b>5</b>. You can search again or enter the address manually.</p>
+  <p><a href="/agent/update-address/update-address-1.html">Search again</a></p>
+  <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
         Enter address manually
@@ -47,8 +48,7 @@
       </ul>
       If the customer's address is still not listed you can <a href="/agent/update-address/update-address-manual-entry.html">enter the customer's address details manually</a> instead, but this may make it more difficult to search for the address in future.
     </div>
-  </details> -->
+  </details>
   <!-- <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p> -->
   </div> 
-</div>
 {% endblock %}

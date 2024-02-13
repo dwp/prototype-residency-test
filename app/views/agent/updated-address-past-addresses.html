@@ -7,6 +7,17 @@
 {% block beforeContent %}
 
     {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
     
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -24,116 +35,290 @@
 </div>-->
 
 <div class="govuk-grid-row">
+
         <div class="govuk-grid-column-two-thirds">
 
-{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+            <form method="post">
 
-<table class="govuk-table" id="addresses">
-  <caption class="govuk-table__caption govuk-table__caption--l">Customer’s past addresses</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date</th>
-      <th scope="col" class="govuk-table__header"> Address</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-third"> More details </th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">5 Jan 2021 to 19 May 2023</td>
-      <td class="govuk-table__cell">18 Burdett House <br> Main Street <br> Guildford <br> GU79 6YW</td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-          Permanent residential
-        </strong>
-      <p style="margin-top: 5px">Updated 7 Jan 2021</p>
-        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
-      </td>
-    </tr>   
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> 12 Dec 2018 to 4 Jan 2021 </td>
-      <td class="govuk-table__cell"> 23 Rose Cottage <br> Fair Street <br> Telford <br> TY3 4HN </td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-          Permanent residential
-        </strong>
-        <p style="margin-top: 5px">Updated 14 Dec 2018</p>
-        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> 4 Oct 2018 to 11 Dec 2018 </td>
-      <td class="govuk-table__cell"> Hampton Court Bloomcare <br> 34 Scarisbrick <br> New Road <br> Southport <br> PR8 6Q</td>
-      <td class="govuk-table__cell">
-      <strong class="govuk-tag govuk-tag--blue" style="max-width: none;">
-        Temporary care home
-      </strong>
-      <p style="margin-top: 5px">Updated 5 Oct 2018 </p>
-        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 3</a></b>.  -->
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> 25 Oct 2017 to 3 Oct 2018 </td>
-      <td class="govuk-table__cell">4 Purple Dream <br> Main Court <br> Manchester <br> MY3 4HN</td>
-      <td class="govuk-table__cell"> 
-        <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-          Permanent residential
-        </strong>
-      <p style="margin-top: 5px">Updated 30 Oct 2017  </p>
-        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 1</a></b>.  -->
-      </td>
-    </tr>    
-  </tbody>
-</table>
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Customer’s past addresses
+                </h1>
+              </legend>
 
-    
-    <nav class="govuk-pagination" role="navigation" aria-label="results">
-      <ul class="govuk-pagination__list">
-        <li class="govuk-pagination__item govuk-pagination__item--current">
-          <a class="govuk-link govuk-pagination__link" href="/agent/update-address/past-addresses/past-addresses.html" aria-label="Page 1" aria-current="page">
-            1
-          </a>
-        </li>
-        <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link" href="/agent/update-address/past-addresses/past-addresses-2.html" aria-label="Page 2">
-            2
-          </a>
-        </li>
-        <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link" href="/agent/update-address/past-addresses/past-addresses-3.html" aria-label="Page 3">
-            3
-          </a>
-        </li>
-      </ul>
-      <div class="govuk-pagination__next">
-        <a class="govuk-link govuk-pagination__link" href="/agent/update-address/past-addresses/past-addresses-2.html" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-          </svg></a>
-      </div>
-  <ul class="govuk-pagination__list" id="pagination-list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link" href="/agent/update-address/past-addresses/all-past-addresses.html" aria-label="See all" aria-current="page" onclick="changePage(4)">
-        See all
-      </a>
-    </li>
-  </ul>
-</nav>
+            </fieldset>
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
+            {%- from "govuk/components/tag/macro.njk" import govukTag -%}
 
-<div class="govuk-button-group">
-  
-  {{ govukButton({
-    text: "Back to current address",
-    href: "/agent/current-address.html"
-  }) }}
+            <!-- <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col"> Permanent address </th>
+                  <td class="govuk-table__cell">
+                    5 Wellington House, Windsor Street, <br> South Gosforth, Newcastle upon Tyne, <br> NE3 1YL
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="/agent/update-address/uk-or-international.html">Change</a>
+                  </td> 
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col"> Start date </th>
+                  <td class="govuk-table__cell">
+                    20 May 2023
+                  </td>
+                  <td class="govuk-table__cell">
+                    
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col"> Address type </th>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Residential",
+                      classes: "govuk-tag--grey"
+                    })}}
+                  </td>
+                  <td class="govuk-table__cell">
+                    
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col"> Updated </th>
+                  <td class="govuk-table__cell">
+                    24 May 2023
+                  </td>
+                  <td class="govuk-table__cell">
+                    
+                  </td>
+                </tr>
+              </tbody>
 
-</div>
+            </table>
 
-    </div>
-            </form>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Past addresses
+                </span>
+              </summary>
+              
+              <div class="govuk-details__text"> -->
+            
+                <table class="govuk-table" id="addresses">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header"> Address information </th>
+                      <th scope="col" class="govuk-table__header"> More details </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">18 Burdett House, Main Street, <br> Guildford, GU79 6YW <br> 5 Jan 2021 to 19 May 2023 </td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Permanent Residential",
+                        classes: "govuk-tag--green"
+                      })}} <br> Updated 7 Jan 2021
+                      <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 0</a></b> <br> -->
+                    </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">23 Rose Cottage, Fair Street, <br> Telford, TY3 4HN <br> 12 Dec 2018 to 4 Jan 2021 </td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Permanent Residential",
+                        classes: "govuk-tag--green"
+                      })}} <br> Updated 14 Dec 2018
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Hampton Court Bloomcare, 34 Scarisbrick, <br> New Road, Southport, PR8 6Q <br> 4 Oct 2018 to 11 Dec 2018 </td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Temporary Care home",
+                        classes: "govuk-tag--blue"
+                      })}} <br> Updated 5 Oct 2018 
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 3</a></b>.  -->
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">4 Purple Dream, Main Court, <br> Manchester, MY3 4HN <br> 25 Oct 2017 to 3 Oct 2018 </td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Permanent Residential",
+                        classes: "govuk-tag--green"
+                      })}} <br> Updated 30 Oct 2017 
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 1</a></b>.  -->
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">9 Lilly House, Main Steet, <br> Brighton, BR3 8MK <br> 20 Jan 2015 to 24 Oct 2017 </td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Permanent Residential",
+                        classes: "govuk-tag--green"
+                      })}} <br> Updated 30 Jan 2015 
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">12 Angel's Court, Fairmoth Avenue, <br> Bath, BA1 3FD <br> 3 Jul 2013 to 19 Jan 2015</td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Permanent Residential",
+                        classes: "govuk-tag--green"
+                      })}} <br> Updated 15 Jul 2015 
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 1</a></b>.  -->
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"> 1 Old Terrace, Green Steet, <br> Lancaster, LK7 4HN <br> 6 May 2010 to 2 Jul 2013 </td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Permanent Residential",
+                        classes: "govuk-tag--green"
+                      })}} <br> Updated 10 May 2010 
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 2</a></b>.  -->
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"> 3 Gunnersbury House, Chapel Hill, <br> Lancaster, LY3 4HN <br> 3 Apr 2008 to 5 May 2010 </td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Permanent Residential",
+                        classes: "govuk-tag--green"
+                      })}} <br> Updated 10 Apr 2008 
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 1</a></b>.  -->
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"> Brushwood Bloomcare, 1 South Parade, <br> Speke, Liverpool, L24 2SG <br> 22 Mar 2007 to 2 Apr 2008 </td>
+                      <td class="govuk-table__cell">{{govukTag({
+                        text: "Temporary Care home",
+                        classes: "govuk-tag--blue"
+                      })}} <br> Updated 25 Mar 2007 
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 3</a></b>.  -->
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"> 7 White Cottage, Bow Street, <br> Bath, BA1 3FD <br> 1 Jul 2005 to 21 Mar 2007  </td>
+                      <td class="govuk-table__cell"> {{govukTag({
+                        text: "Permanent Residential",
+                        classes: "govuk-tag--green"
+                      })}} <br> Updated 13 Jul 2005 
+                        <!-- <br> Verified to <b><a class="govuk-link" href="https://www.gov.uk/government/publications/attributes-in-the-uk-digital-identity-and-attributes-trust-framework/how-to-score-attributes#show-how-reliable-the-attribute-is">Score 1</a></b>.  -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            
+                
+            <!-- 
+                {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+            
+            {{ govukPagination({
+              next: {
+                href: "current-address-2"
+              },
+              items: [
+                {
+                  number: 1,
+                  current: true,
+                  href: "current-address"
+                },
+                {
+                  number: 2,
+                  href: "current-address-2.html"
+                },
+                {
+                  number: 3,
+                  href: "current-address-3.html"
+                }
+              ]
+            }) }} -->
+            
+            <nav class="govuk-pagination" role="navigation" aria-label="results">
+              <ul class="govuk-pagination__list" id="pagination-list">
+                <li class="govuk-pagination__item">
+                  <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page" onclick="changePage(1)">
+                    1
+                  </a>
+                </li>
+                <li class="govuk-pagination__item">
+                  <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" onclick="changePage(2)">
+                    2
+                  </a>
+                </li>
+                <li class="govuk-pagination__item">
+                  <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3" onclick="changePage(3)">
+                    3
+                  </a>
+                </li>
+              </ul>
+              <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg></a>
+              </div>
+              <ul class="govuk-pagination__list" id="pagination-list">
+                <li class="govuk-pagination__item">
+                  <a class="govuk-link govuk-pagination__link" href="#" aria-label="See all" aria-current="page" onclick="changePage(4)">
+                    See all
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            
+            {% from "govuk/components/button/macro.njk" import govukButton %}
 
-        </div>
+            <div class="govuk-button-group">
+              
+              {{ govukButton({
+                text: "Back to current address",
+                href: "/agent/updated-address.html"
+              }) }}
+              </div>
 
-</div>
+                </div>
+          
+            
+            <script>
+            let itemsPerPage = 3
+            let currentPage = 1
+            function paginate() {
+              let table = document.getElementById("addresses");
+              let rows = table.getElementsByTagName("tbody")[0].rows;
+              let startIndex = (currentPage -1) * itemsPerPage;
+              let endIndex = startIndex + itemsPerPage;
+            
+            for (let i = 0; i < rows.length; i++) {
+              if (i >= startIndex && i < endIndex) {
+                rows[i].style.display = "table-row";
+               } else {
+                 rows[i].style.display = "none";
+               }
+              }
+            }
+            
+            function changePage(pageNumber) {
+              currentPage = pageNumber;
+              paginate();
+              updateActiveButton();
+            }
+            function updateActiveButton() {
+              let pagination = document.getElementById("pagination-list")
+              let buttons = pagination.getElementsByTagName("li");
+            for (let i = 0; i < buttons.length; i++) {
+              buttons[i].classList.remove("govuk-pagination__item--current")
+            }
+            buttons[currentPage -1].classList.add("govuk-pagination__item--current")
+            
+            }
+            paginate();
+            updateActiveButton();
+            
+            </script>
+                        </form>
 
-{% endblock %}
+                  
+                    </div>
+            
+            </div>
+            
+            {% endblock %}

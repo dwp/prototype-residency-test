@@ -6,6 +6,17 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
 {% block beforeContent %}
 
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
     {{ super() }}
 
     {{ govukBackLink ({
@@ -40,29 +51,38 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
     
     <div class="govuk-radios govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefit" name="nationality" type="radio" value="AA">
-        <label class="govuk-label govuk-radios__label" for="benefit">
+        <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
+        <label class="govuk-label govuk-radios__label" for="nationality">
           Attendance Allowance
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefit-2" name="nationality" type="radio" value="CA">
-        <label class="govuk-label govuk-radios__label" for="benefit-2">
-          Carer’s Allowance
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          Carer's Allowance
         </label>
       </div>
-
       <div class="govuk-radios__item">
-
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          Disability Living Allowance
+        </label>
+      </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefit-4" name="nationality" type="radio" value="PC">
-        <label class="govuk-label govuk-radios__label" for="benefit-4">
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          New Style Employment and Support Allowance
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
           Pension Credit
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefit-5" name="nationality" type="radio" value="PIP">
-        <label class="govuk-label govuk-radios__label" for="benefit-5">
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
           Personal Independence Payment
         </label>
       </div>
@@ -79,7 +99,7 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
       </h1>
     </legend>
     <div id="passport-issued-hint" class="govuk-hint">
-      For example, 27 3 2023.
+      For example, 27 3 2007.
     </div>
     <div class="govuk-date-input" id="passport-issued">
       <div class="govuk-date-input__item">
@@ -114,7 +134,7 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Continue",
+                text: "Save and continue",
                 href: "/agent/hrt-v4/filtering/nationality.html"
 
               }) }}

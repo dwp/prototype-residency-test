@@ -8,18 +8,16 @@
 
     {{ super() }}
 
-
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
-          Beta
+          beta
         </strong>
         <span class="govuk-phase-banner__text">
           This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
         </span>
       </p>
     </div>
-
     
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -42,20 +40,19 @@
 
       <br>
 
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h3 class="govuk-fieldset__heading">
-          Claim details
-        </h3>
-      </legend>
       <dl class="govuk-summary-list">
-      
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Claim details
+          </h3>
+        </legend>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
            Benefit
           </dt>
           
           <dd class="govuk-summary-list__value">
-            Personal Independence Payment
+            Attendance Allowance
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/agent/hrt-v4/filtering/benefit.html">Change</a>
@@ -74,13 +71,12 @@
         </div>
       </dl>  
           
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h3 class="govuk-fieldset__heading">
-          Right to reside
-        </h3>
-      </legend>
             <dl class="govuk-summary-list">
-             
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">
+                  Right to reside
+                </h3>
+              </legend>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                    Nationality
@@ -180,11 +176,7 @@
                    Share code expiry date
                   </dt>
                   <dd class="govuk-summary-list__value">
-
-                    18 Mar 2024
-
-                    25 Apr 2024
-
+                    18 Feb 2024
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/visa-status.html">Change</a> -->
@@ -194,12 +186,12 @@
                 </div>
             </dl>  
             
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h3 class="govuk-fieldset__heading">
-                Presence
-              </h3>
-            </legend>
             <dl class="govuk-summary-list">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">
+                  Presence
+                </h3>
+              </legend>
               
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -216,29 +208,16 @@
                 </div>
             </dl>   
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h3 class="govuk-fieldset__heading">
-                Past presence
-              </h3>
-            </legend>
             <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  In UK, Isle of Man or Channel Islands for at least 104 weeks
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 Yes
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
-                  <a class="govuk-link" href="/agent/hrt-v4/filtering/abroad-2years-3years.html">Change</a>
-
-                </dd> 
-                
-              </div>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">
+                  Past presence
+                </h3>
+              </legend>
+             
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Been abroad for more than 104 weeks
+                    Been abroad for more than 4 weeks at a time
                   </dt>
                   <dd class="govuk-summary-list__value">
                    Yes
@@ -304,34 +283,6 @@
                   </dd> 
                 </div>
 
-            </dl> 
-            
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h3 class="govuk-fieldset__heading">
-                Evidence
-              </h3>
-            </legend>
-            <dl class="govuk-summary-list">
-              
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Evidence required
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>Proof of nationality</li>
-                      <li>Proof of immigration status</li>
-                      <li>Proof of presence in the UK, Isle of Man or Channel Islands</li>
-                      <li>Proof of travel abroad</li>
-                    
-                    </ul>
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
-                    <a class="govuk-link" href="/agent/hrt-v4/outcome/select-evidence-required.html">Change</a>
-
-                  </dd> 
-                </div>
             </dl>   
 
             <div class="govuk-form-group">
@@ -356,7 +307,7 @@
 
             {{ govukButton({
               text: "Confirm and submit",
-              href: "/agent/hrt-v4/outcome/end-processing-agent.html"
+              href: "/agent/hrt-v4/outcome/select-evidence-required.html"
             }) }}
 
             <!-- <div>

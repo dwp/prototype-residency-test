@@ -1,8 +1,10 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Residency prototypes
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
+
+
 
 
 {% block beforeContent %}
@@ -17,7 +19,7 @@
 
             <form method="post">
 
-                <h1 class="govuk-heading-xl">Prototypes</h1>
+                <h1 class="govuk-heading-xl">Task list</h1>
 
                 <div class="govuk-tabs" data-module="govuk-tabs">
   <h2 class="govuk-tabs__title">
@@ -46,21 +48,21 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 		<h2 class="govuk-heading-m">Capture a change of address</h2>
-		<p>Citizen’s view of Residency’s journey for capturing a change of address.</p>
+		<p>Citizen's view of Residency's journey for capturing a change of address.</p>
 		<p><strong class="govuk-tag govuk-tag--yellow">On hold</strong></p> 
 		<a href="/address-update-citizen/update-address-versions.html" class="govuk-button">Continue</a>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 		<h2 class="govuk-heading-m">Habitual residency test</h2>
-		<p>Citizen’s view of proving their Habitual Residence.</p>
+		<p>Citizen's view of proving their Habitual Residence.</p>
 		<p><strong class="govuk-tag govuk-tag--yellow">On hold</strong></p> 
 		<a href="/citizen/habitual_residency_test/versions.html" class="govuk-button">Continue</a>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 		<h2 class="govuk-heading-m">International addresses</h2>
-		<p>Citizen’s view of the journey to capture their non-UK address.</p>
+		<p>Citizen's view of the journey to capture their non-UK address.</p>
 		<p><strong class="govuk-tag govuk-tag--yellow">On hold</strong></p> 
 		<a href="/international-addresses/current_address" class="govuk-button">Continue</a>
 
@@ -84,7 +86,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 		<h2 class="govuk-heading-m">Nationality</h2>
-		<p>Citizen’s view of the nationality we hold on them.</p>
+		<p>Citizen's view of the nationality we hold on them.</p>
 		<p><strong class="govuk-tag govuk-tag--yellow">On hold</strong></p> 
 		<a href="/nationality" class="govuk-button">Continue</a>
 
@@ -125,35 +127,50 @@
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-    <h2 class="govuk-heading-m">Digital Habitual Residency Test tool</h2>
-		<p>Residency’s journey for agents to gather information and determine HRT for customers.</p>
-		<p><strong class="govuk-tag govuk-tag--green">Completed</strong></p> 
-		<a href="/agent/hrt-v2/agent-versions.html" class="govuk-button">Continue</a>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">  
-
-		<h2 class="govuk-heading-m">View and Update an Address</h2>
-		<p>Residency’s journey for agents to view and/or update a customer’s address.</p>
-
-		<p><strong class="govuk-tag govuk-tag--green">Completed</strong></p> 
+		<h2 class="govuk-heading-m">View and update an address</h2>
+		<p>Residency's journey for agents to view and update a customer's address.</p>
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
 		<a href="/agent/agent-versions.html" class="govuk-button">Continue</a>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Beginning of a benefit line's journey (stub page)</h2>
+		<p>For testing our reusable components that will be part of bigger services' journeys.</p>
+		<p><strong class="govuk-tag govuk-tag--green">Completed</strong></p> 
+		<a href="/agent/update-address/dashboard.html" class="govuk-button">Continue</a>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Error pages</h2>
+		<p>List of error pages needed for our service.</p>
+		<p><strong class="govuk-tag govuk-tag--green">Completed</strong></p> 
+        <ul class="govuk-list">
+        <li>
+            <a class="govuk-link" href="/error_pages/agent/page-not-found-agent">Error 404</a>
+        </li>
+        <li>
+            <a class="govuk-link" href="/error_pages/agent/there-is-a-problem-with-the-service-agent">Error 500</a>
+        </li>
+        <li>
+            <a class="govuk-link" href="/error_pages/agent/service-unavailable-agent">Error 503</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/error_pages/agent/no-access-agent">No access</a>
+      </li>
+        </ul>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-    <h2 class="govuk-heading-m">SQS UI</h2>
-		<p>Residency’s designs for letting a user of SQS who wishes to delete a single message or all messages on the DLQ queue to confirm the operation before it is deleted.</p>
-		<p><strong class="govuk-tag govuk-tag--green">Completed</strong></p>
-		<a href="/agent/sqs/confirm-purge.html" class="govuk-button">View ’Confirm purge’ screen</a> <br>
-		<a href="/agent/sqs/confirm-delete.html" class="govuk-button">View ’Confirm delete’ screen</a>
+		<h2 class="govuk-heading-m">Digital Habitual Residency Test tool</h2>
+		<p>Residency's journey for agents to complete the HRT for customers.</p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/agent/hrt-v2/agent-versions.html" class="govuk-button">Continue</a>
 
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">  
+           
 
   </div>
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pathfinder">
-    <h2 class="govuk-heading-l">Pathfinder</h2>  
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
+    <h2 class="govuk-heading-l">Pathfinder</h2>       
                             <table class="govuk-table">
                               <caption class="govuk-table__caption govuk-table__caption--m">Maternity Allowance</caption>
                               <thead class="govuk-table__head">

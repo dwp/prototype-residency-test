@@ -1,10 +1,21 @@
-{% extends 'layout-agent.html' %}
+dwp-res-prototype{% extends 'layout-agent.html' %}
 
 {% block pageTitle %}
 Exemptions
 {% endblock %}
 
 {% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
 
     {{ super() }}
 
@@ -30,124 +41,44 @@ Exemptions
       </h2>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
-      <!-- <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="visa" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa">
-        <label class="govuk-label govuk-radios__label" for="visa">
-          EU Settlement Scheme
-        </label>
-  
-      </div>
-      <div class="govuk-radios__conditional" id="conditional-visa">
-        <div class="govuk-form-group">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-              Pre-settled
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-              Settled
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-              Certificate of Application
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-             Family permit
-            </label>
-          </div></div>
-      </div> -->
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption" name="exemptions" type="radio" value="true">
-        <label class="govuk-label govuk-radios__label" for="exemption">
+        <input class="govuk-radios__input" id="type" name="type" type="radio" value="true" data-aria-controls="conditional-type">
+        <label class="govuk-label govuk-radios__label" for="type">
           Armed forces
         </label>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-2" name="exemptions" type="radio" value="true">
-        <label class="govuk-label govuk-radios__label" for="exemption-2">
-          Continental shelf workers
-        </label>
-      </div>
-      <!-- <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="exemption-3" name="exemptions" type="radio" value="foreign" data-aria-controls="conditional-exemption-3">
-          <label class="govuk-label govuk-radios__label" for="exemption-3">
+          <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio" value="foreign" data-aria-controls="conditional-nationality-3">
+          <label class="govuk-label govuk-radios__label" for="nationality-3">
             Coming from an exemption country
           </label>
         </div>
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-exemption-3">
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nationality-3">
           <div class="govuk-form-group">
             <div id="british-hint" class="govuk-hint govuk-radios__hint">Enter the country.</div>
-           
+            <!-- <label class="govuk-label" for="contact-by-email">
+              Nationality
+            </label> -->
             <input class="govuk-input govuk-!-width-one-third" id="foreign-nationality" name="foreignNationality" type="foreign" spellcheck="false" autocomplete="foreign">
           </div>
         </div>
-    </div> -->
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="exemption-4" name="exemptions" type="radio" value="true" >
-      <label class="govuk-label govuk-radios__label" for="exemption-4">
-        Covered by UK-EU Withdrawal Agreement
-      </label>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="exemption-5" name="exemptions" type="radio" value="true" >
-      <label class="govuk-label govuk-radios__label" for="exemption-5">
-        Crown servants (civil servants)
-      </label>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="exemption-6" name="exemptions" type="radio" value="true" >
-      <label class="govuk-label govuk-radios__label" for="exemption-6">
-        Humanitarian crisis
-      </label>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="exemption-7" name="exemptions" type="radio" value="true" >
-      <label class="govuk-label govuk-radios__label" for="exemption-7">
-        Humanitarian protection
-      </label>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="exemption-9" name="exemptions" type="radio" value="true" >
-      <label class="govuk-label govuk-radios__label" for="exemption-9">
-        Mariners or airmen
-      </label>
     </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-8" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-8">
+        <input class="govuk-radios__input" id="type-4" name="type" type="radio" value="true" data-aria-controls="conditional-type-4">
+        <label class="govuk-label govuk-radios__label" for="type-4">
           Medical leave
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-10" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-10">
-          Resettlement schemes
+        <input class="govuk-radios__input" id="type-4" name="type" type="radio" value="true" data-aria-controls="conditional-type-4">
+        <label class="govuk-label govuk-radios__label" for="type-4">
+          Special rules
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-11" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-11">
-          Refugee
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-12" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-12">
-          Special rules for end of life
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-13" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-13">
+        <input class="govuk-radios__input" id="type-2" name="type" type="radio" value="true" data-aria-controls="conditional-type-2">
+        <label class="govuk-label govuk-radios__label" for="type-2">
           None
         </label>
       </div>
@@ -175,7 +106,7 @@ Exemptions
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Save and continue",
-                href: "/agent/hrt-v4b/outcome/select-evidence-required.html"
+                href: "/agent/hrt-v4b/outcome/check.html"
               }) }}
 
               {{ govukButton({

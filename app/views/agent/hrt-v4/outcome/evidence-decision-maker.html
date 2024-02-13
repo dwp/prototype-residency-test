@@ -8,6 +8,16 @@
 
     {{ super() }}
 
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
     
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -45,19 +55,19 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
-                Proof of nationality
+                Passport
               </label>
             </div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
               <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                Proof of immigration status
+                Proof of pre-settled or settled status through the EU Settlement Scheme
               </label>
             </div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
               <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                Proof of recourse to public funds
+                Proof of indefinite leave to enter (ILE) or remain in the UK (ILR)
               </label>
             </div>
             <div class="govuk-checkboxes__item">
@@ -66,11 +76,10 @@
                 Proof of being exempt from immigration control
               </label>
             </div>
-            <div class="govuk-radios__divider">or</div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
               <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                No evidence required
+                Certificate of application
               </label>
             </div>
           </div>
@@ -88,14 +97,19 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
-                Proof of presence in the UK, Isle of Man or Channel Islands
+                Tax documents, such as P60 or P45 
               </label>
             </div>
-            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Council tax bills
+              </label>
+            </div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
               <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                No evidence required
+                Mortgage statements for a house or flat
               </label>
             </div>
           </div>
@@ -113,20 +127,19 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
-                Proof of travel abroad
+                Travel tickets or boarding passes
               </label>
             </div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
               <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                Proof of exemption
+                Proof that the UK, Ireland, the Isle of Man or the Channel Islands is their main home
               </label>
             </div>
-            <div class="govuk-radios__divider">or</div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
               <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                No evidence required
+                Evidence 3
               </label>
             </div>
           </div>
@@ -135,16 +148,15 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Continue",
+          text: "Save and continue",
           href: "/agent/hrt-v4/outcome/decision-dm.html"
       
         }) }}
       
         {{ govukButton({
-          text: "Save and come back later",
+          text: "Save and exit",
           classes: "govuk-button--secondary",
-          href: "/agent/hrt-v4/progress-saved-dm.html"
-
+          href: "/agent/hrt-v4/outcome/reference-number-saved.html"
         }) }}
       </div>
 

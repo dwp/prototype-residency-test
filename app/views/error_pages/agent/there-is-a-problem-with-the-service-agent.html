@@ -1,26 +1,23 @@
 {% extends 'layout-agent-no-details.html' %}
 
 {% block pageTitle %}
-There is a problem with the servic
+    There is a problem with the service
 {% endblock %}
 
 {% block beforeContent %}
 
     {{ super() }}
     
-    <!-- <a href="javascript:history.back()" class="govuk-back-link">Back</a> -->
-
-    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
-      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
-
 {% endblock %}
 
 {% block content %}
 
+                {% set mainClasses = "govuk-main-wrapper--l" %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">There is a problem with the service</h1>
-      <p class="govuk-body">Try refreshing the page, or try again later.</p>
+      <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+      <p class="govuk-body">Please try again later.</p>
       <p class="govuk-body"></p>
       <p class="govuk-body">
        <p class="govuk-body">When the service is available, you will have to start again. </p>
