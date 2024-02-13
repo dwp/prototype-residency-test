@@ -1,0 +1,185 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-fieldset__heading">
+            Check your answers
+          </h2>
+        </legend>
+      </fieldset>
+
+      <br>
+
+      <dl class="govuk-summary-list">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Claim details
+          </h3>
+        </legend>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Benefit
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            Attendance Allowance
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/agent/hrt-v4/filtering/benefit.html">Change</a>
+          </dd> 
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Date of claim
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 Jan 2024
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/agent/hrt-v4/filtering/benefit.html">Change</a>
+          </dd> 
+        </div>
+      </dl>  
+          
+            <dl class="govuk-summary-list">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">
+                  Right to reside
+                </h3>
+              </legend>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                   Nationality
+                  </dt>
+                  
+                  <dd class="govuk-summary-list__value">
+                    British
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
+                    <a class="govuk-link" href="/agent/hrt-v4/filtering/nationality.html">Change</a>
+
+                  </dd> 
+                </div>
+            </dl>  
+            
+            <dl class="govuk-summary-list">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">
+                  Presence
+                </h3>
+              </legend>
+              
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Lives in UK, Isle of Man or Channel Islands
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                   Yes
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
+                    <a class="govuk-link" href="/agent/hrt-v4/filtering/presence.html">Change</a>
+
+                  </dd> 
+                </div>
+            </dl>   
+
+            <dl class="govuk-summary-list">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">
+                  Past presence
+                </h3>
+              </legend>
+             
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Been abroad for more than 4 weeks at a time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                   No
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
+                    <a class="govuk-link" href="/agent/hrt-v4/filtering/abroad-4weeks-3years.html">Change</a>
+
+                  </dd> 
+                  
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Exemptions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    None
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/agent/hrt-v4/filtering/exemptions.html">Change</a>
+                  </dd> 
+                </div>
+
+            </dl>   
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Declaration
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox" value="yes">
+                    <label class="govuk-label govuk-checkboxes__label" for="declaration">
+                      Claimant has agreed that the information they have given is complete and correct.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Confirm and submit",
+              href: "/agent/hrt-v4b/outcome/select-evidence-required.html"
+            }) }}
+
+            <!-- <div>
+              <a href="/agent/hrt-v4/outcome/evidence.html" class="govuk-body-m">Request and provide evidence
+            </a>
+            </div> -->
+    </div>
+</div>
+
+{% endblock %}

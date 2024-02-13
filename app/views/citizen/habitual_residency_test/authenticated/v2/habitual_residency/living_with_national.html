@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Are you living with a British or EEA National?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">
+  Are you living with a British or EEA national?
+</h1>
+
+      <form action="/citizen/habitual_residency_test/authenticated/v2/habitual_residency/living_with_national_yes.html" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="british-eea-national-yes" name="british-eea-national" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="uk-address-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="british-eea-national-no" name="british-eea-national" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="uk-address-no">
+                No
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+<div class="govuk-button-group">
+        {{ govukButton ({
+          html: 'Continue'
+        }) }}
+        {{ govukButton({
+    text: "Save and do later",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+
+{% endblock %}

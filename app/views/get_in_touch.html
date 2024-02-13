@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Get in touch
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Get in touch</h1>
+
+               <p class="govuk-body">If you would like to leave feedback about the prototype or have an idea or suggestion, get in touch with the Residency team.</p> 
+
+               <h2 class="govuk-heading-l">Email</h2>
+               <span class="govuk-body-l">Christian Chesher - Designer on Residency</span>
+               <p class="govuk-body">christian.chesher@engineering.digital.dwp.gov.uk</p>
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

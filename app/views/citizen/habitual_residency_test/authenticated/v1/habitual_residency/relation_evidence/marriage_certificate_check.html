@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Check your document
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Check your document</h1>
+
+                 <p class="govuk-body">Your document must be clear and in focus.</p>
+                 <p class="govuk-body">We must be able to clearly read the words on the certificate.</p>
+
+                 <img src="https://i.pinimg.com/originals/70/8b/ae/708bae136ec15d48787d446570457eda.jpg" alt="Uploaded marriage certificate" height="271.5" width="400">
+
+<br><br><br>
+
+                <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                       Does your document meet those requirements
+                    </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="meet-requirements" name="meet-requirements" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="meet-requirements">
+                        Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="meet-requirements-2" name="meet-requirements" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for="meet-requirements-2">
+                        No, I want to upload a different document
+                        </label>
+                    </div>
+                    </div>
+
+                </fieldset>
+                </div>
+
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/authenticated/v1/habitual_residency/relation_evidence/upload_success.html'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

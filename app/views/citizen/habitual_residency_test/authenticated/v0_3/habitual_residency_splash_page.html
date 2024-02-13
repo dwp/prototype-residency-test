@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Habitual Residency test
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">You may be required to do a Habitual Residency test</h1>
+
+                <p class="govuk-body">We're about to present with information we have regarding your Nationality and potentially your immigration status for you to review.</p>
+
+                <p class="govuk-body">We're doing this to check whether you'll need to go through a more detailed test, which will help us understand your eligibility to claim benefits.</p>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "/citizen/habitual_residency_test/authenticated/v0_3/dual_nationality_question.html"
+  }) }}
+</div>
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

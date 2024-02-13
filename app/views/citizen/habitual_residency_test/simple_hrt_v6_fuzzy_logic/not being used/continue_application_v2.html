@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %} Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+<form action="/citizen/habitual_residency_test/simple_hrt_v6_fuzzy_logic/passport.html" class="form">
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Have you lived in the United Kingdom for
+at least 24 months (2 years) over the past 36 months (3 years?)</h1>
+    </legend>
+    <br>
+        <div id="nationality-hint" class="govuk-hint">
+          
+You should select 'Yes' if your time spent abroad in the past 3 years adds up to a year or less.<br></div>
+    <br>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence" name="presence" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence-2" name="presence" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+                
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

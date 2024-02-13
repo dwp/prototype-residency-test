@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Enter address manually
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+//f
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+<form action="/cherished-address/ca-end.html" class="form">
+
+
+{% call govukFieldset({
+          legend: {
+            text: "What is your address?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              html: 'Address 1 <span class="govuk-visually-hidden">line 1 of 2</span>'
+            },
+            id: "address-line-1",
+            name: "address-line-1",
+            autocomplete: "address-line1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: '<span class="govuk-visually-hidden"></span>'
+            },
+            id: "address-line-2",
+            name: "address-line-2",
+            autocomplete: "address-line-2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: '<span class="govuk-visually-hidden"></span>'
+            },
+            id: "address-line-2",
+            name: "address-line-2",
+            autocomplete: "address-line-2"
+          }) }}
+          {{ govukInput({
+            label: {
+              html: '<span class="govuk-visually-hidden"></span>'
+            },
+            id: "address-line-2",
+            name: "address-line-2",
+            autocomplete: "address-line-2"
+          }) }}
+
+         
+
+          {{ govukInput({
+            label: {
+              text: "Country"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "address-county"
+          }) }}
+
+
+{% endcall %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue",
+      value: "true"
+    }) }}
+
+</form>
+
+  </div>
+</div>
+
+{% endblock %}

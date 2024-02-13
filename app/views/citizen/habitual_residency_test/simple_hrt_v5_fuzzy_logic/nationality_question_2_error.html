@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What's your nationality?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter a country name in English and select from the list",
+      href: "#f-nationality"
+    }
+  ]
+}) }}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="/citizen/habitual_residency_test/simple_hrt_v5_fuzzy_logic/presence.html" class="form">
+
+                <h1 class="govuk-heading-xl">What's your nationality?</h1>
+                
+
+<div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-body" for="f-nationality">Start typing your nationality, then select from the list</label>
+              <br>
+                <span id="national-insurance-number-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span>Enter a country name in English and select from the list
+  </span>
+              <div class="govuk-body" id="f-nationality"></div>
+</div>
+
+
+  <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I have dual citizenship
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you have dual citizenship, enter the nationality on the identity documents you are using to make this application.
+  </div>
+</details>
+
+        <div class="casa-form-control-block">
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

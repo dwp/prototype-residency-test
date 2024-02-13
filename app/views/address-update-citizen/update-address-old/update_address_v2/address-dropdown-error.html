@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Error - Find your address
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+  {% if data['sort'] == 'false' %}
+  {{ '/capture-new-residential-address/address-date' | redirect | safe }}
+{% endif %}
+
+  {% block content %}
+
+
+        {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukErrorSummary({
+          "titleText": "There is a problem",
+          "errorList": [
+            {
+              "text": "Select an address from the list",
+              "href": "#sort"
+            }
+          ]
+        }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h2 class="govuk-heading-xl">Select your address</h2>
+
+          <div class="govuk-form-group">
+          <span class="govuk-body"> Postcode</span>
+          <p><b>AB1 2CD</b> <a href="javascript:history.back()" class="govuk-!-margin-left-2">Change <span class="govuk-visually-hidden">Postcode</span> </a></p>
+          </div>
+
+<p class="govuk-body govuk-!-margin-bottom-4"></p>
+
+
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{{ govukSelect({
+  label: {
+    text: "Select an address"
+  },
+  id: "sort",
+  name: "sort",
+  errorMessage: {
+    text: "Select an address from the list"
+  },
+    items: [
+    {
+      value: "5 addresses found",
+      text: "5 addresses found",
+      selected: true
+    },
+    {
+      value: "1 swaffield avenue",
+      text: "1 Swaffield Avenue"
+    },
+    {
+      value: "2 swaffield avenue",
+      text: "2 Swaffield Avenue"
+    },
+    {
+      value: "3 swaffield avenue",
+      text: "3 Swaffield Avenue"
+    },
+        {
+      value: "4 swaffield avenue",
+      text: "4 Swaffield Avenue"
+    },
+        {
+      value: "5 swaffield avenue",
+      text: "5 Swaffield Avenue"
+    }
+  ]
+}) }}
+
+      <div>
+      <a href="/capture-new-residential-address/enter-address-manually.html" class="govuk-body-m">I can't find my address in the list</a>
+      </div>
+
+      <br><br>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "/capture-new-residential-address/address-date.html",
+      value: "true"
+    }) }}
+
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

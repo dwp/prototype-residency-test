@@ -1,0 +1,71 @@
+{% extends 'layout-agent-no-details.html' %}
+
+{% block pageTitle %}
+    Name
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">What is the customer's name?</h1>
+              
+                <div id="dob-hint" class="govuk-hint">
+                  Enter the customer's full name
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">
+                    Given names
+                  </label>
+                  <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">
+                    Family name
+                  </label>
+                  <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
+                </div>
+  
+               <!-- <button class="govuk-button" data-module="govuk-button" href="agent/hrt/identification/dob.html"> Continue </button> -->
+               {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/agent/hrt-v2/identification/dob.html"
+}) }}
+           
+          </div>  
+
+  <!-- <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What to do if the customer has dual nationality?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If the customer has dual nationality, select the nationality on the identity documents you're using to process this case.
+  </div>
+</details> -->
+
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

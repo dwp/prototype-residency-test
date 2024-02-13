@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What is your nationality?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#nationalities">Make a selection</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+      <form action="/citizen/habitual_residency_test/simple_hrt_v3a/nationality_question_2.html" class="form">
+
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl" id="nationalities">
+      <h1 class="govuk-fieldset__heading">
+        What is your nationality?
+      </h1>
+    </legend>
+        <span id="nationality-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Make a selection
+    </span>
+    <div class="govuk-radios govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
+        <label class="govuk-label govuk-radios__label" for="nationality">
+          British
+        </label>
+      <div id="british-hint" class="govuk-hint govuk-radios__hint">select if you're from England, Scotland, Wales or Northern Ireland</div>
+      </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          Irish
+        </label>
+      </div>
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="nationality-3">
+          Another nationality
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+ <div id="nationality-hint" class="govuk-body">
+      If you hold a permanent British passport, you're a Briish national. If you're not sure whether you qualify, <a class="govuk-body" href="https://www.gov.uk/types-of-british-nationality">find out if you're a British national</a>
+    </div>
+
+  <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I have dual citizenship
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you have dual citizenship, select the nationality on the identity documents you're using to make this application.
+  </div>
+</details>
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

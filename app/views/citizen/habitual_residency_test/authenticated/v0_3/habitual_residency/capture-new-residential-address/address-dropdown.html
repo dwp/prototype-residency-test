@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Find your address
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+  {% if data['address-lookup-yes'] == 'true' %}
+  {{ '/address-error' | redirect | safe }}
+{% endif %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h2 class="govuk-heading-xl">Select your address</h2>
+
+
+          <div class="govuk-form-group">
+          <span class="govuk-body"> Postcode</span>
+          <p><b>AB1 2CD</b> <a href="/ma/ma_address_lookup" class="govuk-!-margin-left-2">Change <span class="govuk-visually-hidden">Postcode</span> </a></p>
+          </div>
+
+<p class="govuk-body govuk-!-margin-bottom-4"></p>
+
+    <form action="/citizen/habitual_residency_test/authenticated/v0_3/habitual_residency/capture-new-residential-address/address-dropdown.html" method="post" class="form">
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Select an address"
+  },
+  items: [
+    {
+      value: "5 addresses found",
+      text: "5 addresses found",
+      selected: true
+    },
+    {
+      value: "1 swaffield avenue",
+      text: "1 Swaffield Avenue, London"
+    },
+    {
+      value: "2 swaffield avenue",
+      text: "2 Swaffield Avenue, London"
+    },
+    {
+      value: "3 swaffield avenue",
+      text: "3 Swaffield Avenue, London"
+    },
+        {
+      value: "4 swaffield avenue",
+      text: "4 Swaffield Avenue, London"
+    },
+        {
+      value: "5 swaffield avenue",
+      text: "5 Swaffield Avenue, London"
+    }
+  ]
+}) }}
+
+    {{ govukButton({
+      text: "Continue",
+      value: "true"
+    }) }}
+
+
+
+    </form>
+
+      <div>
+      <a href="/address_manually.html" class="govuk-body-m">I can't find my address in the list</a>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

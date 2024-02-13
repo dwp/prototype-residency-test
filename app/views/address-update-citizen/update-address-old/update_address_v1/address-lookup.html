@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Address lookup
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+{% block content %}
+
+{% if data['uk-question'] == 'false' %}
+  {{ '/international-addresses/country_list' | redirect | safe }}
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/capture-new-residential-address/address-error" method="post" class="form">
+
+<h2 class="govuk-heading-xl">What is your address?</h2>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <div class="govuk-label">
+                <label class="govuk-label" for="address-postcode">
+      Enter your postcode
+    </label>
+              <input class="govuk-input govuk-input--width-10" id="address-lookup-yes" name="address-lookup" type="text" value="">
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" value= "true" data-module="govuk-button">Find address</button>
+
+   </form>
+
+   <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with entering your address
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We need to know your address so we know where you live. If you cannot provide a postcode, you’ll have to <a href="/capture-new-residential-address/enter-address-manually.html" class="govuk-link">enter your address in manually</a>.
+  </div>
+</details>
+
+
+  </div>
+</div>
+
+{% endblock %}

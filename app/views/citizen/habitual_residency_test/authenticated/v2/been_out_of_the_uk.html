@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    In the last 2 years, have you been out of the UK for 4 weeks or more in a single trip?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+  
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  
+    <h1 class="govuk-fieldset__heading">
+      In the last 2 years, have you been out of the UK for 4 weeks or more in a single trip?
+    </h1>
+  </legend>
+  <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="out-of-country-four-weeks" name="claimant[outOfCountryFourWeeks]" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="out-of-country-four-weeks">
+        Yes
+      </label>
+        </div>      
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="out-of-country-four-weeks-2" name="claimant[outOfCountryFourWeeks]" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="out-of-country-four-weeks-2">
+        No
+      </label>       
+        </div>   
+  </div>
+
+</fieldset>
+</div>
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/authenticated/v2/return_to_uk.html'
+                }) }}
+
+    </form>
+  </div>
+
+
+{% endblock %}

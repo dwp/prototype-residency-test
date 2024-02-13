@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %} Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Type a nationality in the box",
+      href: "#f-nationality"
+    }
+  ]
+}) }}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
+    
+     
+     
+<div class="govuk-form-group govuk-form-group--error">
+            
+
+
+
+     
+     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you have a British or Irish passport?</h1>
+    </legend>
+       
+                <span id="national-insurance-number-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span>Tell us if you have a British or Irish passport
+        <div id="nationality-hint" class="govuk-hint">
+          
+    <br>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="passport" name="passport" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
+          Yes, I have a British passport
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="passport-2" name="passport" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          Yes, I have an Irish passport
+        </label>
+      </div>
+      </div>
+<br>      <p class="govuk-body">or</p>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="passport-3" name="passport" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+No      </label>
+      </div>
+    </div>
+
+
+
+</div>
+  </fieldset>
+</div>
+                
+
+<button class="govuk-button" data-module="govuk-button" onclick="check2()">
+  Continue
+</button>
+            </form>
+
+            <script>
+              function check2() {
+                console.log('in function')
+                var radios = document.getElementsByName("passport");
+                var hasSelection = false
+                for (var i = 0, len = radios.length; i < len; i++) {
+                  if (radios[i].checked) {
+                    hasSelection = true;
+                  }
+                }
+                if (!hasSelection) {
+                  window.location.href = "/citizen/habitual_residency_test/simple_hrt_v7b/nationality_question_1_documents_error.html";
+                } else {
+                  window.location.href = "/citizen/habitual_residency_test/simple_hrt_v7b/nationality_question_2_documents.html"
+              
+                }
+              }
+              </script>
+
+        </div>
+
+</div>
+<details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why do we need this information?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Your nationality is one of the many details that affect your eligibility for this benefit.
+  </div>
+  </details>
+
+        </div>
+
+</div>
+
+{% endblock %}

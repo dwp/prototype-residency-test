@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What is your relation to the British or EEA National?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+{% if data['british-eea-national'] == 'false' %}
+  {{ 'caring_british_eea_national' | redirect | safe }}
+{% endif %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+  <form action="/citizen/habitual_residency_test/authenticated/v2/habitual_residency/caring_british_eea_national.html" class="form">
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "what-is-your-relation",
+  name: "what-is-your-relation",
+  fieldset: {
+    legend: {
+      text: "What is your relation to the British or EEA National?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "child",
+      text: "Child"
+    },
+    {
+      value: "parent",
+      text: "Parent"
+    },
+    {
+      value: "sibling",
+      text: "Sibling"
+    },
+    {
+      value: "spouse",
+      text: "Spouse"
+    },
+    {
+      value: "carer",
+      text: "Carer"
+    },
+    {
+      value: "other",
+      text: "Other"
+    }
+  ]
+}) }}
+                
+
+        <div class="govuk-button-group">
+                {{ govukButton ({
+                html: 'Continue'
+                }) }}
+                {{ govukButton({
+            text: "Save and do later",
+            classes: "govuk-button--secondary"
+        }) }}
+        </div>
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

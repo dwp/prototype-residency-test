@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    There is a problem with the service
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+                {% set mainClasses = "govuk-main-wrapper--l" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+      <p class="govuk-body">Please try again later.</p>
+      <p class="govuk-body"></p>
+      <p class="govuk-body">
+       <p class="govuk-body">If the problem persists <a class="govuk-link" href="#">contact the "Service line" Helpline</a> if you need to make changes to your claim or speak to someone about your situation.
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

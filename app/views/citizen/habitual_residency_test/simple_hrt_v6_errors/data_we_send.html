@@ -1,0 +1,112 @@
+{% extends 'layout_blue_zone.html' %}
+
+{% block pageTitle %}
+    Continue with your application
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+{% if data['presence'] == '' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v6/presence_error.html' | redirect | safe }}
+{% endif %}
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      <em>This is<strong> purely presentation purposes</strong> and not a Citizen or Agent facing screen to show we have captured and validated the data supplied by the citizen.</em>
+    </span>
+  </p>
+</div>
+<br>
+<br>
+
+        <h1 class="govuk-heading-xl">Habitual Residency determination</h1>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__header">
+        Habitual Residency status
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--red">
+  No
+</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+        <p class="govuk-body">See below why we were <strong>not able</strong> to determine the claimants Habitual Residency status.</p>
+
+<br>
+<br>
+
+<h2 class="govuk-heading-m">Nationality <strong style="margin-left: 19em;" class="govuk-tag govuk-tag--red">Not Matching</strong></h2>
+<table class="govuk-table">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Asserted nationality</th>
+      <td class="govuk-table__cell">French</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">CIS nationality</th>
+      <td class="govuk-table__cell">Italian</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Home Office nationality</th>
+      <td class="govuk-table__cell">Italian</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<h2 class="govuk-heading-m">Presence in GB<strong style="margin-left: 21em;" class="govuk-tag govuk-tag--green">Passed</strong></h2>
+<table class="govuk-table">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Asserted time out of GB</th>
+      <td class="govuk-table__cell">false</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<h2 class="govuk-heading-m">Eligibility attributes</h2>
+<table class="govuk-table">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Immigration status</th>
+      <td class="govuk-table__cell">No data in response</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Recourse to public funds</th>
+      <td class="govuk-table__cell">No data in response</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </div>
+
+</div>
+
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

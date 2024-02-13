@@ -1,0 +1,114 @@
+dwp-res-prototype{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+Customer details submitted
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Case HDJ2123F has been sent to a decision maker to review.
+    </h3>
+    <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
+  </div>
+</div>
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Customer details submitted
+  </h1>
+  <div class="govuk-panel__body">
+    Case reference number<br><strong>HDJ2123F</strong>
+  </div>
+</div>
+<br>
+<!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
+
+<h2 class="govuk-heading-m">What to do next</h2>
+<p class="govuk-body">
+  If you are a decision maker, go to the case tasks queue to review a case.
+</p>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Send case",
+  disabled: true
+}) }}
+
+  {{ govukButton({
+    text: "Go to case tasks queue",
+    href: "/agent/hrt-v4/outcome/reference-number.html"
+  }) }}
+
+</div>
+
+<p class="govuk-body">
+  Ask the customer to provide proof of the following: 
+</p>
+
+  <!-- <p class="govuk-body">You can buy:</p> -->
+<ul class="govuk-list govuk-list--bullet">
+  <li>nationality</li>
+  <li>immigration status</li>
+  <li>presence in the UK</li>
+  <li>travel abroad</li>
+
+</ul>
+</fieldset>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+
+  {{ govukButton({
+    text: "Generate list of evidence required",
+    classes: "govuk-button--secondary",
+    href: "#"
+  }) }}
+</div>
+</form>
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

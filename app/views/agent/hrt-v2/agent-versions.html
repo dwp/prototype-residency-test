@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Digital HRT - Versions Agent view
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Digital HRT Tool Versions - Agent view</h1>
+
+	<div class="govuk-tabs__panel" id="past-day" role="tabpanel" aria-labelledby="tab_past-day">
+		<!-- <h2 class="govuk-heading-l">Update address journey prototypes</h2> -->
+		<p>These prototypes are experimental pages testing hypothesis and designs for agents who are using the HRT tool with and for customers.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Processsing agent journey - EU citizen scenario</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>18 October 2023</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v2/identification/all" class="govuk-button">View version 2</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Decision maker journey - EU citizen scenario</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>18 October 2023</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v2/outcome/reference-number" class="govuk-button">View version 2</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Processsing agent journey - EU citizen scenario</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>1 November 2023</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v3/identification/all" class="govuk-button">View version 3</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Decision maker journey - EU citizen scenario</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>1 November 2023</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v3/outcome/reference-number" class="govuk-button">View version 3</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Processsing agent journey - EU citizen scenario</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>23 January 2024</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v4/identification/all" class="govuk-button">View version 4a</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Processsing agent journey - British citizen scenario</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>23 January 2024</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v4b/identification/all" class="govuk-button">View version 4b</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Decision maker journey - EU citizen scenario Option 1</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>19 December 2023</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v4/outcome/reference-number" class="govuk-button">View version 4a Option 1</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Decision maker journey - EU citizen scenario Option 2</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>19 December 2023</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v4/outcome-1/reference-number" class="govuk-button">View version 4a Option 2</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Decision maker journey - British citizen scenario</h2>
+		<!-- <p>MVP ready</p> -->
+		<p>23 January 2024</p>
+
+		<p><strong class="govuk-tag govuk-tag--green">completed</strong></p> 
+		<a href="/agent/hrt-v4b/outcome/reference-number" class="govuk-button">View version 4b</a><br/>
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<!-- <h2 class="govuk-heading-m">Version 2</h2>
+		<p>Post MVP</p>
+
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--yellow">on hold</strong></p> 
+		<a href="#"  class="govuk-button">View version 2</a><br/>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+            </form>
+        </div>
+</div>
+
+{% endblock %}

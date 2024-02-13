@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %} Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+              <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#presence">Tell us if you’ve been abroad for more than 12 of the past 36 months</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+ <div class="govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Have you spent more than a year abroad in the past 3 years?</h1>
+      </legend>
+      
+      <div id="nationality-hint" class="govuk-hint">
+        <span id="where-do-you-live-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Tell us if you’ve been abroad for more than 12 of the past 36 months
+        </span>            
+  Select 'Yes' if you've spent more than 12 months outside Great Britain in the past 36 months.
+  
+    <br>  <br>
+    <div class="govuk-radios govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence" name="presence" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence-2" name="presence" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence-3" name="presence" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          Not sure
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+                
+       
+                  
+<button class="govuk-button" data-module="govuk-button" onclick="check1()">
+  Continue
+</button>
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("presence");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8b/continue_application_error.html";
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8b/confirm_residence.html"
+
+  }
+}
+</script>
+
+        </div>
+
+</div>
+
+<h2 class="govuk-heading-m">More information</h2>
+
+<details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+<summary class="govuk-details__summary">
+<span class="govuk-details__summary-text">
+What happens if you’re not sure
+</span>
+</summary>
+<div class="govuk-details__text">
+If it’s difficult to answer this question straight
+away, select ‘not sure’. We will contact you later
+to help answer this question.
+</div>
+</details>
+
+<details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+<summary class="govuk-details__summary">
+<span class="govuk-details__summary-text">
+Why do we need this information?
+</span>
+</summary>
+<div class="govuk-details__text">
+The time you’ve recently spent out of the country affects your eligibility for this benefit. 
+</div>
+</details>
+
+<br>
+
+</div>
+
+
+{% endblock %}

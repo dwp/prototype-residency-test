@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Have you been employed in GB in the past?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Have you been employed in GB in the past?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="previous-employment" name="previous-employment" type="radio" value="true">
+        <label class="govuk-label govuk-radios__label" for="previous-employment">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="previous-employment-2" name="previous-employment" type="radio" value="false">
+        <label class="govuk-label govuk-radios__label" for="previous-employment-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+            <div class="govuk-button-group">
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/authenticated/v2/habitual_residency/student_question.html'
+                }) }}
+                {{ govukButton({
+                text: "Save and do later",
+                classes: "govuk-button--secondary"
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

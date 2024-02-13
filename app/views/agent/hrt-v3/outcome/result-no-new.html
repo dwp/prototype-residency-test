@@ -1,0 +1,116 @@
+dwp-res-prototype{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Decision
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-notification-banner govuk-notification-banner" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      The answers provided indicate that a factual habitual residency test may not be required to determine the customer's habitual residency.
+    </h3>
+    <p class="govuk-body">Please confirm.</p>
+  </div>
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Does the customer need a factual habitual residency test?
+      </h1>
+    </legend>
+    
+    <!-- <div id="dob-hint" class="govuk-hint">
+      Record your decision.
+    </div> -->
+    
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+              
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/agent/hrt-v3/outcome/hab-res.html"
+}) }}
+
+<!-- {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "What to do if the customer has traveled from several countries?",
+  text: "If the customer has travelled from several countries, enter the one they have spent the most time in."
+}) }} -->
+                  
+<!-- <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+  Continue
+</button> -->
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("presence");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/continue_application_error.html";
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/confirm_residence.html"
+
+  }
+}
+</script>
+
+        </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

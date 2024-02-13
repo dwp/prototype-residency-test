@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Do you have anymore evidence that can show your intent to stay in GB?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you have anymore evidence that can show your intent to stay in GB?
+      </h1>
+    </legend>
+        <div id="changed-name-hint" class="govuk-hint">
+      We may ask for more evidence from you if we feel we cannot conclude whether you pass the Habitual Residency test.
+    </div>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-evidence" name="further-evidence" type="radio" value="doctors-note">
+        <label class="govuk-label govuk-radios__label" for="further-evidence">
+          Doctors note
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-evidence-2" name="further-evidence" type="radio" value="sentist-note">
+        <label class="govuk-label govuk-radios__label" for="further-evidence-2">
+          Dentist note
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-evidence-3" name="further-evidence" type="radio" value="tenancy-agreement">
+        <label class="govuk-label govuk-radios__label" for="further-evidence-3">
+          Tenancy agreement
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-evidence-4" name="further-evidence" type="radio" value="ni-payment">
+        <label class="govuk-label govuk-radios__label" for="further-evidence-4">
+          NI Payment
+        </label>
+      </div>
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-evidence-5" name="further-evidence" type="radio" value="residency-card">
+        <label class="govuk-label govuk-radios__label" for="further-evidence-5">
+         Residency card
+        </label>
+      </div>
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-evidence-6" name="further-evidence" type="radio" value="other">
+        <label class="govuk-label govuk-radios__label" for="further-evidence-6">
+         Other
+        </label>
+      </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-evidence-7" name="further-evidence" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="further-evidence-7">
+         No
+        </label>
+      </div>
+
+  </fieldset>
+</div>
+            <div class="govuk-button-group">
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/authenticated/v1/habitual_residency/check_your_answers.html'
+                }) }}
+                {{ govukButton({
+                text: "Save and do later",
+                classes: "govuk-button--secondary"
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

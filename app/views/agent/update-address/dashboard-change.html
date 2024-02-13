@@ -1,0 +1,253 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Customer information
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <strong class="govuk-tag govuk-tag--blue" style="margin-bottom:40px;">
+            RECEIVING CARERS ALLOWANCE
+        </strong>
+
+        <style>
+        
+            /* Style the tab */
+            .tab {
+              overflow: hidden;
+              border-bottom: 1px solid #ccc;
+            }
+            
+            /* Style the buttons inside the tab */
+            .tab button {
+              background-color: inherit;
+              float: left;
+              border: none;
+              margin:0px;
+              color:#144e81;
+              outline: none;
+              cursor: pointer;
+              padding: 14px 16px;
+              font-size: 17px;
+                text-decoration: underline;
+            
+            }
+            
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+              background-color: #ededed;
+            }
+            
+            /* Create an active/current tablink class */
+            .tab button.active {
+              background-color: #ffff;
+                border-bottom: 5px solid #4d79b8;
+                    text-decoration: none;
+            }
+            
+            /* Style the tab content */
+            .tabcontent {
+              display: none;
+              padding: 6px 12px;
+           
+            }
+            </style>
+            
+            <div class="tabs" style="width:100%;">
+            <div class="tab">
+              <button class="tablinks" onclick="openTab(event, 'Personal')">Personal</button>
+              <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+              
+              <button class="tablinks" onclick="openTab(event, 'Award')">Award</button> 
+              <button class="tablinks" onclick="openTab(event, 'Payment')">Payment</button>
+            </div>
+            
+            <Div style="height:0.5px; width:100%; background-color: black; margin:0px; padding:0px;"></Div>
+            <div id="Personal" class="tabcontent">
+                <h2 class="govuk-heading-m" style="margin-top:40px;">Personal details</h2>
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Permanent address
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            18 Burdett House, Main Street,<br> Guildford, GU79 6YW
+                        </dd>
+                    
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="/agent/updated-address.html">
+                                View details<span class="govuk-visually-hidden"> address</span>
+                            </a>
+                            <p></p>
+                            <!-- <a class="govuk-link" href="/agent/update-address/perm-or-temp.html">
+                                Change<span class="govuk-visually-hidden"> address</span>
+                            </a> -->
+        
+                        </dd>
+                    </div>
+        
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Temporary address
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            5 Wellington House, Windsor Street, South Gosforth, <br>Newcastle upon Tyne,<br>NE3 1YL
+                        </dd>
+                    
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="/agent/updated-address.html">
+                                View details<span class="govuk-visually-hidden"> address</span>
+                            </a>
+                            <p></p>
+                            <!-- <a class="govuk-link" href="/agent/update-address/perm-or-temp.html">
+                                Change<span class="govuk-visually-hidden"> address</span>
+                            </a> -->
+                        </dd>
+                    </div>
+        
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Nationality
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            British
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Change<span class="govuk-visually-hidden"> nationality</span>
+                            </a>
+                        </dd>
+                    </div>
+        
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Bank details
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Add<span class="govuk-visually-hidden"> bank details</span>
+                            </a>
+                        </dd>
+                    </div>
+        
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Alternative format for letters
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Braille
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Change<span class="govuk-visually-hidden"> alternative format for letters</span>
+                            </a>
+                        </dd>
+                    </div>
+        
+                </dl>
+            </div>
+            </div>
+            
+            <div id="Contact" class="tabcontent"> 
+                
+        <h2 class="govuk-heading-m" style="margin-top:40px;">Contact details</h2>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Work phone number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    0191 2798475
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> work phone number</span>
+                    </a>
+                </dd>
+            </div>
+         
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Mobile phone number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                        Add <span class="govuk-visually-hidden"> mobile phone number</span>
+                    </a>
+                </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                        Add<span class="govuk-visually-hidden"> email address</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+<div id="Award" class="tabcontent">
+</div>
+
+    <div id="Payment" class="tabcontent">
+    </div>
+</div>
+
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+{% endblock %}

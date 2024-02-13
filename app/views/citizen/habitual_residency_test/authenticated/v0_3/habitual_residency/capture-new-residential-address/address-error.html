@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block Error %}
+Error - Address lookup
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+{% block content %}
+
+        {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukErrorSummary({
+          "titleText": "There is a problem",
+          "errorList": [
+            {
+              "text": "Enter a valid UK postcode",
+              "href": "#postcode-error"
+            }
+          ]
+        }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/ma/ma_address_lookup_error" method="post" class="form">
+
+
+<h2 class="govuk-heading-l">What is your address?</h2>
+
+<div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <div class="govuk-label">
+                <label class="govuk-label" for="address-postcode">
+      Postcode
+    </label>
+      </div>
+  <span id="postcode-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a valid UK postcode
+  </span>
+  <input class="govuk-input govuk-input--width-10" id="address-lookup-yes" name="address-lookup" type="text" value="" aria-describedby="address-lookup-error">
+</div>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" value= "true" data-module="govuk-button">Find address</button>
+
+   </form>
+
+      <div>
+      <a href="/ma/ma_address_manually.html" class="govuk-body-m">Enter address manually</a>
+      </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

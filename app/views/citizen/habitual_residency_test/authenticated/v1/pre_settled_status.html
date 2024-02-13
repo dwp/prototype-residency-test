@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Is this your pre-settled status?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Is this your pre-settled status?</h1>
+
+                <table class="govuk-table">
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Pre-settled status</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">No right to reside</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    <p class="govuk-body govuk-!-font-size-19">We believe this is your Pre Settled Status following information from the Home Office. <a href="#" class="govuk-link govuk-link--no-visited-state">Let us know if this is incorrect</a>.</p>
+   
+                {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+                <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                    Help with Pre-settled status
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                   If you have not lived in the UK for 5 years in a row (known as ‘continuous residence’), you’ll usually get pre-settled status. You must have started living in the UK by 31 December 2020 unless you are applying as the existing close family member of an EU, EEA or Swiss citizen who started living here by then. You can stay in the UK for a further 5 years from the date you get pre-settled status. <br><br> <a href="https://www.gov.uk/settled-status-eu-citizens-families/switch-from-presettled-status-to-settled-status">You can apply to switch to settled status</a> as soon as you’ve had 5 years’ continuous residence. You must apply for settled status before your pre-settled status expires to stay in the UK.
+                </details>
+
+                    </div>
+                    </div>
+
+
+
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/authenticated/v1/habitual_residency/information_page.html'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

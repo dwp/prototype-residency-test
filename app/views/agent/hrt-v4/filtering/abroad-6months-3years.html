@@ -1,0 +1,107 @@
+dwp-res-prototype{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+   Leave
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Past presence</h1>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h2 class="govuk-fieldset__heading">
+        Have they been abroad for 6 months or more in the last 3 years?
+      </h2>
+    </legend>
+    
+   <div id="nationality-hint" class="govuk-hint">
+    Select ‘Yes’ if they have spent 6 months or more outside the United Kingdom, the Isle of Man or the Channel Islands in the past 3 years. The 6 months do not need to be continuous.  </div>
+    
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="abroad-yes" name="abroad" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="abroad-no" name="abroad" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          No
+        </label>
+      </div>
+      <!-- <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence-3" name="presence" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          Not sure
+        </label>
+      </div> -->
+    </div>
+
+  </fieldset>
+<br>
+  <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+    Continue
+  </button>
+
+</div>
+                  
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("abroad");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/agent/hrt-v3/filtering/abroad-6months-3years-error.html";
+  } else {
+    if (document.getElementById("abroad-yes").checked) {
+        window.location.href = "/agent/hrt-v4/filtering/country.html"
+      } else {
+        window.location.href = "/agent/hrt-v4/filtering/exemptions.html.html"
+      }}}
+</script>
+
+        </div>
+      </div>
+ 
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

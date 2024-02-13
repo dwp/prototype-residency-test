@@ -1,0 +1,378 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Choose a country
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+      <form method="post">
+
+        <h1 class="govuk-heading-xl">What is your nationality?</h1>
+
+{# <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+	<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset">
+			<div class="govuk-radios">
+				<div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="British">
+					<label class="govuk-label govuk-radios__label" for="nationality">British</label>
+				</div>
+				<div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="Irish">
+					<label class="govuk-label govuk-radios__label" for="nationality-2">Irish</label>
+				</div>
+				<br>
+				<p class="govuk-body">Or</p>
+
+
+        {{ govukInput ({
+          id: 'country-search',
+          name: 'country-search',
+          value: data['country-search'] if data['country-search'] else '',
+          classes: 'govuk-input--width-20',
+          type: 'search',
+          label: {
+            text: 'Enter your nationality in English',
+            classes: 'govuk-input--width-20'
+          }
+        }) }}
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-grid-column-two-thirds">
+      <div class="app-country-group-container">
+        {% for groupName, countryGroup in data.countries %}
+
+         <div class="app-country-group">
+            <div class="govuk-grid-row">
+               <div class="govuk-grid-column-one-quarter">
+                  <h2 class="govuk-heading-xl">{{groupName}}</h2>
+               </div>
+               <div class="govuk-grid-column-three-quarters">
+                  <ul class="govuk-list app-country-flex app-country-list">
+                     {% for country in countryGroup %}
+                        <li class="countries-list__item" {% if country.synonyms %}data-synonyms="{{- country.synonyms | join('|') -}}" {% endif %}>
+                           <a class="govuk-link countries-list__link" href="international_address?selected-country={{- country.name -}}">
+                              {{- country.name -}}
+                           </a>
+                           <span class="app-synonym-matches"></span>
+                        </li>
+                     {% endfor %}
+                  </ul>
+               </div>
+            </div>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         </div>
+         
+        {% endfor %}
+      </div>
+
+      </form>
+
+    </div>
+
+</div> #}
+
+{# {% endblock %} #}
+
+{# {% block pageScripts %}
+    <script src="/public/javascripts/nationality-list.js"></script>
+{% endblock %} #}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+	{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "nationality",
+  name: "nationality",
+  fieldset: {
+    legend: {
+      text: "A",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: 'Afghan',
+      text: "Afghan"
+    },
+    {
+      value: 'African',
+      text: 'African'
+    },
+    {
+      value: 'Albanian',
+      text: 'Albanian'
+    },
+    {
+      value: 'Algerian',
+      text: 'Algerian'
+    },
+	{
+      value: 'American',
+      text: 'American'
+    },
+    {
+      value: 'Andorran',
+      text: 'Andorran'
+    },
+    {
+      value: 'Angolan',
+      text: 'Angolan'
+    },
+    {
+      value: 'Anguillan',
+      text: 'Anguillan'
+    },
+	    {
+      value: 'Antiguan',
+      text: 'Antiguan'
+    },
+    {
+      value: 'Argentinean',
+      text: 'Argentinean'
+    },
+    {
+      value: 'Armenian',
+      text: 'Armenian'
+    },
+    {
+      value: 'Aruban',
+      text: 'Aruban'
+    },
+	{
+      value: 'Ascension',
+      text: 'Ascension'
+    },
+    {
+      value: 'Australian',
+      text: 'Australian'
+    },
+    {
+      value: 'Austrian',
+      text: 'Austrian'
+    },
+    {
+      value: 'Azerbaijani',
+      text: 'Azerbaijani'
+    }
+  ]
+}) }}
+    
+{{ govukRadios({
+  idPrefix: "nationality",
+  name: "nationality",
+  fieldset: {
+    legend: {
+      text: "A",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: 'Afghan',
+      text: "Afghan"
+    },
+    {
+      value: 'African',
+      text: 'African'
+    },
+    {
+      value: 'Albanian',
+      text: 'Albanian'
+    },
+    {
+      value: 'Algerian',
+      text: 'Algerian'
+    },
+	{
+      value: 'American',
+      text: 'American'
+    },
+    {
+      value: 'Andorran',
+      text: 'Andorran'
+    },
+    {
+      value: 'Angolan',
+      text: 'Angolan'
+    },
+    {
+      value: 'Anguillan',
+      text: 'Anguillan'
+    },
+	    {
+      value: 'Antiguan',
+      text: 'Antiguan'
+    },
+    {
+      value: 'Argentinean',
+      text: 'Argentinean'
+    },
+    {
+      value: 'Armenian',
+      text: 'Armenian'
+    },
+    {
+      value: 'Aruban',
+      text: 'Aruban'
+    },
+	{
+      value: 'Ascension',
+      text: 'Ascension'
+    },
+    {
+      value: 'Australian',
+      text: 'Australian'
+    },
+    {
+      value: 'Austrian',
+      text: 'Austrian'
+    },
+    {
+      value: 'Azerbaijani',
+      text: 'Azerbaijani'
+    }
+  ]
+}) }}    
+    
+  </div>
+  <div class="govuk-grid-column-one-half">
+    	{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "nationality",
+  name: "nationality",
+  fieldset: {
+    legend: {
+      text: "B",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: 'Bahamian',
+      text: 'Bahamian'
+    },
+    {
+      value: 'Bahraini',
+      text: 'Bahraini'
+    },
+    {
+      value: 'Bangladeshi',
+      text: 'Bangladeshi'
+    },
+    {
+      value: 'Barbadian',
+      text: 'Barbadian'
+    },
+	{
+      value: 'Barbudan',
+      text: 'Barbudan'
+    },
+    {
+      value: 'Belarussian',
+      text: 'Belarussian'
+    },
+    {
+      value: 'Belgian',
+      text: 'Belgian'
+    },
+    {
+      value: 'Belize',
+      text: 'Belize'
+    },
+	    {
+      value: 'Beninese',
+      text: 'Beninese'
+    },
+    {
+      value: 'Bermudan',
+      text: 'Bermudan'
+    },
+    {
+      value: 'Bhutanese',
+      text: 'Bhutanese'
+    },
+    {
+      value: 'Bolivian',
+      text: 'Bolivian'
+    },
+	{
+      value: 'Bosnian',
+      text: 'Bosnian'
+    },
+    {
+      value: 'Botswanan',
+      text: 'Botswanan'
+    },
+    {
+      value: 'Brazilian',
+      text: 'Brazilian'
+    },
+    {
+      value: 'British',
+      text: 'British'
+    },
+	    {
+      value: 'British Virgin Islander',
+      text: 'British Virgin Islander'
+    },
+    {
+      value: 'British/West Indian',
+      text: 'British/West Indian'
+    },
+	{
+      value: 'Brunei',
+      text: 'Brunei'
+    },
+    {
+      value: 'Bulgarian',
+      text: 'Bulgarian'
+    },
+    {
+      value: 'Burkinau',
+      text: 'Burkinau'
+    },
+    {
+      value: 'Burmese',
+      text: 'Burmese'
+    },
+	    {
+      value: 'Burundi',
+      text: 'Burundi'
+    }
+  ]
+}) }}
+
+
+    
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

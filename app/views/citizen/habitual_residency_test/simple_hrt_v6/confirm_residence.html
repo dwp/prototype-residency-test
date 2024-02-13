@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %} Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Have you been out of the United Kingdom in the past 2 years?</h1>
+    </legend>
+    <br>
+        <div id="nationality-hint" class="govuk-hint">
+          
+    <br>
+    <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="fuzzy" name="confirm" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="fuzzy">
+            Yes, for less than 2 weeks
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="fuzzy-2" name="confirm" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="fuzzy-2">
+            Yes, for 2 to 4 weeks
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="fuzzy-2" name="confirm" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="fuzzy-2">
+              Yes, for more than 4 weeks
+            </label>
+          </div>
+     </div>
+    </div>
+    <p class="govuk-body">Or</p>
+
+   <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="fuzzy-2" name="confirm" type="radio" value="no">
+    <label class="govuk-label govuk-radios__label" for="fuzzy-2">
+No        </label>
+  </div>
+    </fieldset>
+  
+
+  </fieldset>
+</div>
+                
+                       
+<button class="govuk-button" data-module="govuk-button" onclick="check1()">
+  Continue
+</button>
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("confirm");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v6/confirm_residence_error.html";
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v6/end.html"
+
+  }
+}
+</script>
+      
+
+        </div>
+
+</div>
+
+{% endblock %}

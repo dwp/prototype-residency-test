@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Address lookup
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+<h2 class="govuk-heading-xl" style="margin-bottom:20px;">Do you know your postcode?</h2>
+
+<br>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item" >
+        <input class="govuk-radios__input" id="yes" name="contact" type="radio" value="email" checked data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Enter your postcode
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="postcode-entry" name="contact-by-phone" type="tel" autocomplete="tel">
+        </div>
+        <br>
+        <label class="govuk-label" for="contact-by-email">
+          Enter your property name or number (optional)
+        </label>
+        <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel" autocomplete="tel">
+      </div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="no" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        
+
+      </div>
+      
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+        <button class="govuk-button" value= "true" data-module="govuk-button" style="margin-bottom:50px;" onclick="check3()" >Continue</button>
+
+   </form>
+
+   <script>
+    function check3() {
+      console.log(document.getElementById("yes"))
+
+
+        if (document.getElementById("yes").checked) {
+          if (document.getElementById("postcode-entry").value) {
+            window.location.href = "/address-update-citizen/update-address-v1b/addresses-found.html"
+          } else {
+            window.location.href = "/address-update-citizen/update-address-v1b/postcode-error.html"
+          }
+        } else {
+          window.location.href = "/address-update-citizen/update-address-v1b/manual-entry.html"
+        }
+    }
+  </script>
+  
+
+</div>
+
+{% endblock %}

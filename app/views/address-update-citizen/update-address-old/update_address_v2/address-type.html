@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What type of address is it?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What type of address is it?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="address-type" name="address-type" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="address-type">
+          Residential
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="address-type-2" name="address-type" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="address-type-2">
+          Short term hospital stay
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="address-type-3" name="address-type" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="address-type-3">
+          Long term hospital stay
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="address-type-4" name="address-type" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="address-type-4">
+          Care home
+        </label>
+      </div>
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="address-type-4" name="address-type" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="address-type-4">
+          Other
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+                
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

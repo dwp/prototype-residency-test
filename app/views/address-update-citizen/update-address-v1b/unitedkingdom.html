@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Current address
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl" style="margin-bottom:20px;">
+  Is your address in the United Kingdom?
+</h1>
+<p class="govuk-body-m">Select Yes if you currently live in England,
+  Scotland, Wales, Northern Ireland, the Isle of
+  Man or the Channel Islands.</p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="UK-yes" name="UK" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="UK-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="UK-no" name="UK" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="UK-no">
+                No
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+
+        <script>
+          function check() {
+            console.log('in function')
+            var radios = document.getElementsByName("UK");
+            var hasSelection = false
+            for (var i = 0, len = radios.length; i < len; i++) {
+              if (radios[i].checked) {
+                hasSelection = true;
+              }
+            }
+            if (!hasSelection) {
+              window.location.href = "/address-update-citizen/update-address-v1b/unitedkingdom-error.html";
+            } else {
+              if (document.getElementById("UK-yes").checked) {
+                window.location.href = "/address-update-citizen/update-address-v1b/postcode.html"
+              } else {
+                window.location.href = "/address-update-citizen/update-address-v1b/manual-entry-international.html"
+              }
+        
+        
+            }
+          }
+        </script>
+
+      
+
+        <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button>
+
+      
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with this question
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            If you have more than one address or you’re
+            currently staying in temporary
+            accommodation, tell us about the address
+            where you live most of the time.          </div>
+        </details>
+
+
+{% endblock %}

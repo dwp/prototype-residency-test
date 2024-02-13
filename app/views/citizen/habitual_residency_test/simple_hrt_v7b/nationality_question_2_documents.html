@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<script>
+    function validateForm() {
+      var x = document.forms["myForm"]["f-nationality"].value;
+      if (x == "" || x == null) {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v7b/nationality_question_2_documents_error.html";
+        return false;
+      }
+    }
+    </script>
+
+
+<div class="govuk-grid-row">
+ 
+        <div class="govuk-grid-column-two-thirds">
+
+            <form name="myForm" action="/citizen/habitual_residency_test/simple_hrt_v7b/presence" class="form" onsubmit="return validateForm()" method="post" required>
+
+                <h1 class="govuk-heading-xl">What nationality is on the identity document(s) you’re using for this application?</h1>
+
+              <label class="govuk-label" for="f-nationality">Start typing the nationality, then select from the options</label>
+
+              <div class="govuk-body" id="f-nationality" ></div>
+
+<br><br>
+        <div class="casa-form-control-block">
+
+            <input type="submit" value="Continue" class="govuk-button" data-module="govuk-button" onclick="check5" >
+                
+        </input>
+
+        
+
+              </div>
+              </form>
+
+        
+        </div>
+
+
+
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Choose a country
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        <h1 class="govuk-heading-xl">Choose a country</h1>
+
+        {{ govukInput ({
+          id: 'country-search',
+          name: 'country-search',
+          value: data['country-search'] if data['country-search'] else '',
+          classes: 'govuk-input--width-20',
+          type: 'search',
+          label: {
+            text: 'Search for a country',
+            classes: 'govuk-input--width-20'
+          }
+        }) }}
+
+      <div class="app-country-group-container">
+        {% for groupName, countryGroup in data.countries %}
+
+         <div class="app-country-group">
+            <div class="govuk-grid-row">
+               <div class="govuk-grid-column-one-quarter">
+                  <h2 class="govuk-heading-m">{{groupName}}</h2>
+               </div>
+               <div class="govuk-grid-column-three-quarters">
+                  <ul class="govuk-list app-country-flex app-country-list">
+                     {% for country in countryGroup %}
+                        <li class="countries-list__item" {% if country.synonyms %}data-synonyms="{{- country.synonyms | join('|') -}}" {% endif %}>
+                           <a class="govuk-link countries-list__link" href="foo?selected-country={{- country.name -}}">
+                              {{- country.name -}}
+                           </a>
+                           <span class="app-synonym-matches"></span>
+                        </li>
+                     {% endfor %}
+                  </ul>
+               </div>
+            </div>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         </div>
+         
+        {% endfor %}
+      </div>
+
+      </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+    <script src="/public/javascripts/country-list.js"></script>
+{% endblock %}

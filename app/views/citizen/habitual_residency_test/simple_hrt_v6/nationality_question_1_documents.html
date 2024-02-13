@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %} Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+<form action="/citizen/habitual_residency_test/simple_hrt_v6/end.html" class="form">
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you have a British or Irish passport?</h1>
+    </legend>
+    <br>
+        <div id="nationality-hint" class="govuk-hint">
+    <br>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="passport" name="passport" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
+          Yes, I have a British Passport
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="passport-2" name="passport" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+        Yes, I have an Irish (Republic of Ireland) passport
+        </label>
+      </div>
+      </div>
+<br>      <p class="govuk-body">or</p>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="passport-3" name="passport" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+No, I do not have a British or Irish passport        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+                
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

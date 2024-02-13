@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Please upload a copy of your marriage certificate
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Please upload a copy of your marriage certificate</h1>
+
+                <p class="govuk-body">Please a take a clear photograph of your marriage certificate with a camera or digital smartphone. You can also scan in a copy of your marriage certificate if you have a scanner. Please make sure the document is in colour.</p>
+
+                <h2 class="govuk-heading-l">Please check that:</h2>
+
+                <ul class="govuk-list govuk-list--bullet">
+                <li>the document is in focus</li>
+                <li>text is visible and clear enough to read</li>
+                </ul>
+
+                <img src="https://i.pinimg.com/originals/70/8b/ae/708bae136ec15d48787d446570457eda.jpg" alt="Sample marriage certificate" height="271.5" width="400">
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                <h2 class="govuk-heading-l">Upload your document</h2>
+
+                <ul class="govuk-list govuk-list--bullet">
+                <li>in colour</li>
+                <li>unedited by computer software</li>
+                <li>a JPG, BMP, PNG, TIF or PDF</li>
+                <li>smaller than 10mb</li>
+                </ul>
+
+                {{ govukButton ({
+                    html: 'Upload your document',
+                    href: '/citizen/habitual_residency_test/authenticated/v1/habitual_residency/relation_evidence/marriage_certificate_check.html'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

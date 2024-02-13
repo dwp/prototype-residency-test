@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Error - Find your address
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+  {% block content %}
+
+
+        {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukErrorSummary({
+          "titleText": "There is a problem",
+          "errorList": [
+            {
+              "text": "Please select an address",
+              "href": "#sort"
+            }
+          ]
+        }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h2 class="govuk-heading-l">Select your address</h2>
+
+          <div class="govuk-form-group">
+          <span class="govuk-body"> Postcode</span>
+          <p><b>AB1 2CD</b> <a href="/ma/ma_address_lookup" class="govuk-!-margin-left-2">Change <span class="govuk-visually-hidden">Postcode</span> </a></p>
+          </div>
+
+<p class="govuk-body govuk-!-margin-bottom-4"></p>
+
+    <form action="/ma/ma_address_dropdown_error" method="post" class="form">
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{{ govukSelect({
+  label: {
+    text: "Select an address"
+  },
+  id: "sort",
+  name: "sort",
+  errorMessage: {
+    text: "Please select an address"
+  },
+    items: [
+    {
+      value: "5 addresses found",
+      text: "5 addresses found",
+      selected: true
+    },
+    {
+      value: "1 swaffield avenue",
+      text: "1 Swaffield Avenue"
+    },
+    {
+      value: "2 swaffield avenue",
+      text: "2 Swaffield Avenue"
+    },
+    {
+      value: "3 swaffield avenue",
+      text: "3 Swaffield Avenue"
+    },
+        {
+      value: "4 swaffield avenue",
+      text: "4 Swaffield Avenue"
+    },
+        {
+      value: "5 swaffield avenue",
+      text: "5 Swaffield Avenue"
+    }
+  ]
+}) }}
+
+    {{ govukButton({
+      text: "Submit and continue",
+      value: "true"
+    }) }}
+
+    </form>
+
+      <div>
+      <a href="/ma/ma_address_manually.html" class="govuk-body-m">I can't find my address in the list</a>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

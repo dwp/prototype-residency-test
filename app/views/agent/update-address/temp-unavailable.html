@@ -1,0 +1,51 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Service unavailable
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sorry, this functionality is not yet available</h1>
+      <p class="govuk-body"> Proceed to update the temporary address using your regular processes or go back to update a permanent address.</p>
+      <p class="govuk-body">
+      Please <a class="govuk-link" href="#">contact Residency</a> if you need to update a temporary address.
+      </p>
+
+      <br>
+      
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  
+  {{ govukButton({
+    text: "Back to current address",
+    href: "/agent/current-address.html"
+  }) }}
+
+</div>
+
+       <!-- <p class="govuk-body"> When the functionality is available, you will have to start again.</p> -->
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Residency
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">AA121221B</span>
+  Celine Smith
+</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Habitual residency"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Needs more information",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Presence in GB"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Yes",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Past presence in GB"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Yes",
+            visuallyHiddenText: "Past presence in GB"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Recourse to public funds"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Yes",
+            visuallyHiddenText: "Recourse to public funds"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+{% endblock %}

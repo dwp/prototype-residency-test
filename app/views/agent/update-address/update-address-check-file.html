@@ -1,0 +1,95 @@
+{% extends "layout-agent.html" %}
+
+{% block pageTitle %}
+Confirm address change and upload file
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+    <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+    
+{% endblock %}
+
+{% if data['address-lookup-yes1'] == 'true' %}
+{{ '/address-error' | redirect | safe }}
+{% endif %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-l" style="margin-bottom:50;">Confirm customer's address update</h2>
+
+        <form action="ca-end" method="post" class="form">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Past address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    55 Main Street, Guildford, <br> GU79 6YW
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    New address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    5 Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="javascript:history.back()">
+                      Change<span class="govuk-visually-hidden"> new address</span>
+                    </a>
+                  </dd>
+                </div>
+            </dl>   
+            <br>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="file-upload-1">
+                <b>Upload a file</b>
+              </label>
+              <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            </div>
+            
+            <br>
+            <br>
+
+            <div class="govuk-button-group">
+                {{ govukButton({
+                    text: "Confirm",
+                    href: "/agent/update-address/dashboard-change.html"
+                    }) }}
+                <a class="govuk-link" href="/agent/update-address/abandon-journey.html">Cancel</a>
+              </div>
+
+                </div>
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

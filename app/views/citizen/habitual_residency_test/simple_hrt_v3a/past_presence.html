@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Have you lived in the United Kingdom for at least 2 of the past 3 years?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="/citizen/habitual_residency_test/simple_hrt_v3a/continue_application.html" class="form">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="past_presence_2-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Have you lived in the United Kingdom for at least 2 of the past 3 years?
+      </h1>
+    </legend>
+            <div id="nationality-hint" class="govuk-hint">
+      The 2 years do not need to be continuous. You should select 'Yes' if your time spent in the United Kingdom over the past 36 months (3 years) adds up to at least 24 months.
+    </div>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="past_presence_2" name="past_presence_2" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="past_presence_2">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="past_presence_2-2" name="past_presence_2" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="past_presence_2-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+                
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

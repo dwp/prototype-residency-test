@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Find your address
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+text: 'Back',
+href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+{% if data['address-lookup-yes1'] == 'true' %}
+{{ '/address-error' | redirect | safe }}
+{% endif %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h2 class="govuk-heading-xl" style="margin-bottom:50;">Check your address</h2>
+
+        <form action="ca-end" method="post" class="form">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__value">
+                        37 St Johns Road, Forest Gate, London
+ </dt>
+
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+            <br>
+            <br>
+
+            <br>
+
+
+            {{ govukButton({
+            text: "Continue",
+            value: "true"
+            }) }}
+
+        </form>
+
+
+
+    </div>
+</div>
+
+<br><br>
+
+
+
+
+{% endblock %}

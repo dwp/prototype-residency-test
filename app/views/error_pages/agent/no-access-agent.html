@@ -1,0 +1,25 @@
+{% extends 'layout-agent-no-details.html' %}
+
+{% block pageTitle %}
+    Page not found
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Page not available</h1>
+        <p class="govuk-body">
+          You are not currently permitted to access this resource.
+        </p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What evidence do you have to support this claim?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="/citizen/habitual_residency_test/authenticated/v1/habitual_residency/relation_evidence/marriage_certificate.html" class="form">
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What evidence do you have to support this claim?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="spouse-evidence" name="spouse-evidence" type="radio" value="marriage-certificate">
+        <label class="govuk-label govuk-radios__label" for="spouse-evidence">
+          Marriage certificate
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="spouse-evidence-2" name="spouse-evidence" type="radio" value="tenancy-agreement">
+        <label class="govuk-label govuk-radios__label" for="spouse-evidence-2">
+          Tenancy agreement
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="spouse-evidence-3" name="spouse-evidence" type="radio" value="other">
+        <label class="govuk-label govuk-radios__label" for="spouse-evidence-3">
+          Other
+        </label>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="spouse-evidence-4" name="spouse-evidence" type="radio" value="continue">
+        <label class="govuk-label govuk-radios__label" for="spouse-evidence-4">
+          Continue and upload evidence later
+        </label>
+    </div>
+
+    {# What if they need to upload more than one piece of evidence? #}
+
+  </fieldset>
+</div>
+
+                
+<div class="govuk-button-group">
+  {{ govukButton ({
+    html: 'Continue'
+  }) }}
+        {{ govukButton({
+    text: "Save and do later",
+    classes: "govuk-button--secondary"
+  }) }}
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

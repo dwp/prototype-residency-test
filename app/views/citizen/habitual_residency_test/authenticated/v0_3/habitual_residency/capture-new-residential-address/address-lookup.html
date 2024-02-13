@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Address lookup
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  {% endblock %}
+
+{% block content %}
+
+{% if data['previous-employment'] == 'true' %}
+  {{ '/citizen/habitual_residency_test/authenticated/v0_3/habitual_residency/earnings_report.html' | redirect | safe }}
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/citizen/habitual_residency_test/authenticated/v0_3/habitual_residency/capture-new-residential-address/address-error.html" method="post" class="form">
+
+<h2 class="govuk-heading-xl">What is your UK address?</h2>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <div class="govuk-label">
+                <label class="govuk-label" for="address-postcode">
+      Enter a UK postcode to search for your address.
+    </label>
+              <input class="govuk-input govuk-input--width-10" id="address-lookup-yes" name="address-lookup" type="text" value="">
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" value= "true" data-module="govuk-button">Find address</button>
+
+   </form>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Need help with postcodes?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    A UK postcode is the last part of your address and is made up of letters and numbers (for example NE98 1YX). If you don't know your postcode or don't have one, you can <a href="/enter-address-manually.html" class="govuk-body-m">enter your address manually</a>
+  </div>
+</details>
+
+
+  </div>
+</div>
+
+{% endblock %}

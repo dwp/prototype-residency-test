@@ -1,0 +1,236 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Versions
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Versions</h1>
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+	<ul class="govuk-tabs__list" role="tablist">
+		<li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation"> <a class="govuk-tabs__tab" href="#past-day" id="tab_past-day" role="tab" aria-controls="past-day" aria-selected="true" tabindex="0">
+                        Prototypes
+                    </a>
+		</li>
+		<li class="govuk-tabs__list-item" role="presentation"> <a class="govuk-tabs__tab" href="#past-week" id="tab_past-week" role="tab" aria-controls="past-week" aria-selected="false" tabindex="-1">
+                        Design decisions
+                    </a>
+		</li>
+	</ul>
+
+	<div class="govuk-tabs__panel" id="past-day" role="tabpanel" aria-labelledby="tab_past-day">
+		<h2 class="govuk-heading-l">Prototypes for the Habitual Residency test journey</h2>
+		<p>These prototypes are experimental pages testing hypothesis and designs for claimants who are entering the Habitual Residency test service.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+		<h2 class="govuk-heading-m">Version 10a</h2>
+		<p>10th February 2022</p>
+		<p>Fuzzy Logic</p>
+
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_1.html" class="govuk-button">View version 10a</a><br/>
+
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+		<h2 class="govuk-heading-m">Version 10b</h2>
+		<p>23rd February 2022</p>
+		<p>Documents</p>
+
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v8b/nationality_question_1_documents.html" class="govuk-button">View version 10b</a><br/>
+
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+		<h2 class="govuk-heading-m">Version 9a</h2>
+		<p>23rd February 2022</p>
+		<p>Fuzzy Logic</p>
+
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v7a/nationality_question_1.html" class="govuk-button">View version 9
+		b</a><br/>
+
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+		<h2 class="govuk-heading-m">Version 9b</h2>
+		<p>10th February 2022</p>
+		<p>Documentation Questions</p>
+
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v7b/nationality_question_1_documents.html" class="govuk-button">View version 9b</a><br/>
+
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+
+
+
+		<h2 class="govuk-heading-m">Version 8 - A</h2>
+		<p>19th November 2021</p>
+		<p>Fuzzy Logic Prototype</p>
+
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v6_fuzzy_logic/nationality_question_1.html" class="govuk-button">View version 8</a>
+
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+		<h2 class="govuk-heading-m">Version 8</h2>
+		<p>11th November 2021</p>
+		<p>Content changes from tickets 10306 and 10626</p>		
+
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v6_errors/nationality_question_1.html" class="govuk-button">View version 8</a>
+
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+		<h2 class="govuk-heading-m">Version 7</h2>
+		<p>28th October 2021</p>
+		<p>Updates from user testing v6</p>
+		<p>Past presence question</p>
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v5/nationality_question_1.html" class="govuk-button">View version 7</a>
+
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+		<h2 class="govuk-heading-m">Version 6</h2>
+		<p>6th October 2021</p>
+		<p>Past Presence test question being asked.</p>
+		<p></p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v4/nationality_question_1.html" class="govuk-button">View version 6</a>
+
+	
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Version 5b (No past presence)</h2>
+		<p>10th August 2021</p>
+		<p>No Past Presence test question being asked.</p>
+		<p>Ready for prototype testing.</p>
+		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
+		<a href="/citizen/habitual_residency_test/simple_hrt_v3b/nationality_question_1.html" class="govuk-button">View version 5b</a>
+
+	
+
+		<h2 class="govuk-heading-m">Version 5a (Past presence)</h2>
+		<p>9th August 2021</p>
+		<p>Content design updates following a review of the interaction journey.</p>
+		<a href="/citizen/habitual_residency_test/simple_hrt_v3a/habitual_residency_splash_page.html" class="govuk-button">View version 5a</a>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Version 4 (Simple 'Cupcake' HRT)</h2>
+		<p>30th July 2021</p>
+		<p>Taking a look at usability of components, specifically the Nationality component, this version uses UX best practices to guide citizens through our service efficiently.</p>
+		<p>Research on the nationality component can be found here on our <a class="govuk-body-link" href= "https://dwpdigital.atlassian.net/wiki/spaces/CITI/pages/132371055591/Nationality+UI+Component">Confluence page</a>.
+		<a href="/citizen/habitual_residency_test/simple_hrt_v2/habitual_residency_splash_page.html" class="govuk-button">View version 4 (Simple 'Cupcake' HRT)</a>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Version 3c (Simple 'Cupcake' HRT)</h2>
+		<p>23rd July 2021</p>
+		<p>Usability iterations on the Nationality UI component following research</p>
+		<a href="/citizen/habitual_residency_test/simple_hrt/nationality_question_3.html" class="govuk-button">View version 3c (Simple 'Cupcake' HRT)</a>
+
+		
+
+        <h2 class="govuk-heading-m">Version 3b (Simple 'Cupcake' HRT)</h2>
+		<p>15th July 2021</p>
+		<p>Usability iterations on the Nationality UI component following research with PIP</p>
+		
+<a href="/citizen/habitual_residency_test/simple_hrt/nationality_question_2.html" class="govuk-button">View version 3b (Simple 'Cupcake' HRT)</a>
+
+		
+
+		<h2 class="govuk-heading-m">Version 3a (Simple 'Cupcake' HRT)</h2>
+		<p>7th June 2021</p>
+		<p>Iterations from engaging and identifying dependancies sessions June</p>
+        <p>For this proposed journey we are validating self asserted data through CIS/WDS.</p>
+        <p>No dependancy on Evidence and Task</p>
+		
+		<a href="/citizen/habitual_residency_test/simple_hrt/habitual_residency_splash_page.html" class="govuk-button">View version 3a (Simple 'Cupcake' HRT)</a>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Version 2</h2>
+		<p>10th May 2021</p>
+		<p>Iterations from Ideation session</p>
+		<p>Initial design walkthrough with the Residency team in an ideation session found technical changes and content and interaction design changes.</p>
+	 <a href="/citizen/habitual_residency_test/authenticated/v2/habitual_residency_splash_page.html" class="govuk-button">View version 2</a>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<h2 class="govuk-heading-m">Version 1</h2>
+		<p>10th May 2021</p>
+		<p>Initial designs after <a href="https://dwpdigital.atlassian.net/wiki/spaces/CITI/pages/131982853070/Round+1" class="govuk-link">phase 1 of research done</a>.</p>
+		<p>Identifying what the business logic might be</p>
+		<p>What Green Zones might we have a dependancy on</p>
+		<p>Are there any new components that need to be considored</p>
+		<p>Looking at the potential interaction and content design.</p>
+        <p>What level of validation/authentication do we have on the claimant?</p>
+		<p></p> <a href="/citizen/habitual_residency_test/authenticated/v1/authentication.html" class="govuk-button">View version 1</a>
+
+	</div>
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week" role="tabpanel" aria-labelledby="tab_past-week">
+		<h2 class="govuk-heading-l">Design decisions</h2>
+		<h2 class="govuk-heading-m">Simple 'Cupcake' HRT</h2>
+		<p>Decisions that have been made from research</p> <a href="https://dwpdigital.atlassian.net/wiki/spaces/CITI/pages/132007691704/Simple+Cupcake+Citizen+HRT+-+Design+Decisions" class="govuk-button">View design decisions</a>
+	</div>
+</div>
+
+
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

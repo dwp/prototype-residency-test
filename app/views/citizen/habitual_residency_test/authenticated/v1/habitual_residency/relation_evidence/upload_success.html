@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    You have successfully uploaded your document[s]
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">You have successfully uploaded [1] document</h1>
+
+                <p class="govuk-body">You have successguly uploaded your documents, you may continue with your Habitual Residency test.</p>
+
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/authenticated/v1/habitual_residency/employment_status.html'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

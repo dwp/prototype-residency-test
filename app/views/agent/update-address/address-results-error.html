@@ -1,0 +1,141 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+Error - Select address
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+  <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+  
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#where-do-you-live">Select an address to continue</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    
+<div class="govuk-radios" data-module="govuk-radios">
+
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="where-do-you-live-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Select the new permanent address
+      </h1>
+    </legend>
+    <legend class="govuk-fieldset__legend">
+      2 addresses found for <b>NE3 1YL</b> and <b>5</b>.
+    </legend>
+    <p id="where-do-you-live-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select an address to continue
+    </p>
+    <div class="govuk-radios" data-module="govuk-radios">
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="true">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          5 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL <br>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+      Residential
+    </strong>
+          </td>
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="false">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+          51 Wellington House, Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL <br>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+      Care home
+      </strong>
+          </td>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-button-group">
+  <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()" >Use this address</button>
+  <a class="govuk-link" href="/agent/update-address/update-address-1.html">Search again</a>
+</div>
+
+  <script>
+      function check() {
+          console.log('in function')
+          var radios = document.getElementsByName("where-do-you-live");
+          var hasSelection = false
+          for (var i = 0, len = radios.length; i < len; i++) {
+              if (radios[i].checked) {
+                  hasSelection = true;
+              }
+          }
+          if (hasSelection) {
+             window.location.href = "/agent/update-address/address-type.html";
+  
+          } else {
+              window.location.href = "/agent/update-address/address-results-error.html";
+  
+          }
+      }
+  </script>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Customer's address is not listed
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If the address you are looking for is not listed, you should check:
+    <ul>
+      <li>
+        the postcode and building number or name are correct
+      </li>
+      <li>
+        how any flat numbers are displayed, for example Flat 2/2 could also be known as Flat 4
+      </li>
+    </ul>
+    If the customer's address is still not listed you can <a href="/agent/update-address/update-address-manual-entry.html">enter the customer's address details manually</a> instead, but this may make it more difficult to search for the address in future.
+  </div>
+</details>
+
+</div>
+
+</div>
+
+{% endblock %}

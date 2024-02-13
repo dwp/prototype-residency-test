@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What you will need
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">What you will need</h1>
+
+                <h2 class="govuk-heading-l">Before you start</h2>
+                
+                <p class="govuk-body">For the Habitual Residency test you will need to do the following:</p>
+                
+                <ul class="govuk-list govuk-list--bullet">
+                <li>provide copies of the evidence asked for</li>
+                <li>a way to take a photograph, such as a smartphone, tablet or digital camera</li>
+                </ul>
+
+                <h2 class="govuk-heading-l">Your personal information</h2>
+                
+                <p class="govuk-body">We will only use your photographs to check your identity. Once we have done this, we will delete them.</p>
+
+                {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "are-you-ready-to-continue-with-the-test",
+  name: "Are-you-ready-to-continue-with-the-test",
+  fieldset: {
+    legend: {
+      text: "Are you ready to continue with the test?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, I cannot upload my documents online"
+    }
+  ]
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "/citizen/habitual_residency_test/authenticated/v1/habitual_residency/passport.html"
+  }) }}
+
+  {{ govukButton({
+    text: "Save and do later",
+    classes: "govuk-button--secondary"
+  }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

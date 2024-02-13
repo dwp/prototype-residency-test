@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+  {% block content %}
+
+  {% if data['nationality'] == 'other' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html' | redirect | safe }}
+{% endif %}
+
+{% if data['nationality'] == '' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2_error.html' | redirect | safe }}
+
+  {% endif %}
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you live in the United Kingdom or Ireland?
+      </h1>
+    </legend>
+        <br>
+        <div id="nationality-hint" class="govuk-hint">
+          Select ‘Yes’ if you currently live in England, Scotland, Wales, Northern Ireland, the Isle of Man, the Channel Isles or the Republic of Ireland.  </div>
+              <br>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence" name="presence" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence-2" name="presence" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+                
+<button class="govuk-button" data-module="govuk-button" onclick="check1()">
+  Continue
+</button>
+
+  <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why do we need this information?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+   Where you live is one of the many details that affect your eligibility for this benefit.
+  </div>
+  </details>
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("presence");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/presence_error.html";
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/continue_application.html"
+
+  }
+}
+</script>
+
+
+        </div>
+
+</div>
+
+{% endblock %}

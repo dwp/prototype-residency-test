@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Habitual Residency test
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">We need to understand your eligibility</h1>
+
+                <p class="govuk-body">We are going to ask you some questions to better understand your residence in the country.</p>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "/citizen/habitual_residency_test/simple_hrt/nationality_question_1.html"
+  }) }}
+</div>
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

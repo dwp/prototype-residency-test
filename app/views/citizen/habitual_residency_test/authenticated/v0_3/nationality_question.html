@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What's your nationality?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="/citizen/habitual_residency_test/authenticated/v0_3/eu_settled_status_question.html" class="form">
+
+                <h1 class="govuk-heading-xl">What's your nationality?</h1>
+
+              <label class="govuk-body" for="f-nationality">Select your country</label>
+              <div id="f-nationality"></div>
+
+
+  <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I have dual citizenship
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you have <a href="" class="govuk-link">dual citizenship</a>, enter the nationality on the identity documents you are using to make this application.
+  </div>
+</details>
+
+        <div class="casa-form-control-block">
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,109 @@
+dwp-res-prototype{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+   Customer details submitted
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Customer details submitted
+  </h1>
+  <div class="govuk-panel__body">
+    Case reference number<br><strong>HDJ2123F</strong>
+  </div>
+</div>
+<br>
+<!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
+<h2 class="govuk-heading-m">What to do next</h2>
+<p class="govuk-body">
+  Send the case to a decision maker to review the customer's details.
+</p>
+
+{{ govukButton({
+  text: "Send case",
+href: "/agent/hrt-v4b/outcome/end-processing-agent-1.html"
+
+}) }}
+
+<!-- <p class="govuk-body">
+  Ask the customer to provide proof of the following: 
+</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>none</li>
+
+</ul> -->
+
+<!-- {% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+
+  {{ govukButton({
+    text: "Generate list of evidence required",
+    classes: "govuk-button--secondary",
+    href: "#"
+  }) }}
+</div> -->
+
+             <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
+  Continue
+</button> -->
+           
+</form>
+            <script>
+          function check() {
+    console.log('in function')
+    var radios = document.getElementsByName("nationality");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
+    }
+    if (!hasSelection) {
+      window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_1_error.html";
+    } else {
+      if (document.getElementById("nationality").checked || (document.getElementById("nationality-2").checked )) {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/presence.html"
+      } else {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html"
+      }
+
+  
+    }
+  }
+              </script>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

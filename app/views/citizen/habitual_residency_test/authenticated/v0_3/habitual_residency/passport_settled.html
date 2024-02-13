@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    So you have a passport?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+       <form action="/citizen/habitual_residency_test/authenticated/v0_3/habitual_residency/birth_certificate_settled.html" class="form">  
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you have a passport?
+      </h1>
+    </legend>
+  <div class="govuk-form-group">
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="f-choice" name="choice" type="radio" value="yes" data-ga-question="" data-ga-answer="Yes" aria-controls="conditional-f-choice" aria-expanded="true">
+          <label class="govuk-label govuk-radios__label" for="f-choice">
+        Yes
+      </label>
+    </div>
+  <div class="govuk-radios__conditional" id="conditional-f-choice">
+    <label class="govuk-label" for="f-passportNumber">
+    Enter your passport number
+    </label>
+
+  <div class="govuk-form-group">
+    <input class="govuk-input govuk-!-width-two-thirds" id="f-passportNumber" name="passportNumber" type="text">
+  </div>
+</div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="f-choice-2" name="choice" type="radio" value="no" data-ga-question="" data-ga-answer="No">
+      <label class="govuk-label govuk-radios__label" for="f-choice-2">
+        No
+      </label>
+    </div>
+  </div>
+</div>
+
+  {# <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        I have dual citizenship
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      Lorem ipsum delor
+    </div>
+  </details> #}
+
+<div class="govuk-button-group">
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+                  {{ govukButton({
+    text: "Save and do later",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+
+            </form>
+
+
+
+{% endblock %}

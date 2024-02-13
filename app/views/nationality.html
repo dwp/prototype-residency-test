@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Nationality
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/residency">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">AA121221B</span>
+  Celine Smith
+</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<table class="govuk-table">
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Nationality</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">British and Australian</td>
+    </tr>
+  </tbody>
+</table>
+<p class="govuk-body govuk-!-font-size-19">We believe this is your Nationality following information from the Home Office. <a href="#" class="govuk-link govuk-link--no-visited-state">Let us know if this is incorrect</a>.</p>
+  </div>
+</div>
+
+
+  <div>
+    <form class="form" action="/current_address" method="post">
+  <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</div>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What's your nationality?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+<fieldset class="govuk-fieldset">
+	<legend class="govuk-fieldset__legend">
+		<h1 class="govuk-heading-xl">What's your nationality?</h1>
+		<p>Select all options that are relevant to you.</p>
+	</legend>
+	<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+		<div class="govuk-checkboxes__item">
+			<input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+			<label class="govuk-label govuk-checkboxes__label" for="nationality">British</label>
+			<div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">including English, Scottish, Welsh or from Northern Ireland</div>
+		</div>
+		<div class="govuk-checkboxes__item">
+			<input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish" aria-describedby="nationality-2-item-hint">
+			<label class="govuk-label govuk-checkboxes__label" for="nationality-2">Irish</label>
+			
+		</div>
+		<div class="govuk-checkboxes__item">
+			<input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other" aria-controls="conditional-nationality-3" aria-expanded="true">
+			<label class="govuk-label govuk-checkboxes__label" for="nationality-3">Citizen of a different country</label>
+		</div>
+		<div class="govuk-checkboxes__conditional" id="conditional-nationality-3">
+			<div id="different-country-html">
+				<div>
+					<div class="additional-country-form-group"> <span class="additional-country-field-heading">
+      <label class="govuk-label" for="added-country-1" aria-label="1st additional country">Country name</label>
+						<div class="govuk-form-group"> <span><div class="autocomplete__wrapper"><div style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"><div id="added-country-1__status--A" role="status" aria-atomic="true" aria-live="polite"></div><div id="added-country-1__status--B" role="status" aria-atomic="true" aria-live="polite"></div></div><input aria-expanded="false" aria-owns="added-country-1__listbox" aria-autocomplete="both" aria-describedby="added-country-1__assistiveHint" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="added-country-1" name="" placeholder="" type="text" role="combobox"><ul class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden" id="added-country-1__listbox" role="listbox"></ul><span id="added-country-1__assistiveHint" style="display: none;">When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.</span>
+						</div>
+						</span>
+						<select class="govuk-select nationality-autocomplete" id="added-country-1-select" name="added-country-1" style="display: none;">
+						</select>
+					</div>
+				</div>
+				<div class="additional-country-form-group" style="display: none;"> <span class="additional-country-field-heading">
+      <label class="govuk-label" for="added-country-2" aria-label="2nd additional country">Country name</label>
+	 </div>
+	</div>
+	<button type="button" class="govuk-button govuk-button--secondary add-additional-country" data-module="govuk-button">Add additional country</button>
+	</div>
+	</div>
+	</div>
+</fieldset>
+
+            <form action="/citizen/habitual_residency_test/simple_hrt/fallout.html" class="form">
+            <br><br>
+
+
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/simple_hrt/been_out_of_the_uk.html'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

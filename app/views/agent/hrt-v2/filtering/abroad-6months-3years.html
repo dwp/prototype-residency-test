@@ -1,0 +1,99 @@
+dwp-res-prototype{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+   Leave
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Have they been abroad for more than 6 months in the last 3 years ?
+      </h1>
+    </legend>
+    
+   <div id="nationality-hint" class="govuk-hint">
+    Select ‘Yes’ if they have spent more than 6 months outside the United Kingdom, the Isle of Man or the Channel Islands in the past 36 months. The 6 months do not need to be continuous.  </div>
+    
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence" name="presence" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="presence">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence-2" name="presence" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          No
+        </label>
+      </div>
+      <!-- <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="presence-3" name="presence" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="presence-2">
+          Not sure
+        </label>
+      </div> -->
+    </div>
+
+  </fieldset>
+</div>
+              
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/agent/hrt-v2/filtering/country.html"
+}) }}
+                  
+<!-- <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+  Continue
+</button> -->
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("presence");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/continue_application_error.html";
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/confirm_residence.html"
+
+  }
+}
+</script>
+
+        </div>
+      </div>
+ 
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

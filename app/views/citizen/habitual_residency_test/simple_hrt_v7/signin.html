@@ -1,0 +1,51 @@
+{% extends 'layout_blue_zone.html' %}
+
+{% block pageTitle %}
+    Sign in
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-two-thirds">
+				<form action="#" method="post">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+							<h1 class="govuk-fieldset__heading">
+      Sign in
+    </h1>
+						</legend>
+					</fieldset>
+					<div class="govuk-form-group">
+						<label class="govuk-label" for="email-address">Email address</label>
+						<input class="govuk-input govuk-!-width-full-width" id="email-address" name="email-address" type="text">
+					</div>
+					<div class="govuk-form-group">
+						<label class="govuk-label" for="user-password">Password</label>
+						<input class="govuk-input govuk-!-width-full-width" id="user-password" name="user-password" type="password">
+					</div>
+					{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/citizen/habitual_residency_test/simple_hrt_v7/nationality_question_1.html"
+}) }}
+				</form>
+			</div>
+		</div>
+</div>
+
+                
+
+{% endblock %}

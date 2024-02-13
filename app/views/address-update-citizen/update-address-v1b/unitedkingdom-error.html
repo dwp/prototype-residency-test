@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Current address
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+text: 'Back',
+href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+<form action="/address-update-citizen/update-address-v1a/postcode.html" class="form">
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+        data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                    <a href="#UK-yes">Select 'yes' if you live in the UK</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group govuk-form-group--error">
+
+                <h1 class="govuk-heading-xl" style="margin-bottom:20px;">
+                    Is your address in the United Kingdom?
+                </h1>
+                <p class="govuk-body-m">Select Yes if you currently live in England,
+                    Scotland, Wales, Northern Ireland, the Isle of
+                    Man or the Channel Islands.</p>
+                  
+                    <p id="passport-issued-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Select 'yes' if you live in the UK
+                      </p>
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="UK-yes" name="UK" type="radio" value="true">
+                                <label class="govuk-label govuk-radios__label" for="UK-yes">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="UK-no" name="UK" type="radio" value="false">
+                                <label class="govuk-label govuk-radios__label" for="UK-no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+
+            <button class="govuk-button" value="true" data-module="govuk-button">Continue</button>
+
+</form>
+
+<script>
+    function check() {
+        console.log('in function')
+        var radios = document.getElementsByName("UK");
+        var hasSelection = true
+        for (var i = 0, len = radios.length; i < len; i++) {
+            if (radios[i].checked) {
+                hasSelection = true;
+            }
+        }
+        if (!hasSelection) {
+            window.location.href = "/address-update-citizen/update-address-v1b/unitedkingdom-error.html";
+
+        } else {
+            window.location.href = "/address-update-citizen/update-address-v1b/manual-entry-international.html"
+
+        }
+    }
+</script>
+{% endblock %}

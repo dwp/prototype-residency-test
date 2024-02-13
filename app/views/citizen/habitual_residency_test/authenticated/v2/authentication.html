@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Sign in
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Sign in</h1>
+
+                {{ govukInput ({
+                    id: 'username',
+                    name: 'username',
+                    value: data['username'] if data['username'] else '',
+                    classes: ' ',
+                    label: {
+                        text: 'Username',
+                        classes: ' '
+                    }
+                }) }}
+
+                {{ govukInput ({
+                    id: 'password',
+                    name: 'password',
+                    value: data['password'] if data['password'] else '',
+                    classes: 'password',
+                    type: 'password',
+                    label: {
+                        text: 'Password',
+                        classes: ' '
+                    }
+                }) }}
+
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/authenticated/v2/habitual_residency_splash_page.html'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

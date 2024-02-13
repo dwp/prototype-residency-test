@@ -1,0 +1,120 @@
+dwp-res-prototype{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+        
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Have you been abroad in the last 2 years?
+      </h1>
+    </legend>
+    
+    <br/>
+   <div id="nationality-hint" class="govuk-hint">
+    Select ‘Yes’ if you’ve travelled outside the United Kingdom, the Republic of Ireland, the Isle of Man or the Channel Isles in the last 2 years.</div>
+      <br/>     
+    <div class="govuk-radios govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
+        <label class="govuk-label govuk-radios__label" for="nationality">
+          Yes, for 4 weeks or longer in a single trip</label>
+        
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          Yes, for less than 4 weeks in a single trip</label>
+      </div>
+
+        <p class="govuk-body">Or</p>
+
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio" value="other">
+        <label class="govuk-label govuk-radios__label" for="nationality-3">
+          No</label>
+                   
+
+
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+
+             <button class="govuk-button" data-module="govuk-button" onclick="check()">
+  Continue
+</button>
+
+<script>
+function check() {
+  console.log('in function')
+  var radios = document.getElementsByName("nationality");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/confirm_residence_error.html";
+    
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/end.html"
+
+  }
+}
+</script>
+
+<br><br>
+
+            <h2 class="govuk-heading-m">More information</h2>
+
+             <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Why do we need this information?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    The time you’ve recently spent out of the country affects your eligibility for this benefit. 
+  </div>
+</details>
+
+ 
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

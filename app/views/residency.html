@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Residency
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">AA121221B</span>
+  Celine Smith
+</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Habitual Residency
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Needs more information<span class="govuk-visually-hidden"> Habitual residency</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Presence in GB
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__actions">
+        Yes<span class="govuk-visually-hidden"> Presence in GB</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Past presence in GB
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__actions">
+        Yes<span class="govuk-visually-hidden"> Past presence in GB</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Recourse to public funds
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__actions">
+        Yes<span class="govuk-visually-hidden"> Recourse to public funds</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<div>
+  <form class="form" action="/nationality" method="post">
+  <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</div>
+
+{% endblock %}

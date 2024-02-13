@@ -1,0 +1,122 @@
+dwp-res-prototype{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+        
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What is your nationality?
+      </h1>
+    </legend>
+    <br/><br/>
+
+    <div class="govuk-radios govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
+        <label class="govuk-label govuk-radios__label" for="nationality">
+          British
+        </label>
+        <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if you're from England, Scotland, Wales or Northern Ireland.</div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          Irish
+        </label>
+         <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if you're from the Republic of Ireland.</div>
+      </div>
+
+  <p class="govuk-body">or</p>
+ 
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="nationality-3">
+          Citizen of another country
+          </label>
+                    <div id="british-hint" class="govuk-hint govuk-radios__hint">You’ll tell us your nationality on the next page.</div>
+
+
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+
+             <button class="govuk-button" data-module="govuk-button" onclick="check()">
+  Continue
+</button>
+            </form>
+
+<script>
+function check() {
+  console.log('in function')
+  var radios = document.getElementsByName("nationality");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v6/nationality_question_1_error.html";
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v6/nationality_question_2.html"
+
+  }
+}
+</script>
+
+<br><br>
+
+            <h2 class="govuk-heading-m">More information</h2>
+            <p class="govuk-body"><a href="https://www.gov.uk/types-of-british-nationality" target="_blank">Find out about types of British nationality</a></p>
+           <p class="govuk-body"><a href="https://www.gov.uk/government/publications/common-travel-area-guidance" target="_blank">Your rights as an Irish citizen</a> </p>
+ <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What to do if you have dual nationality
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you have dual nationality, select the nationality on the identity documents you're using to make this application.
+  </div>
+</details>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

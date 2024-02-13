@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What date did you most recently return to the UK?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+{% if data['out-of-country'] == 'no' %}
+  {{ 'blue-zone' | redirect | safe }}
+{% endif %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+<form method="post">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="out-of-uk-return-hint">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  
+    <h1 class="govuk-fieldset__heading">
+      What date did you most recently return to the UK?
+    </h1>
+  
+  </legend>
+  <div id="out-of-uk-return-hint" class="govuk-hint">
+    For example, 31 3 2018
+  </div>
+  <div class="govuk-date-input" id="out-of-uk-return">
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="out-of-uk-return-day">
+          Day
+        </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="out-of-uk-return-day" name="claimant[outOfUkReturn][day]" type="text" value="" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="out-of-uk-return-month">
+          Month
+        </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="out-of-uk-return-month" name="claimant[outOfUkReturn][month]" type="text" value="" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="out-of-uk-return-year">
+          Year
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="out-of-uk-return-year" name="claimant[outOfUkReturn][year]" type="text" value="" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div> 
+  </div>
+
+</fieldset>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+    </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

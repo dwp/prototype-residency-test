@@ -1,0 +1,99 @@
+dwp-res-prototype{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+      <form action="/citizen/habitual_residency_test/simple_hrt_v5/nationality_question_2.html" class="form">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What is your nationality?
+      </h1>
+    </legend>
+    <br/><br/>
+        <p class="govuk-body">Select if you are British, Irish or a citizen of a different country.</p>
+
+    <div class="govuk-radios govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
+        <label class="govuk-label govuk-radios__label" for="nationality">
+          British
+        </label>
+        <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if you're from England, Scotland, Wales or Northern Ireland.</div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          Irish
+        </label>
+         <div id="british-hint" class="govuk-hint govuk-radios__hint">(The Republic of Ireland)</div>
+      </div>
+
+  <p class="govuk-body">or</p>
+ 
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="nationality-3">
+          Another nationality
+          </label>
+          <div id="british-hint" class="govuk-hint govuk-radios__hint">You’ll tell us your nationality on the next page.</div>
+
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+<br><br>
+
+            <h2 class="govuk-heading-m">More information</h2>
+            <p class="govuk-body">What to do if you have <a href="#" target="_blank">dual nationality</a></p>            
+            <p class="govuk-body"><a href="https://www.gov.uk/government/publications/common-travel-area-guidance" target="_blank">Your rights as an Irish citizen</a> </p>
+            <p class="govuk-body">Find out about types of <a href="https://www.gov.uk/types-of-british-nationality" target="_blank">British nationality</a></p>
+
+
+
+
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

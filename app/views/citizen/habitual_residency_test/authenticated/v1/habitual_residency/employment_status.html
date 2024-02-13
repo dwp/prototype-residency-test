@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    What is your employment status?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What is your employment status?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="what-is-your-employment-status" name="what-is-your-employment-status" type="radio" value="employed">
+        <label class="govuk-label govuk-radios__label" for="what-is-your-employment-status">
+          Employed
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="what-is-your-employment-status-2" name="what-is-your-employment-status" type="radio" value="self-employed">
+        <label class="govuk-label govuk-radios__label" for="what-is-your-employment-status-2">
+          Self-employed
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="what-is-your-employment-status-3" name="what-is-your-employment-status" type="radio" value="unemployed">
+        <label class="govuk-label govuk-radios__label" for="what-is-your-employment-status-3">
+          Unemployed
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+<div class="govuk-button-group">
+                {{ govukButton ({
+                    html: 'Continue',
+                    href: '/citizen/habitual_residency_test/authenticated/v1/habitual_residency/previous_employment.html'
+                }) }}
+                        {{ govukButton({
+    text: "Save and do later",
+    classes: "govuk-button--secondary"
+  }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

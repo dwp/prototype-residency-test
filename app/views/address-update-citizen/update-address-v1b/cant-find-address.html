@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Find your address
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+text: 'Back',
+href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+{% if data['address-lookup-yes1'] == 'true' %}
+{{ '/address-error' | redirect | safe }}
+{% endif %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <form action="/address-update-citizen/update-address-v1b/addresses-found.html" class="form">
+
+        <h2 class="govuk-heading-xl" style="margin-bottom:0;">I can’t find my address</h2>
+        <h2 class="govuk-caption-m" style="margin-bottom:20px;">Please check the details:</h2>
+
+        <form action="ca-end" method="post" class="form">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Property Number/ Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Not Entered
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Postcode
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    SE11 6LZ
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            <br>
+            <br>
+
+            <br>
+
+
+            {{ govukButton({
+            text: "Continue",
+            value: "true"
+            }) }}
+
+        </form>
+
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+The above details are correct. What should I do?              </span>
+            </summary>
+            <div class="govuk-details__text">
+                You can give us your address by entering your address details manually.
+                It may take us some time before we can verify your address.  <br>  <br>
+                <a href="/address-update-citizen/update-address-v1b/manual-entry.html" target="_blank">Enter address manually</a></p> </div>
+
+          </details>
+
+    </div>
+</div>
+
+<br><br>
+
+
+
+
+{% endblock %}

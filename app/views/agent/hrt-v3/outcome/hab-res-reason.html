@@ -1,0 +1,122 @@
+dwp-res-prototype{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+   More detail
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+       
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What is the reason behind your decision?
+                </h1>
+              </legend>
+              <div id="contact-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact">
+                    They have the right to reside.
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                    Presence
+                  </label>
+                </div>
+               
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+                    They have satisfied the past presence test.
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="email-1" data-aria-controls="conditional-contact-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-4">
+                    They have passed the factual habitual residency test.
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-5" name="contact" type="checkbox" value="phone-1" data-aria-controls="conditional-contact-5">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-5">
+                    Exemption rule
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-6" name="contact" type="checkbox" value="text message-1" data-aria-controls="conditional-contact-6">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-6">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-6">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-text">
+                      
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-third" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+             <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
+  Confirm
+</button> -->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/agent/hrt-v3/outcome/end.html"
+}) }}
+</form>
+            <script>
+          function check() {
+    console.log('in function')
+    var radios = document.getElementsByName("nationality");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
+    }
+    if (!hasSelection) {
+      window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_1_error.html";
+    } else {
+      if (document.getElementById("nationality").checked || (document.getElementById("nationality-2").checked )) {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/presence.html"
+      } else {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html"
+      }}}
+              </script>
+        </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

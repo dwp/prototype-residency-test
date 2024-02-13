@@ -1,0 +1,112 @@
+dwp-res-prototype{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+   Right to reside decision
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+        
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Based on the information and evidence reviewed, does the customer have the right to reside in the UK?
+      </h1>
+    </legend>
+  
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
+        <label class="govuk-label govuk-radios__label" for="nationality">
+          Yes
+        </label>
+        <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are employed in England, Scotland, Wales or Northern Ireland.</div> -->
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          No
+        </label>
+         <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are self-employed in England, Scotland, Wales or Northern Ireland.</div> -->
+      </div>
+    </div>
+
+  </fieldset>
+  <br>
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue",
+    href: "/agent/hrt-v4b/outcome/check-presence.html"
+
+  }) }}
+
+  {{ govukButton({
+    text: "Save and exit",
+    classes: "govuk-button--secondary",
+    href: "/agent/hrt-v4b/outcome/reference-number-save.html"
+  }) }}
+</div>
+
+</div>
+
+             <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
+  Continue
+</button> -->
+           
+</form>
+            <script>
+          function check() {
+    console.log('in function')
+    var radios = document.getElementsByName("nationality");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
+    }
+    if (!hasSelection) {
+      window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_1_error.html";
+    } else {
+      if (document.getElementById("nationality").checked || (document.getElementById("nationality-2").checked )) {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/presence.html"
+      } else {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html"
+      }}}
+              </script>
+        </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

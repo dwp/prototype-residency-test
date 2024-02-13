@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Residency Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/citizen/habitual_residency_test/simple_hrt_v8a/fuzzy_logic.html" class="form">
+
+                <h1 class="govuk-heading-xl">Enter your nationality</h1>
+              
+                <label class="govuk-label" for="f-nationality">Start typing your nationality, then select from the list.</label>
+  
+                <div class="govuk-body" id="f-nationality"></div>
+  <br><br>
+          <div class="casa-form-control-block">
+  
+               <button class="govuk-button" data-module="govuk-button" >
+    Continue
+  </button>
+          
+          </div>
+          </form>
+  
+  <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What to do if you have dual nationality
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you have dual nationality, select the nationality on the identity documents you're using to make this application.
+  </div>
+</details>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}
