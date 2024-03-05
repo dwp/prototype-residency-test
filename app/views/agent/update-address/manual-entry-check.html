@@ -11,7 +11,7 @@
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
-          beta
+          Beta
         </strong>
         <span class="govuk-phase-banner__text">
           This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -31,17 +31,15 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-l">Confirm the address update</h2>
-
-        <form action="ca-end" method="post" class="form">
+            <h1 class="govuk-heading-l">Confirm the address update</h1>
             
             <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
+                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
                     New address
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    55 Windsor Street, South Gosforth, <br> Newcastle upon Tyne, NE3 1YL
+                    55 Windsor Street <br> South Gosforth <br> Newcastle upon Tyne <br> NE3 1YL
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="/agent/update-address/update-address-manual-entry.html">Change</a>
@@ -64,13 +62,27 @@
                     Address type
                   </dt>
                   <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
+                      Permanent residential
+                    </strong>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="/agent/update-address/address-type.html">Change</a> -->
+                  </dd> 
+                  
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Address stay reason
+                  </dt>
+                  <dd class="govuk-summary-list__value">
                     {{govukTag({
-                      text: "Permanent residential",
-                      classes: "govuk-tag--green"
+                      text: "Residential",
+                      classes: "govuk-tag--grey"
                     })}}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="/agent/update-address/address-type.html">Change</a>
+                    <a class="govuk-link" href="/agent/update-address/address-type-manual.html">Change</a>
                   </dd> 
                   
                 </div>
@@ -81,7 +93,7 @@
                     Previous address
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    18 Burdett House, Main Street, Guildford, GU79 6YW
+                    18 Burdett House <br> Main Street <br> Guildford <br> GU79 6YW
                   </dd>
                   <dd class="govuk-summary-list__actions">
                   </dd>
