@@ -1,33 +1,4 @@
-{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
-
-{% from "internal-service-header/macro.njk" import dwpHeader %}
-
-<main>
-{{ dwpHeader({
-name: "Service name",
-serviceHref: '#',
-container:true
-}) }}
-</main> 
-
-{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
-
-{{ dwpKeyDetailsBar({
-  primaryIdentifier: {
-  text: 'Name:',
-  value: 'John Smith'
-  },
-  secondaryIdentifier: {
-  text: 'National Insurance Number:',
-  value: 'QQ 12 34 56 X'
-  },
-  additionalData: [
-  {
-  value: "4 June 1952",
-  text: "Date of birth:"
-  }
-  ]
-}) }} 
+{% extends 'layout-agent.html' %}
 
 {% block pageTitle %}
     Current address
@@ -76,8 +47,8 @@ container:true
     <dd class="govuk-summary-list__value">
       18 Burdett House <br> Main Street <br> Guildford <br> GU79 6YW
       </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd> 
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
       
   </div>
   <div class="govuk-summary-list__row">
@@ -87,8 +58,8 @@ container:true
      <dd class="govuk-summary-list__value">
       5 January 2021
     </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd> 
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
   
   </div>
   <div class="govuk-summary-list__row">
@@ -101,8 +72,8 @@ container:true
         classes: "govuk-tag--green"
       })}}
     </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd> 
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
     
   </div>
   <div class="govuk-summary-list__row">
@@ -115,8 +86,8 @@ container:true
         classes: "govuk-tag--grey"
       })}}
     </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd> 
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
     
   </div>
   <div class="govuk-summary-list__row">
@@ -126,8 +97,8 @@ container:true
      <dd class="govuk-summary-list__value">
      7 January 2021
     </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd> 
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
   
   </div>
   </dl>
