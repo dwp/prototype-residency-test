@@ -11,7 +11,7 @@
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
-          beta
+          Beta
         </strong>
         <span class="govuk-phase-banner__text">
           This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -28,18 +28,16 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-l" style="margin-bottom:50;">Confirm the address update</h2>
-
-        <form action="ca-end" method="post" class="form">
+      <h1 class="govuk-heading-l">Confirm the address update</h1>
 
             <dl class="govuk-summary-list">
                 
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
+                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
                     New address
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Bajo E, Calle de Sevilla 2, <br> 28014, Madrid, Spain
+                    Bajo E <br> Calle de Sevilla 2 <br> 28014 <br> Madrid <br> Spain
                   </dd>
 
                   <dd class="govuk-summary-list__actions">
@@ -64,14 +62,28 @@
                     Address type
                   </dt>
                   <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
+                      Permanent residential
+                    </strong>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="/agent/update-address/address-type-international.html">Change</a> -->
+                  </dd> 
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Address stay reason
+                  </dt>
+                  <dd class="govuk-summary-list__value">
                     {{govukTag({
-                      text: "Permanent residential",
-                      classes: "govuk-tag--green"
+                      text: "Residential",
+                      classes: "govuk-tag--grey"
                     })}}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="/agent/update-address/address-type-international.html">Change</a>
                   </dd> 
+                  
                 </div>
 
                 <br>

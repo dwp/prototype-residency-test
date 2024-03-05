@@ -11,7 +11,7 @@
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
-          beta
+          Beta
         </strong>
         <span class="govuk-phase-banner__text">
           This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -38,7 +38,7 @@
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#permanent">Select 'permanent' if the customer's new address is permanent </a>
+          <a href="#permanent">Select if the customer’s new address is permanent or temporary</a>
         </li>
       </ul>
     </div>
@@ -48,14 +48,16 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-form-group">
-<fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+<div class="govuk-form-group govuk-form-group--error">
+<fieldset class="govuk-fieldset" aria-describedby="address-type-error">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-fieldset__heading">
-  Is the customer’s new address permanent or temporary?
+  Is the customer’s new residential address permanent or temporary?
 </h1>
 </legend>
-
+<p id="address-type-error" class="govuk-error-message">
+  <span class="govuk-visually-hidden">Error:</span> Select if the customer’s new address is permanent or temporary
+</p>
 <div class="govuk-radios" data-module="govuk-radios">
 <div class="govuk-radios__item">
   <input class="govuk-radios__input" id="permanent" name="type" type="radio" value="true">
@@ -63,7 +65,7 @@
     Permanent
   </label>
   <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-    This is the customer's permanent address or they have lived there for 14 weeks or more.
+    The customer has lived or expects to live there for 14 weeks or more.
   </div>
 </div>
 <div class="govuk-radios__item">
@@ -72,15 +74,15 @@
     Temporary
   </label>
   <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-    The customer is expecting to live at this address for less than 13 weeks.
+    <!-- The customer is expecting to live at this address for less than 13 weeks. -->
+    The customer expects to live there for less than 14 weeks.
   </div>
 </div>
 </div>
 </fieldset>
-
-<br>
-<button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button>
 </div>
+
+<button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button>
 
 <script>
 function check() {
@@ -98,7 +100,7 @@ window.location.href = "/agent/update-address/perm-or-temp-error.html";
       if (document.getElementById("permanent").checked) {
         window.location.href = "/agent/update-address/uk-or-international.html"
       } else {
-        window.location.href = "/agent/update-address/uk-or-international-temp.html"
+        window.location.href = "/agent/update-address/temp-unavailable.html"
       }}}
 </script>
 
