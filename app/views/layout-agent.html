@@ -1,4 +1,5 @@
 {% extends "layouts/main.html" %}
+
 {% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
 {% set serviceName %}
  Residency test
@@ -29,15 +30,6 @@ container:true
   }
   ]
 }) }} 
-
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
 
 {% endblock %}
 
