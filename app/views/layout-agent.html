@@ -5,33 +5,29 @@
 {% endset%}
 {% block header %}
 
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{{ dwpHeader({
+name: "Service name",
+serviceHref: '/',
+container:true
+}) }}
+
 {{ dwpKeyDetailsBar({
-primaryIdentifier: {
-text: 'Name:',
-value: 'Jane Doe'
-},
-secondaryIdentifier: {
-text: 'National Insurance Number:',
-value: 'QQ 12 34 56 X'
-},
-status: {
-text: 'Claim status:',
-value: 'Completed'
-},
-additionalData: [
-{
-value: "4 June 1972",
-text: "Date of birth:"
-},
-{
-value: "07777 900 900",
-text: "Mobile number:"
-},
-{
-value: "Welsh speaker",
-text: "Language:"
-}
-]
+  primaryIdentifier: {
+  text: 'Name:',
+  value: 'John Smith'
+  },
+  secondaryIdentifier: {
+  text: 'National Insurance Number:',
+  value: 'QQ 12 34 56 X'
+  },
+  additionalData: [
+  {
+  value: "4 June 1952",
+  text: "Date of birth:"
+  }
+  ]
 }) }} 
 {% endblock %}
 
@@ -46,33 +42,23 @@ text: "Language:"
 {% if useAutoStoreData %}
   {% block footer %}
 
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://www.gov.uk/help",
-            text: "Help"
-          },
-          {
-            href: "https://www.gov.uk/help/accessibility-statement",
-            text: "Accessibility statement"
-          },
-          {
-            href: "https://www.gov.uk/help/cookies",
-            text: "Cookies"
-          },
-          {
-            href: "https://www.gov.uk/help/privacy-notice",
-            text: "Privacy"
-          },
-          {
-            href: "https://www.gov.uk/help/terms-conditions",
-            text: "Terms and conditions"
-          }
-        ]
-      }
-    }) }}
+  {% from "internal-service-footer/macro.njk" import dwpFooter %}
+
+  {{ dwpFooter({
+  meta: {
+  visuallyHiddenTitle: "Support links",
+  items: [
+  {
+    href: "",
+    text: "Accessibility statement"
+  },
+  {
+    href: "",
+    text: "Privacy notice"
+  }
+  ]
+  }
+  }) }} 
   {% endblock %}
 {% endif %}
 
