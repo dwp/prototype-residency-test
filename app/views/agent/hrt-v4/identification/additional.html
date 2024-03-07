@@ -33,14 +33,21 @@
         <div class="govuk-grid-column-two-thirds">
 
           <form action="/citizen/habitual_residency_test/simple_hrt_v8a/fuzzy_logic.html" class="form">
+            <span class="govuk-caption-l">Identification</span>
 
-                <h1 class="govuk-heading-l">Additional customer's details</h1>
+                <h1 class="govuk-heading-l">Additional customer’s details</h1>
              
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="full-name">
                     First name
                   </label>
                   <input class="govuk-input" id="full-name" name="fullName" type="text" value="Joe" spellcheck="false" autocomplete="name">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">
+                    Middle name
+                  </label>
+                  <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="full-name">
@@ -55,7 +62,7 @@
                       Date of birth
                     </legend>
                     <div id="passport-issued-hint" class="govuk-hint">
-                      For example, 20 8 2003.
+                      For example, 27 3 2007.
                     </div>
                     <div class="govuk-date-input" id="passport-issued">
                       <div class="govuk-date-input__item">
@@ -90,9 +97,6 @@
                   <label class="govuk-label" for="address-postcode">
                     Postcode
                   </label>
-                  <div id="postcode-hint" class="govuk-hint">
-                    For example, AA3 1AB.
-                </div>
                   <input class="govuk-input govuk-input--width-5" id="address-postcode" name="address-postcode" type="text" value="BA1 9PJ" autocomplete="postal-code">
                 </div>
               
@@ -113,7 +117,7 @@
                   <div id="telephone-number-hint" class="govuk-hint">
                     For international numbers include the country code.
                   </div>
-                  <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephoneNumber" type="tel" aria-describedby="telephone-number-hint" autocomplete="tel">
+                  <input class="govuk-input govuk-input--width-10" id="telephone-number" name="telephoneNumber" type="tel" aria-describedby="telephone-number-hint" autocomplete="tel">
                 </div>
   
 <!--   
