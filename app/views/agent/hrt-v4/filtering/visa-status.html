@@ -29,7 +29,6 @@ Immigration status
 {% block content %}
 
 <div class="govuk-grid-row">
-
         <div class="govuk-grid-column-two-thirds">
           <span class="govuk-caption-l">Right to reside</span>
         
@@ -51,44 +50,44 @@ Immigration status
     
     <div class="govuk-radios govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
-        <label class="govuk-label govuk-radios__label" for="nationality">
-          EU pre-settled
+        <input class="govuk-radios__input" id="visa" name="visa" type="radio" value="EU">
+        <label class="govuk-label govuk-radios__label" for="visa">
+          EU Settlement Scheme
         </label>
         <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are from England, Scotland, Wales or Northern Ireland</div> -->
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
-        <label class="govuk-label govuk-radios__label" for="nationality-2">
-          EU settled
-        </label>
-         <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are European</div> -->
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
-        <label class="govuk-label govuk-radios__label" for="nationality-2">
-          Indefinite leave to remain
+        <input class="govuk-radios__input" id="visa-2" name="visa" type="radio" value="ind-leave">
+        <label class="govuk-label govuk-radios__label" for="visa-2">
+          Indefinite leave to remain or enter
         </label>
          <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are from the Republic of Ireland</div> -->
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
-        <label class="govuk-label govuk-radios__label" for="nationality-2">
-          Limited leave to remain
+        <input class="govuk-radios__input" id="visa-3" name="visa" type="radio" value="lim-leave">
+        <label class="govuk-label govuk-radios__label" for="visa-3">
+          Limited leave to remain or enter
         </label>
          <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are from the Republic of Ireland</div> -->
       </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
-      <label class="govuk-label govuk-radios__label" for="nationality-2">
+      <input class="govuk-radios__input" id="visa-4" name="visa" type="radio" value="refugee">
+      <label class="govuk-label govuk-radios__label" for="visa-4">
         Refugee
       </label>
        <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are from the Republic of Ireland</div> -->
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
-      <label class="govuk-label govuk-radios__label" for="nationality-2">
+      <input class="govuk-radios__input" id="visa-5" name="visa" type="radio" value="HP">
+      <label class="govuk-label govuk-radios__label" for="visa-5">
         Humanitarian protection
+      </label>
+       <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are from the Republic of Ireland</div> -->
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="visa-6" name="visa" type="radio" value="HP">
+      <label class="govuk-label govuk-radios__label" for="visa-6">
+        Other
       </label>
        <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are from the Republic of Ireland</div> -->
     </div>
@@ -105,14 +104,14 @@ Immigration status
     </legend>
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="changedName">
+        <input class="govuk-radios__input" id="yes" name="publicFunds" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="yes">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="changedName-2">
+        <input class="govuk-radios__input" id="no" name="publicFunds" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="no">
           No
         </label>
       </div>

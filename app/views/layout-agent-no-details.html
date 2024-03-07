@@ -1,48 +1,49 @@
 {% extends "layouts/main.html" %}
 
+{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
+{% set serviceName %}
+ Residency
+{% endset%}
+{% block header %}
 
-{% block head %}
-  {% include "includes/head.html" %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{{ dwpHeader({
+name: "Service name",
+serviceHref: '/',
+container:true
+}) }}
+
 {% endblock %}
+
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+    Current address
 {% endblock %}
 
 
-
-
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
 {% if useAutoStoreData %}
   {% block footer %}
 
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://www.gov.uk/help",
-            text: "Help"
-          },
-          {
-            href: "https://www.gov.uk/help/accessibility-statement",
-            text: "Accessibility statement"
-          },
-          {
-            href: "https://www.gov.uk/help/cookies",
-            text: "Cookies"
-          },
-          {
-            href: "https://www.gov.uk/help/privacy-notice",
-            text: "Privacy"
-          },
-          {
-            href: "https://www.gov.uk/help/terms-conditions",
-            text: "Terms and conditions"
-          }
-        ]
-      }
-    }) }}
+  {% from "internal-service-footer/macro.njk" import dwpFooter %}
+
+  {{ dwpFooter({
+  meta: {
+  visuallyHiddenTitle: "Support links",
+  items: [
+  {
+    href: "",
+    text: "Accessibility statement"
+  },
+  {
+    href: "",
+    text: "Privacy notice"
+  }
+  ]
+  }
+  }) }} 
   {% endblock %}
 {% endif %}
 
