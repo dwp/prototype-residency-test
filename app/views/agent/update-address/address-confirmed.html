@@ -1,7 +1,7 @@
 {% extends 'layout-agent.html' %}
 
 {% block pageTitle %}
-    Unauthorised access
+    Service unavailable
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,8 +18,6 @@
         </span>
       </p>
     </div>
-
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
 {% endblock %}
 
@@ -28,12 +26,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">You cannot access this page</h1>
+      <h1 class="govuk-heading-l">Address update already confirmed</h1>
       <p class="govuk-body">
-      You do not have permission to access this page.
+      You cannot go back to this page as you have already confirmed the address update.
       </p>
-      <!-- <p class="govuk-body"></p>
-       <p class="govuk-body"> When the service is available, you will have to start again.</p> -->
+
+      <a href="/agent/updated-address.html" class="govuk-button">Continue </a>
+
     </div>
   </div>
 {% endblock %}
