@@ -1,4 +1,4 @@
-dwp-res-prototype{% extends 'layout-agent.html' %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
    Select nationality
@@ -119,10 +119,10 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
       window.location.href = "/agent/hrt-v4/filtering/nationality-error.html";
     } else {
         if (document.getElementById("nationality").checked) {
-          window.location.href = "/agent/hrt-v4/filtering/presence.html"
+          window.location.href = "/agent/hrt-v4b/filtering/presence.html"
         } else {
           if (document.getElementById("nationality-2").checked) {
-          window.location.href = "/agent/hrt-v4/filtering/presence.html"
+          window.location.href = "/agent/hrt-v4b/filtering/presence.html"
           } else{ 
             window.location.href = "/agent/hrt-v4/filtering/visa-status.html"
         }
