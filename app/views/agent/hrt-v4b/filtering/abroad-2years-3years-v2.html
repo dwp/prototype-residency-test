@@ -37,12 +37,12 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
   <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h2 class="govuk-fieldset__heading">
-        Have they been in the UK, the Isle of Man or the Channel Islands for less than 104 weeks in the last 156 weeks?
+        Have they been abroad for more than 52 weeks in the last 156 weeks?
       </h2>
     </legend>
     
-   <!-- <div id="nationality-hint" class="govuk-hint">
-    Abroad means outside the UK, the Isle of Man or the Channel Islands. </div> -->
+   <div id="nationality-hint" class="govuk-hint">
+    Abroad means outside the UK, the Isle of Man or the Channel Islands. </div>
     
     <div class="govuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
@@ -95,9 +95,9 @@ function check1() {
     window.location.href = "/agent/hrt-v3/filtering/abroad-error.html";
   } else {
     if (document.getElementById("abroad-yes").checked) {
-        window.location.href = "/agent/hrt-v4/filtering/country.html"
+        window.location.href = "/agent/hrt-v4b/filtering/country.html"
       } else {
-        window.location.href = "/agent/hrt-v4/filtering/exemptions.html.html"
+        window.location.href = "/agent/hrt-v4b/filtering/exemptions.html.html"
       }}}
 </script>
 
