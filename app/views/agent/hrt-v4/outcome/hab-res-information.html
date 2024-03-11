@@ -42,7 +42,7 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
       </h1>
     </legend>
   
-    <div class="govuk-radios govuk-radios--inline">
+    <div class="govuk-radios govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="yes" name="type" type="radio" value="true">
         <label class="govuk-label govuk-radios__label" for="nationality">
@@ -88,9 +88,9 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
         window.location.href = "/agent/hrt-v4/outcome/hab-res-information-error.html";
       } else {
         if (document.getElementById("yes").checked) {
-          window.location.href = "/agent/hrt-v4/outcome/FHRT.html"
-        } else {
           window.location.href = "/agent/hrt-v4/outcome/hab-res.html"
+        } else {
+          window.location.href = "/agent/hrt-v4/outcome/FHRT.html"
         }}}
   </script>
        
