@@ -36,11 +36,15 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
   <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Based on the information you have reviewed, are they habitually resident?
+        Is the customer habitually resident?
       </h1>
     </legend>
+
+    <div id="changedName-hint" class="govuk-hint">
+      You must base your decisions on the reviewed information and evidence.
+    </div>
   
-    <div class="govuk-radios govuk-radios--inline">
+    <div class="govuk-radios govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
         <label class="govuk-label govuk-radios__label" for="nationality">
@@ -68,7 +72,7 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
   }) }}
 
   {{ govukButton({
-    text: "Save and exit",
+    text: "Save and come back later",
     classes: "govuk-button--secondary",
     href: "/agent/hrt-v4/outcome/reference-number-save.html"
   }) }}
