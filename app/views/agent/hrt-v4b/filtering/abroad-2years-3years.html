@@ -1,4 +1,4 @@
-{% extends 'layout-agent.html' %}
+dwp-res-prototype{% extends 'layout-agent.html' %}
 
 {% block pageTitle %}
    Past presence
@@ -37,12 +37,12 @@
   <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h2 class="govuk-fieldset__heading">
-        Have they been abroad for more than 104 of the last 156 weeks?
+        Have they been in the UK, Isle of Man or Channel Islands for at least 104 of the last 156 weeks?
       </h2>
     </legend>
     
    <div id="nationality-hint" class="govuk-hint">
-    Abroad means outside the UK, Isle of Man or Channel Islands. </div>
+    In years, this means for at least 2 of the last 3 years. </div>
     
     <div class="govuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
@@ -69,19 +69,33 @@
 <br>
 
 <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue",
+    href: "/agent/hrt-v4b/filtering/abroad-4weeks-3years.html"
+
+  }) }}
+
+  {{ govukButton({
+    text: "Save and come back later",
+    classes: "govuk-button--secondary",
+    href: "#"
+  }) }}
+</div>
+
+<!-- <div class="govuk-button-group">
   <button class="govuk-button" data-module="govuk-button" onclick="check1()">
     Save and continue
   </button>
   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Save and come back later
   </button>
-</div>
+</div> -->
 
 </div>
                   
             </form>
 
-<script>
+<!-- <script>
 function check1() {
   console.log('in function')
   var radios = document.getElementsByName("abroad");
@@ -92,14 +106,14 @@ function check1() {
     }
   }
   if (!hasSelection) {
-    window.location.href = "/agent/hrt-v4b/filtering/abroad-error.html";
+    window.location.href = "/agent/hrt-v3/filtering/abroad-error.html";
   } else {
     if (document.getElementById("abroad-yes").checked) {
-        window.location.href = "/agent/hrt-v4b/filtering/country.html"
+        window.location.href = "/agent/hrt-v4/filtering/country.html"
       } else {
-        window.location.href = "/agent/hrt-v4b/filtering/exemptions.html.html"
+        window.location.href = "/agent/hrt-v4/filtering/exemptions.html.html"
       }}}
-</script>
+</script> -->
 
         </div>
       </div>

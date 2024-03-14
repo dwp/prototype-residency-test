@@ -42,18 +42,18 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
     </legend>
     
    <div id="nationality-hint" class="govuk-hint">
-    Abroad means outside the UK, the Isle of Man or the Channel Islands. </div>
+    Abroad means outside the UK, Isle of Man or Channel Islands. </div>
     
     <div class="govuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="abroad-yes" name="abroad" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="presence">
+        <label class="govuk-label govuk-radios__label" for="abroad-yes">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="abroad-no" name="abroad" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="presence-2">
+        <label class="govuk-label govuk-radios__label" for="abroad-no">
           No
         </label>
       </div>
@@ -95,7 +95,7 @@ function check1() {
     window.location.href = "/agent/hrt-v3/filtering/abroad-error.html";
   } else {
     if (document.getElementById("abroad-yes").checked) {
-        window.location.href = "/agent/hrt-v4b/filtering/country.html"
+        window.location.href = "/agent/hrt-v4/filtering/country.html"
       } else {
         window.location.href = "/agent/hrt-v4b/filtering/exemptions.html.html"
       }}}
