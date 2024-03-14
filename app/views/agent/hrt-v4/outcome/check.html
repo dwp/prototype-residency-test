@@ -216,7 +216,20 @@
               </h3>
             </legend>
             <dl class="govuk-summary-list">
-             
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  In UK, Isle of Man or Channel Islands for at least 104 weeks
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
+                  <a class="govuk-link" href="/agent/hrt-v4/filtering/abroad-2years-3years.html">Change</a>
+
+                </dd> 
+                
+              </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Been abroad for more than 4 weeks at a time
@@ -285,6 +298,34 @@
                   </dd> 
                 </div>
 
+            </dl> 
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-fieldset__heading">
+                Evidence
+              </h3>
+            </legend>
+            <dl class="govuk-summary-list">
+              
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Evidence required
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Proof of nationality</li>
+                      <li>Proof of immigration status</li>
+                      <li>Proof of presence in the UK, Isle of Man or Channel Islands</li>
+                      <li>Proof of travel abroad</li>
+                    
+                    </ul>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
+                    <a class="govuk-link" href="/agent/hrt-v4/outcome/select-evidence-required.html">Change</a>
+
+                  </dd> 
+                </div>
             </dl>   
 
             <div class="govuk-form-group">
@@ -309,7 +350,7 @@
 
             {{ govukButton({
               text: "Confirm and submit",
-              href: "/agent/hrt-v4/outcome/select-evidence-required.html"
+              href: "/agent/hrt-v4/outcome/end-processing-agent.html"
             }) }}
 
             <!-- <div>
