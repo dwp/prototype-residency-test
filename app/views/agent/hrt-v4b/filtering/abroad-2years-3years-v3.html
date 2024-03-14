@@ -37,12 +37,12 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
   <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h2 class="govuk-fieldset__heading">
-        Have they been abroad for more than 4 weeks at a time in the last 3 years?
+        Since 14 January 2021, have they been abroad for more than 52 weeks?
       </h2>
     </legend>
     
    <div id="nationality-hint" class="govuk-hint">
-    Abroad means outside the UK, Isle of Man or Channel Islands. </div>
+    Abroad means outside the UK, Isle of Man or Channel Islands. This could be 1 trip, or a number of trips, adding up to more than 52 weeks.</div>
     
     <div class="govuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
@@ -95,9 +95,9 @@ function check1() {
     window.location.href = "/agent/hrt-v3/filtering/abroad-error.html";
   } else {
     if (document.getElementById("abroad-yes").checked) {
-        window.location.href = "/agent/hrt-v4/filtering/country.html"
+        window.location.href = "/agent/hrt-v4b/filtering/country.html"
       } else {
-        window.location.href = "/agent/hrt-v4/filtering/exemptions.html.html"
+        window.location.href = "/agent/hrt-v4b/filtering/exemptions.html.html"
       }}}
 </script>
 
