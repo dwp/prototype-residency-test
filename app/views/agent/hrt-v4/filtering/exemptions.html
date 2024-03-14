@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends 'layout-agent.html' %}
 
 {% block pageTitle %}
 Exemptions
@@ -41,12 +41,12 @@ Exemptions
       </h2>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
+      <!-- <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="visa" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa">
         <label class="govuk-label govuk-radios__label" for="visa">
           EU Settlement Scheme
         </label>
-        <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select to enter the nationality.</div> -->
+  
       </div>
       <div class="govuk-radios__conditional" id="conditional-visa">
         <div class="govuk-form-group">
@@ -74,7 +74,7 @@ Exemptions
              Family permit
             </label>
           </div></div>
-      </div>
+      </div> -->
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="exemption" name="exemptions" type="radio" value="true">
         <label class="govuk-label govuk-radios__label" for="exemption">
@@ -87,7 +87,7 @@ Exemptions
           Continental shelf workers
         </label>
       </div>
-      <div class="govuk-radios" data-module="govuk-radios">
+      <!-- <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="exemption-3" name="exemptions" type="radio" value="foreign" data-aria-controls="conditional-exemption-3">
           <label class="govuk-label govuk-radios__label" for="exemption-3">
@@ -97,13 +97,11 @@ Exemptions
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-exemption-3">
           <div class="govuk-form-group">
             <div id="british-hint" class="govuk-hint govuk-radios__hint">Enter the country.</div>
-            <!-- <label class="govuk-label" for="contact-by-email">
-              Nationality
-            </label> -->
+           
             <input class="govuk-input govuk-!-width-one-third" id="foreign-nationality" name="foreignNationality" type="foreign" spellcheck="false" autocomplete="foreign">
           </div>
         </div>
-    </div>
+    </div> -->
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="exemption-4" name="exemptions" type="radio" value="true" >
       <label class="govuk-label govuk-radios__label" for="exemption-4">
@@ -128,16 +126,16 @@ Exemptions
         Humanitarian protection
       </label>
     </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="exemption-9" name="exemptions" type="radio" value="true" >
+      <label class="govuk-label govuk-radios__label" for="exemption-9">
+        Mariners or airmen
+      </label>
+    </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="exemption-8" name="exemptions" type="radio" value="true" >
         <label class="govuk-label govuk-radios__label" for="exemption-8">
           Medical leave
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-9" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-9">
-          Mariners or airmen
         </label>
       </div>
       <div class="govuk-radios__item">
@@ -188,7 +186,7 @@ Exemptions
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Save and continue",
-                href: "/agent/hrt-v4/outcome/check.html"
+                href: "/agent/hrt-v4/outcome/select-evidence-required.html"
               }) }}
 
               {{ govukButton({

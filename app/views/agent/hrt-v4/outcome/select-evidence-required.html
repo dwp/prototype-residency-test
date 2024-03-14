@@ -29,6 +29,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Evidence</span>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
@@ -87,22 +88,35 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
               <label class="govuk-label govuk-checkboxes__label" for="countries-5">
-                No evidence requried
+                No evidence required
               </label>
             </div>
           </div>
         </fieldset>
       </div>
 
-            {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
             <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save and continue",
+                href: "/agent/hrt-v4/outcome/check.html"
+              }) }}
+
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "#"
+              }) }}
+            </div>
+
+            <!-- <div class="govuk-button-group">
               {{ govukButton({
                 text: "Confirm",
                 href: "/agent/hrt-v4/outcome/end-processing-agent.html"
 
               }) }}
-            </div>
+            </div> -->
 
     </div>
 </div>

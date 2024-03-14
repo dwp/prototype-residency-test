@@ -69,19 +69,33 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 <br>
 
 <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue",
+    href: "/agent/hrt-v4/filtering/abroad-4weeks-3years.html"
+
+  }) }}
+
+  {{ govukButton({
+    text: "Save and come back later",
+    classes: "govuk-button--secondary",
+    href: "#"
+  }) }}
+</div>
+
+<!-- <div class="govuk-button-group">
   <button class="govuk-button" data-module="govuk-button" onclick="check1()">
     Save and continue
   </button>
   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Save and come back later
   </button>
-</div>
+</div> -->
 
 </div>
                   
             </form>
 
-<script>
+<!-- <script>
 function check1() {
   console.log('in function')
   var radios = document.getElementsByName("abroad");
@@ -99,7 +113,7 @@ function check1() {
       } else {
         window.location.href = "/agent/hrt-v4/filtering/exemptions.html.html"
       }}}
-</script>
+</script> -->
 
         </div>
       </div>
