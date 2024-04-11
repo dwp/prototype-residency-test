@@ -31,68 +31,63 @@
   <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        What is the reason for the customer’s stay at this address?
+        Why is the customer at the new address?
       </h1>
     </legend>
     <br>
-    <p class="govuk-body">If you do not have these details, you can <a class="govuk-link" href="/agent/update-address/move-in-date-international.html">skip this page for now</a>.</p>
-
+    <p class="govuk-body">If the reason is not known or listed, skip this question</a>.</p>
   
   <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="type-4" name="type" type="radio" value="true" data-aria-controls="conditional-type-4">
-        <label class="govuk-label govuk-radios__label" for="type-4">
-          Residential
-        </label>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="type-4" name="type" type="radio" value="true" data-aria-controls="conditional-type-4">
+      <label class="govuk-label govuk-radios__label" for="type-4">
+        Residential move
+      </label>
+      <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+        Select if they have moved into a residential property. For example, if they have moved house, been discharged from a care home or hospital, or released from prison.
       </div>
+    </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="type" name="type" type="radio" value="true" data-aria-controls="conditional-type">
         <label class="govuk-label govuk-radios__label" for="type">
-          Care home
+          Care home admission
         </label>
       </div>
    
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="type-2" name="type" type="radio" value="true" data-aria-controls="conditional-type-2">
         <label class="govuk-label govuk-radios__label" for="type-2">
-          Hospital
+          Hospital admission
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="type-3" name="type" type="radio" value="true" data-aria-controls="conditional-type-3">
         <label class="govuk-label govuk-radios__label" for="type-3">
-          Prison
+          Prison sentence or custody
         </label>
       </div>
     </div>
   </fieldset>
 </div>
 
-{{ govukButton({
-  text: "Continue",
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
   href: "/agent/update-address/move-in-date-international.html"
   }) }}
 
-<!-- <div class="govuk-button-group">
-<button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button> 
+  {{ govukButton({
+    text: "Skip question",
+    classes: "govuk-button--secondary",
+  href: "/agent/update-address/move-in-date-international.html"
+  }) }}
 </div>
 
-<script>
-  function check() {
-    console.log('in function')
-    var radios = document.getElementsByName("type");
-    var hasSelection = false
-    for (var i = 0, len = radios.length; i < len; i++) {
-      if (radios[i].checked) {
-        hasSelection = true;
-      }
-    }
-    if (!hasSelection) {
-        window.location.href = "/agent/update-address/address-type-error-international.html";
-      } else {
-        window.location.href = "/agent/update-address/move-in-date-international.html"
-      }}
-</script> -->
+<div class="govuk-button-group">
+  <a class="govuk-link" href="/agent/update-address/address-type.html">Clear selection</a>
+</div>
 
             </form>
         </div>

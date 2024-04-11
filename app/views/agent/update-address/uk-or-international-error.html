@@ -28,6 +28,9 @@
 
 {% block content %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 <div class="govuk-error-summary" data-module="govuk-error-summary">
@@ -44,9 +47,6 @@
     </div>
   </div>
 </div>
-
-<div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
 
 <div class="govuk-form-group govuk-form-group--error">
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
