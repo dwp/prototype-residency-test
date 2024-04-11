@@ -38,7 +38,7 @@ Error - UK address
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#address-postcode">Enter a full UK, Isle of Man or Channel Islands postcode, for example, AA3 1AB</a>
+            <a href="#address-postcode">Postcode must only include letters, numbers and a space, for example, AA3 1AB</a>
           </li>
           <li>
             <a href="#address-number">Enter a building number or name</a>
@@ -69,7 +69,7 @@ Error - UK address
     For example, AA3 1AB.
 </div>
   <p id="address-postcode-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter a full UK, Isle of Man or Channel Islands postcode, for example, AA3 1AB
+    <span class="govuk-visually-hidden">Error:</span>Postcode must only include letters, numbers and a space, for example, AA3 1AB
   </p>
   <input class="govuk-input govuk-input--width-5 govuk-input--error" id="address-postcode" name="address-postcode" type="text" aria-describedby="address-postcode-error" autocomplete="address-postcode">
 
@@ -86,22 +86,7 @@ Error - UK address
 
   </div>
 
-  <!-- {{ govukButton({
-    text: "Find address",
-    href: "/agent/update-address/update-address-results.html"
-  }) }}
-
-  {{ govukButton ({
-    html: 'Continue',
-    href: '/agent/update-address/update-address-results.html'
-}) }} -->
-
 <button class="govuk-button" value= "true" data-module="govuk-button" style="margin-bottom:50px;" onclick="check3()" >Find address</button>
-
-<!-- <div>
-  <a href="/agent/update-address/update-address-manual-entry.html" class="govuk-body-m">Enter address manually
-</a>
-</div> -->
 
 </fieldset>
 
@@ -114,7 +99,7 @@ Error - UK address
       if (document.getElementById("address-number").value && document.getElementById("address-postcode").value ) {
         window.location.href = "/agent/update-address/update-address-results.html"
       } else {
-        window.location.href = "/agent/update-address/number-and-postcode-error.html"
+        window.location.href = "/agent/update-address/number-and-postcode-error-1.html"
       }
 
     }
