@@ -17,12 +17,18 @@
   </p>
 </div>
 
-    {{ super() }}
+<style>
+  .card {
+  background-color: lightblue;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 auto;
+  }
+  </style>
 
-    {{ govukBackLink ({
-        text: 'Back',
-        href: 'javascript:history.back()'
-    }) }}
+    {{ super() }}
 
 {% endblock %}
 
@@ -35,7 +41,7 @@
 
                 <b></b>
 
-                <div>
+                <div class="govuk-!-width-one-half">
                 <h2 class="govuk-heading-m"><a class="govuk-link" href="/agent/hrt-v4/identification/all.html">Collect case details</a></h2>
 <p>
   Collect habitual residency details for a customer, or resume an existing case.
@@ -43,7 +49,7 @@
 </div>
 
 
-<div>
+<div class="govuk-!-width-one-half">
   <h2 class="govuk-heading-m"><a class="govuk-link" href="/agent/hrt-v4/identification/all-dm.html">Record decision</a></h2>
 <p>
   Review details and record a decision about a customer’s habitual residency, or resume a decision in progress.
