@@ -1,0 +1,94 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Review saved details
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-fieldset__heading">
+            Review saved details
+          </h2>
+        </legend>
+      </fieldset>
+
+      <br>
+
+      <p>
+        The following details have been saved so far.
+      </p>
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h3 class="govuk-fieldset__heading">
+          Claim details
+        </h3>
+      </legend>
+      <dl class="govuk-summary-list">
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Benefit
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            Personal Independence Payment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/agent/hrt-v4/filtering/benefit.html">Change</a>
+          </dd> 
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Date of claim
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 Jan 2024
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/agent/hrt-v4/filtering/benefit.html">Change</a>
+          </dd> 
+        </div>
+      </dl>  
+          
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Continue",
+              href: "/agent/hrt-v4/filtering/nationality.html"
+            }) }}
+
+            <!-- <div>
+              <a href="/agent/hrt-v4/outcome/evidence.html" class="govuk-body-m">Request and provide evidence
+            </a>
+            </div> -->
+    </div>
+</div>
+
+{% endblock %}
