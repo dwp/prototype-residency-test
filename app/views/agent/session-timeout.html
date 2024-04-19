@@ -1,0 +1,43 @@
+{% extends 'layout-agent-no-details.html' %}
+
+{% block pageTitle %}
+    Session timeout
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+    {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 id="dialog-title" class="govuk-heading-l">
+            You have been signed out
+            </h1>
+            <div class="govuk-body">
+            <p>You have been signed out and any information you have not saved has been deleted because you did not do anything for 20 minutes. This is to protect your information.</p>
+            </div>
+            <button class="govuk-button dialog-button js-dialog-close" data-module="govuk-button">Sign back in</button>
+           
+          </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}
