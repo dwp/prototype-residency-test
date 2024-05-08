@@ -1,6 +1,5 @@
 {% extends "layouts/main.html" %}
 
-{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
 {% set serviceName %}
  Residency test
 {% endset%}
@@ -13,6 +12,8 @@ name: "Service name",
 serviceHref: '/',
 container:true
 }) }}
+
+{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
 
 {{ dwpKeyDetailsBar({
   primaryIdentifier: {
