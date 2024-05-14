@@ -49,9 +49,14 @@
           <label class="govuk-label govuk-radios__label" for="visa">
             EU Settlement Scheme
           </label>
-          <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select to enter the nationality.</div> -->
+          <div id="EU-hint" class="govuk-hint govuk-radios__hint">For example, pre-settled or settled status.</div>
         </div>
         <div class="govuk-radios__conditional" id="conditional-visa">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select status</b>
+            </h1>
+          </legend>
           <div class="govuk-form-group">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
@@ -86,6 +91,11 @@
 
         </div>
         <div class="govuk-radios__conditional" id="conditional-visa-1">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select indefinite leave type</b>
+            </h1>
+          </legend>
           <div class="govuk-form-group">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
@@ -120,6 +130,11 @@
 
         </div>
         <div class="govuk-radios__conditional" id="conditional-visa-2">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select limited leave type</b>
+            </h1>
+          </legend>
           <div class="govuk-form-group">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
@@ -165,9 +180,14 @@
           <label class="govuk-label govuk-radios__label" for="nationality-5">
             Other
           </label>
-  
+          <div id="other-hint" class="govuk-hint govuk-radios__hint">For example, Afghan or Ukrainian resettlement scheme, or transnational marriage abandonment scheme.</div>
         </div>
         <div class="govuk-radios__conditional" id="conditional-visa-5">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select other immigration status</b>
+            </h1>
+          </legend>
           <div class="govuk-form-group">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
@@ -232,7 +252,7 @@
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v4/filtering/visa-status-dates.html"
+                href: "/agent/hrt-v5/filtering/visa-status-dates.html"
               }) }}
 
               {{ govukButton({

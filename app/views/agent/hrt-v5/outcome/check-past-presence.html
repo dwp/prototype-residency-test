@@ -1,0 +1,177 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+Information and evidence review
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Past presence</span>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      
+          <h1 class="govuk-fieldset__heading">
+            Information and evidence review
+          </h1>
+        </legend>
+      </fieldset>
+
+      <dl class="govuk-summary-list">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            
+          </h3>
+        </legend>
+       
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Been abroad for more than 4 weeks at a time
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
+              <!-- <a class="govuk-link" href="/agent/hrt-v4/filtering/abroad-4weeks-3years.html">Change</a> -->
+
+            </dd> 
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to Spain</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              20 Feb 2022 to 26 May 2022
+            </dt>
+            <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="/agent/hrt-v4/filtering/abroad-summary-2.html"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li> -->
+                <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li> -->
+              </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to France</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              15 May 2023 to 10 Jul 2023
+            </dt>
+            <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="/agent/hrt-v4/filtering/abroad-summary-2.html"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Michael Cain</span></a></li> -->
+                <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Michael Cain from the list</span></a></li> -->
+              </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to United States</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              1 Oct 2023 to 5 Jan 2024
+            </dt>
+            <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="/agent/hrt-v4/filtering/abroad-summary-2.html"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Jeremy Winter</span></a></li> -->
+                <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Jeremy Winter from the list</span></a></li> -->
+              </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Exemptions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="/agent/hrt-v4/filtering/exemptions.html">Change</a> -->
+            </dd> 
+          </div>
+
+      </dl>    
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    What evidence has been reviewed?
+                  </h1>
+                </legend>
+                <div id="waste-hint" class="govuk-hint">
+                  Select all that apply.
+                </div>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="proof" type="checkbox" value="carcasses">
+                    <label class="govuk-label govuk-checkboxes__label" for="proof-1">
+                      Proof of travel abroad
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="proof" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="proof-2">
+                      Proof of exemption
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__divider">or</div>
+                  <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="countries-5" name="proof" type="checkbox" value="none" data-behaviour="exclusive">
+                  <label class="govuk-label govuk-checkboxes__label" for="proof-3">
+                   No evidence required
+                  </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save and continue",
+                href: "/agent/hrt-v4/outcome/past-presence-decision.html"
+            
+              }) }}
+            
+              {{ govukButton({
+                text: "Save and exit",
+                classes: "govuk-button--secondary",
+                href: "/agent/hrt-v4/outcome/reference-number-save.html"
+              }) }}
+            </div>
+
+            <!-- <div>
+              <a href="/agent/hrt-v4/outcome/evidence-dm.html" class="govuk-body-m">Evidence provided
+            </a>
+            </div> -->
+
+    </div>
+</div>
+
+{% endblock %}
