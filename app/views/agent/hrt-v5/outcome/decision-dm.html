@@ -1,0 +1,154 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Decision
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    
+        <h1 class="govuk-fieldset__heading">
+          Record your decisions
+        </h1>
+      </legend>
+    </fieldset>
+
+    <div id="changedName-hint" class="govuk-hint">
+      You must base your decisions on the reviewed information and evidence.
+    </div>
+  
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+<h1 class="govuk-fieldset__heading">
+  Does the customer have the right to reside?
+</h1>
+</legend>
+
+<div class="govuk-radios govuk-radios--inline">
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="nationality" name="reside" type="radio" value="british">
+  <label class="govuk-label govuk-radios__label" for="nationality">
+    Yes
+  </label>
+  <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are employed in England, Scotland, Wales or Northern Ireland.</div> -->
+</div>
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="nationality-2" name="reside" type="radio" value="irish">
+  <label class="govuk-label govuk-radios__label" for="nationality-2">
+    No
+  </label>
+   <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are self-employed in England, Scotland, Wales or Northern Ireland.</div> -->
+</div>
+</div>
+
+</fieldset>
+
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Does the customer satisfy the presence requirements?
+      </h1>
+    </legend>
+  
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality" name="presence" type="radio" value="british">
+        <label class="govuk-label govuk-radios__label" for="nationality">
+          Yes
+        </label>
+        <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are employed in England, Scotland, Wales or Northern Ireland.</div> -->
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nationality-2" name="presence" type="radio" value="irish">
+        <label class="govuk-label govuk-radios__label" for="nationality-2">
+          No
+        </label>
+         <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are self-employed in England, Scotland, Wales or Northern Ireland.</div> -->
+      </div>
+    </div>
+
+  </fieldset>
+  </div>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Does the customer pass the past presence test?
+        </h1>
+      </legend>
+    
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="nationality-1" name="past-presence" type="radio" value="british">
+          <label class="govuk-label govuk-radios__label" for="nationality">
+            Yes
+          </label>
+          <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are employed in England, Scotland, Wales or Northern Ireland.</div> -->
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="nationality-1" name="past-presence" type="radio" value="irish">
+          <label class="govuk-label govuk-radios__label" for="nationality-2">
+            No
+          </label>
+           <!-- <div id="british-hint" class="govuk-hint govuk-radios__hint">Select if they are self-employed in England, Scotland, Wales or Northern Ireland.</div> -->
+        </div>
+      </div>
+  
+    </fieldset>
+
+<br>
+
+<div class="govuk-button-group">
+{{ govukButton({
+text: "Continue",
+href: "/agent/hrt-v4/outcome/hab-res-information.html"
+
+}) }}
+
+{{ govukButton({
+text: "Save and come back later",
+classes: "govuk-button--secondary",
+href: "/agent/hrt-v4/progress-saved-dm.html"
+}) }}
+</div>
+</div>
+
+</form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}
