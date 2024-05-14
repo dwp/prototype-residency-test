@@ -1,0 +1,54 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+There is a problem with the service
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 id="dialog-title" class="govuk-heading-l">
+            There is a problem with the service
+            </h1>
+            <div class="govuk-body">
+            <p>Go back and try submitting the address you entered again.</p>
+              <p>If you keep getting this message, you can <a href="/agent/update-address/manual-entry-no-match.html">confirm the address you entered</a>.</p>
+
+              <!-- <p> You will need to start again.</p> -->
+            </div>
+            <!-- <button class="govuk-button dialog-button js-dialog-close" href="/agent/update-address/update-address-1.html" data-module="govuk-button">Back to address search</button> -->
+            
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              {{ govukButton({
+                text: "Go back and try again",
+                href: "/agent/update-address/update-address-manual-entry.html"
+              }) }}
+          </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}
