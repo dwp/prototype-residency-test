@@ -1,0 +1,94 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+Confirm new address
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Confirm new address
+          </h1>
+        </legend>
+
+        <div class="govuk-inset-text">
+          55 Windsor Street <br> South Gosforth <br> Newcastle upon Tyne <br> NE3 1YL <br>
+          <!-- <strong class="govuk-tag govuk-tag--green" style="margin-top: 5px">
+            Residential
+          </strong> -->
+        </div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to use this address?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="match" name="type" type="radio" value="true">
+        <label class="govuk-label govuk-radios__label" for="match">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="no-match" name="type" type="radio" value="false">
+        <label class="govuk-label govuk-radios__label" for="no-match">
+          No, I need to enter a different address
+        </label>
+      </div>
+    </div>
+    </fieldset>
+  </div>
+
+  <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button>
+    
+<script>
+  function check() {
+    console.log('in function')
+    var radios = document.getElementsByName("type");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
+    }
+    if (!hasSelection) {
+      window.location.href = "/agent/update-address/confirm-new-address-error.html";
+    } else {
+      if (document.getElementById("match").checked) {
+        window.location.href = "/agent/update-address/move-in-date-manual.html"
+      } else {
+        window.location.href = "update-address-manual-entry"
+      }}}
+</script>
+
+            </form>
+        </div>
+</div>
+
+{% endblock %}
