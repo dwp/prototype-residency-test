@@ -62,7 +62,7 @@ Error - international address
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-form-group govuk-form-group--error">
+      <div class="govuk-form-group">
 
 <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -74,6 +74,7 @@ Error - international address
     Enter as many parts of the customer’s new address as you can.
   </div>
 
+  <div class="govuk-form-group govuk-form-group--error">
         <label class="govuk-label" for="address-line-1">
           Address line 1
         </label>
@@ -81,32 +82,34 @@ Error - international address
           <span class="govuk-visually-hidden">Error:</span> Enter address line 1
         </p>
         <input class="govuk-input govuk-input--error" id="address-line-1" name="address-line-1" type="text" aria-describedby="address-line-1-error" autocomplete="address-line-1">
-      
+      </div>
+      <div class="govuk-form-group govuk-form-group--error">
         <label class="govuk-label" for="address-line-2">
-            <br> Address line 2
+            Address line 2
           </label>
           <p id="address-line-2-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Enter address line 2
           </p>
           <input class="govuk-input govuk-input--error" id="address-line-2" name="address-line-2" type="text" aria-describedby="address-line-2-error" autocomplete="address-line-2">
-        
+        </div>
+        <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-3">
-            <br> Address line 3 (optional)
+            Address line 3 (optional)
           </label>
-          <br>
-
           <input class="govuk-input" id="address-line-3" name="address-line-3" type="text" autocomplete="address-line-3">
-
+        </div>
+      <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label" for="address-line-4">
-              <br> Town or city
+              Town or city
             </label>
             <p id="address-line-4-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter a town or city
             </p>
             <input class="govuk-input govuk-input--error" id="address-line-4" name="address-line-4" type="text" aria-describedby="address-line-4-error" autocomplete="address-line-4">
-          
+          </div>
+      <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label" for="country">
-                <br> Country
+               Country
               </label>
               <p id="country-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter a country
@@ -114,6 +117,7 @@ Error - international address
               <form autocomplete="off"> <input class="govuk-input govuk-input--error govuk-input--width-10" onKeyUp="showResults(this.value)" id="country" name="country" type="text">
                 <div id="result">
                 </div> </form>
+                </div>
     
     </div>
 

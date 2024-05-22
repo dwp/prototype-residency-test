@@ -8,7 +8,6 @@ Error - Manual address entry
 
 {{ super() }}
 
-
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
   
 {% endblock %}
@@ -40,7 +39,7 @@ Error - Manual address entry
 
 <fieldset class="govuk-fieldset">
 
-  <div class="govuk-form-group govuk-form-group--error">
+  <div class="govuk-form-group">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       
     <!-- <h1 class="govuk-fieldset__heading">
@@ -58,6 +57,8 @@ Error - Manual address entry
   This address must be in the UK, Isle of Man or Channel Islands. Complete the optional fields if you can.
 </div>
 
+<div class="govuk-form-group govuk-form-group--error">
+
         <label class="govuk-label" for="address-line-1">
           Address line 1
         </label>
@@ -65,13 +66,16 @@ Error - Manual address entry
           <span class="govuk-visually-hidden">Error:</span> Enter address line 1
         </p>
         <input class="govuk-input govuk-input--error" id="address-line-1" name="address-line-1" type="text" aria-describedby="address-line-1-error" autocomplete="address-line-1">
-      
+      </div>
+
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-line-2">
-              <br> Address line 2 (optional)
+            Address line 2 (optional)
             </label>
             <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
           </div>
+
+  <div class="govuk-form-group govuk-form-group--error">
 
           <label class="govuk-label" for="address-town">
           Town or city
@@ -80,22 +84,25 @@ Error - Manual address entry
           <span class="govuk-visually-hidden">Error:</span> Enter a town or city
         </p>
         <input class="govuk-input govuk-!-width-two-thirds govuk-input--error" id="address-town" name="address-town" type="text"  aria-describedby="address-town-error" autocomplete="address-town">
-      
+      </div>
+
         <div class="govuk-form-group">
             <label class="govuk-label" for="address-county">
-              <br> County (optional)
+              County (optional)
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
           </div>
 
+  <div class="govuk-form-group govuk-form-group--error">
+
         <label class="govuk-label" for="address-postcode">
-          <br> Postcode
+          Postcode
         </label>
         <p id="address-postcode-error" class="govuk-error-message">
           <span class="govuk-visually-hidden">Error:</span> Postcode must only include letters, numbers and a space, for example, AA3 1AB
         </p>
         <input class="govuk-input govuk-input--width-10 govuk-input--error" id="address-postcode" name="address-postcode" type="text"  aria-describedby="address-postcode-error" autocomplete="postal-code">
-
+</div>
     </div>
 
     <button class="govuk-button" value= "true" data-module="govuk-button" style="margin-bottom:50px;" onclick="check3()" >Continue</button>
