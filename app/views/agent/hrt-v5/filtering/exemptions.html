@@ -21,63 +21,129 @@ Exemptions
 <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-two-thirds">
-          <span class="govuk-caption-l">Past presence</span>
+          <!-- <span class="govuk-caption-l">Past presence</span> -->
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h2 class="govuk-fieldset__heading">
-        Which of the following exemptions apply to them?
+        Which exemption from the past presence test applies to them?
       </h2>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
   
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="exemption-4" name="exemptions" type="radio" value="true" >
-      <label class="govuk-label govuk-radios__label" for="exemption-4">
+      <input class="govuk-radios__input" id="exemption-1" name="exemptions" type="radio" value="true" >
+      <label class="govuk-label govuk-radios__label" for="exemption-1">
         Covered by UK-EU Withdrawal Agreement
       </label>
     </div>
 
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="exemption-5" name="exemptions" type="radio" value="true" >
-      <label class="govuk-label govuk-radios__label" for="exemption-5">
-        Exempt profession (such as airmen or armed forces)
+      <input class="govuk-radios__input" id="profession" name="exemptions" type="radio" value="true" data-aria-controls="conditional-profession">
+      <label class="govuk-label govuk-radios__label" for="profession">
+        Exempt profession (such as armed forces)
       </label>
+    </div>
+    <div class="govuk-radios__conditional" id="conditional-profession">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+        <h1 class="govuk-fieldset__heading">
+          <b>Select exemption</b>
+        </h1>
+      </legend>
+      <div class="govuk-form-group">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="exemption-3" name="whereDoYouLive" type="radio" value="airmen">
+          <label class="govuk-label govuk-radios__label" for="exemption-3">
+            Airmen
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="exemption-4" name="whereDoYouLive" type="radio" value="armed-forces">
+          <label class="govuk-label govuk-radios__label" for="exemption-4">
+            Armed forces
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="exemption-5" name="whereDoYouLive" type="radio" value="wales">
+          <label class="govuk-label govuk-radios__label" for="exemption-5">
+            Continental shelf workers
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="exemption-6" name="whereDoYouLive" type="radio" value="northern-ireland">
+          <label class="govuk-label govuk-radios__label" for="exemption-6">
+           Crown servants (civil servants)
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="exemption-7" name="whereDoYouLive" type="radio" value="wales">
+          <label class="govuk-label govuk-radios__label" for="exemption-7">
+            Mariners
+          </label>
+        </div>
+      </div>
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="exemption-6" name="exemptions" type="radio" value="true" >
-      <label class="govuk-label govuk-radios__label" for="exemption-6">
-        Humanitarian crisis, protection of refugee
+      <input class="govuk-radios__input" id="refugee" name="exemptions" type="radio" value="true" data-aria-controls="conditional-refugee">
+      <label class="govuk-label govuk-radios__label" for="refugee">
+        Humanitarian or refugee
       </label>
     </div>
+    <div class="govuk-radios__conditional" id="conditional-refugee">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+        <h1 class="govuk-fieldset__heading">
+          <b>Select exemption</b>
+        </h1>
+      </legend>
+      <div class="govuk-form-group">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="exemption-9" name="whereDoYouLive" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="exemption-9">
+            Humanitarian crisis
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="exemption-10" name="whereDoYouLive" type="radio" value="wales">
+          <label class="govuk-label govuk-radios__label" for="exemption-10">
+            Humanitarian protection
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="exemption-11" name="whereDoYouLive" type="radio" value="northern-ireland">
+          <label class="govuk-label govuk-radios__label" for="exemption-11">
+          Refugee
+          </label>
+        </div>
+      </div>
+    </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-8" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-8">
+        <input class="govuk-radios__input" id="exemption-12" name="exemptions" type="radio" value="true" >
+        <label class="govuk-label govuk-radios__label" for="exemption-12">
           Medical leave
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-10" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-10">
-          Resettlement schemes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-12" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-12">
-          Special rules for end of life
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-12" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-12">
-          Transnational marriage abandonment scheme
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="exemption-13" name="exemptions" type="radio" value="true" >
         <label class="govuk-label govuk-radios__label" for="exemption-13">
+          Resettlement schemes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="exemption-14" name="exemptions" type="radio" value="true" >
+        <label class="govuk-label govuk-radios__label" for="exemption-14">
+          Special rules for end of life
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="exemption-15" name="exemptions" type="radio" value="true" >
+        <label class="govuk-label govuk-radios__label" for="exemption-15">
+          Transnational marriage abandonment scheme
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="exemption-16" name="exemptions" type="radio" value="true" >
+        <label class="govuk-label govuk-radios__label" for="exemption-16">
           None
         </label>
       </div>
