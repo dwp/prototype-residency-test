@@ -1,7 +1,7 @@
 {% extends 'layout-agent-no-details-hrt.html' %}
 
 {% block pageTitle %}
-    Additional customer's details
+    More details needed
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,96 +24,25 @@
           <form action="/citizen/habitual_residency_test/simple_hrt_v8a/fuzzy_logic.html" class="form">
             <!-- <span class="govuk-caption-l">Identification</span> -->
 
-                <h1 class="govuk-heading-l">Additional customer’s details</h1>
+                <h1 class="govuk-heading-l">More details needed</h1>
+
+                <p>We need more details to find the right customer.</p>
+
+                <h2 class="govuk-heading-m">Enter the customer’s phone number or email address</h2>
              
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="full-name">
-                    First name
+                    Phone number
                   </label>
-                  <input class="govuk-input" id="full-name" name="fullName" type="text" value="Joe" spellcheck="false" autocomplete="name">
+                  <input class="govuk-input govuk-input--width-10" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="full-name">
-                    Middle name
+                    Email address
                   </label>
-                  <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
+                  <input class="govuk-input govuk-input--width-10" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
                 </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="full-name">
-                    Last name
-                  </label>
-                  <input class="govuk-input" id="full-name" name="fullName" type="text" value="Smith" spellcheck="false" autocomplete="name">
-                </div>
-
-                <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                    <legend class="govuk-fieldset__legend">
-                      Date of birth
-                    </legend>
-                    <div id="passport-issued-hint" class="govuk-hint">
-                      For example, 27 3 2007.
-                    </div>
-                    <div class="govuk-date-input" id="passport-issued">
-                      <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                            Day
-                          </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" value="4" inputmode="numeric">
-                        </div>
-                      </div>
-                      <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                            Month
-                          </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" value="6" inputmode="numeric">
-                        </div>
-                      </div>
-                      <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                            Year
-                          </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" value="1952" inputmode="numeric">
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-postcode">
-                    Postcode
-                  </label>
-                  <input class="govuk-input govuk-input--width-5" id="address-postcode" name="address-postcode" type="text" value="BA1 9PJ" autocomplete="postal-code">
-                </div>
-              
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-line-1">
-                    Building number or name
-                  </label>
-                 <div id="searchString-hint" class="govuk-hint">
-                  For example, 15 or Prospect Cottage.
-              </div>
-                  <input class="govuk-input govuk-input--width-10" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
-                </div>
-
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="telephone-number">
-                    Telephone number
-                  </label>
-                  <div id="telephone-number-hint" class="govuk-hint">
-                    For international numbers include the country code.
-                  </div>
-                  <input class="govuk-input govuk-input--width-10" id="telephone-number" name="telephoneNumber" type="tel" aria-describedby="telephone-number-hint" autocomplete="tel">
-                </div>
-  
-<!--   
-               <button class="govuk-button" data-module="govuk-button" >
-    Continue
-  </button> -->
-
+       
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
   {{ govukButton({
