@@ -1,4 +1,4 @@
-{% extends 'layout-agent.html' %}
+{% extends 'layout-agent-hrt.html' %}
 
 {% block pageTitle %}
 HRT cases
@@ -36,7 +36,7 @@ HRT cases
   <fieldset class="govuk-fieldset" aria-describedby="test-cases-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Habitual residence test cases
+        Habitual residence cases
       </h1>
     </legend>
 
@@ -52,7 +52,7 @@ HRT cases
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Created</th>
-          <th scope="col" class="govuk-table__header">Expires</th>
+          <th scope="col" class="govuk-table__header">Updated</th>
           <th scope="col" class="govuk-table__header">Benefit line</th>
           <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
           <th scope="col" class="govuk-table__header">Action</th>
@@ -62,57 +62,104 @@ HRT cases
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">12 Mar 2024</td>
-          <td class="govuk-table__cell">12 Mar 2026</td>
+          <td class="govuk-table__cell">24 Mar 2024</td>
+
           <td class="govuk-table__cell">Personal Independence Payment</td>
 
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--blue">
-              In progress
+              Incomplete
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v4/saved-details.html">Resume</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v5/saved-details.html">Resume</a></td>
 
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">23 Feb 2024</td>
-          <td class="govuk-table__cell">23 Feb 2026</td>
+          <td class="govuk-table__cell">23 Jan 2024</td>
+          <td class="govuk-table__cell">20 Feb 2024</td>
 
           <td class="govuk-table__cell">Attendance Allowance</td>
 
           <td class="govuk-table__cell">
 
             <strong class="govuk-tag govuk-tag--green">
-              Submitted
+              Habitually resident
             </strong>
           </td>
           <td class="govuk-table__cell"></td>
 
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">15 Apr 2024</td>
-          <td class="govuk-table__cell">15 Apr 2026</td>
+          <td class="govuk-table__cell">15 Oct 2023</td>
+          <td class="govuk-table__cell">30 Nov 2023</td>
 
           <td class="govuk-table__cell">Pension Credit</td>
 
           <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--blue">
+            <strong class="govuk-tag govuk-tag--light-blue">
               In progress
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Resume</a></td>
+          <td class="govuk-table__cell"></td>
 
 
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">4 Mar 2022</td>
-          <td class="govuk-table__cell">4 Mar 2024</td>
+          <td class="govuk-table__cell">1 Jan 2024</td>
+          <td class="govuk-table__cell">1 Jan 2024</td>
+
+
+          <td class="govuk-table__cell">Attendance Allowance</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--pink">
+              Decision needed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"></td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">23 Jan 2024</td>
+          <td class="govuk-table__cell">20 Feb 2024</td>
+
+          <td class="govuk-table__cell">Attendance Allowance</td>
+
+          <td class="govuk-table__cell">
+
+            <strong class="govuk-tag govuk-tag--red">
+              Not habitually resident
+            </strong>
+          </td>
+          <td class="govuk-table__cell"></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">15 Oct 2023</td>
+          <td class="govuk-table__cell">30 Nov 2023</td>
+
+          <td class="govuk-table__cell">Pension Credit</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Waiting on
+            </strong>
+          </td>
+          <td class="govuk-table__cell"></td>
+
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1 Jan 2022</td>
+          <td class="govuk-table__cell">4 Mar 2023</td>
 
 
           <td class="govuk-table__cell">Attendance Allowance</td>
 
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--grey">
-              Expired
+              No longer available to view
             </strong>
           </td>
           <td class="govuk-table__cell"></td>
@@ -128,7 +175,7 @@ HRT cases
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Start a new case",
-      href: "/agent/hrt-v4/filtering/benefit.html"
+      href: "/agent/hrt-v5/filtering/benefit.html"
   
     }) }}
 
