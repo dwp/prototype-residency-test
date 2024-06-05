@@ -6,6 +6,16 @@ Exemptions
 
 {% block beforeContent %}
 
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – to help us improve it, <a class="govuk-link" href="https://forms.microsoft.com/e/mR3DLwkxg7" target="_blank">give feedback (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
 
     {{ super() }}
 
@@ -160,7 +170,7 @@ Exemptions
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v5/outcome/select-evidence-required.html"
+                href: "/agent/hrt-v5/filtering/abroad-4weeks-3years.html"
               }) }}
 
               {{ govukButton({
