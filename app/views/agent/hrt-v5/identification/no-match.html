@@ -18,11 +18,21 @@
 {% block content %}
 
 <div class="govuk-width-container">
-  <h1 class="govuk-heading-l">No match found</h1>
-  <p>We could not identify a customer that matches <b>Joe Smith</b>, <b>4 6 1952</b> and <b>BA1 9PJ</b>.</p>
-  <p><a href="/agent/hrt-v5/identification/all.html">Search again</a></p>
-  <!-- <p><a href="/agent/hrt-v4/identification/additional.html">Enter more details about the customer</a></p> -->
+  <h1 class="govuk-heading-l">Customer not found</h1>
 
+  <p>There is no record matching <b>Joe Smith</b>, <b>4 6 1952</b> and <b>BA1 9PJ</b>.</p>
+
+  <p>Check the customer’s details and try again.</p>
+
+  <p>If you keep getting this message, try searching again for the customer in Searchlight.</p>
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Go back",
+      href: "/agent/update-address/dashboard.html"
+    }) }}
+  </div>
+ 
  </div> 
 
 {% endblock %}
