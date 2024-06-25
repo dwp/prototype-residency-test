@@ -1,0 +1,54 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    	Address update cancelled
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    
+    <!-- <a href="javascript:history.back()" class="govuk-back-link">Back</a> -->
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">
+                  Address update already cancelled
+                </h1>
+
+            <p class="govuk-body">You cannot go back to this page as you have already cancelled the address update.</p>
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "/agent/update-address/dashboard.html"
+  }) }}
+<!-- 
+  {{ govukButton({
+    text: "Change",
+    classes: "govuk-button--secondary",
+    href: "/agent/update-address/uk-or-international.html"
+  }) }} -->
+</div>
+
+<!-- <div>
+  <a href="/agent/updated-address-past-addresses.html" class="govuk-body-m">Past addresses
+</a>
+</div> -->
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}
