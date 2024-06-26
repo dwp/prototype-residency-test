@@ -23,14 +23,10 @@ dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
           <!-- <span class="govuk-caption-l">Past presence</span> -->
 
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h2 class="govuk-fieldset__heading">
-        When were they abroad?
-      </h2>
-    </legend>
 
-    <br>
+      <h1 class="govuk-heading-l">
+        When did they go to France?
+      </h1>
     
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -118,15 +114,16 @@ dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v5/filtering/travel-reason-1.html"
+                href: "/agent/hrt-v6/filtering/travel-reason-1.html"
               }) }}
+
               {{ govukButton({
                 text: "Save and come back later",
                 classes: "govuk-button--secondary",
                 href: "#"
               }) }}
             </div>
-                  
+           
 <!-- <button class="govuk-button" data-module="govuk-button" onclick="check1()">
   Continue
 </button>

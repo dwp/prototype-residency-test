@@ -31,16 +31,18 @@
 <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-two-thirds">
-
-          <!-- <span class="govuk-caption-l">Right to reside</span> -->
         
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h2 class="govuk-fieldset__heading">
+
+      <h1 class="govuk-heading-l">
         Immigration status
-      </h2>
-    </legend>
+      </h1>
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">
+          What is their immigration status?
+        </h2>
+      </legend>
     
     <div class="govuk-radios" data-module="govuk-radios">
 
@@ -162,30 +164,16 @@
             </div></div>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="visa-3" name="visa" type="radio" value="refugee">
-          <label class="govuk-label govuk-radios__label" for="visa-3">
-            Refugee
-          </label>
-     
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="visa-4" name="visa" type="radio" value="HP">
-          <label class="govuk-label govuk-radios__label" for="visa-4">
-            Humanitarian protection
-          </label>
-
-        </div>
-        <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="visa-5" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-5">
           <label class="govuk-label govuk-radios__label" for="nationality-5">
-            Other
+            Resettlement schemes, humanitarian protection and refugee
           </label>
-          <div id="other-hint" class="govuk-hint govuk-radios__hint">For example, Afghan or Ukrainian resettlement scheme, or transnational marriage abandonment scheme.</div>
+          <!-- <div id="other-hint" class="govuk-hint govuk-radios__hint">For example, Afghan or Ukrainian resettlement scheme, or transnational marriage abandonment scheme.</div> -->
         </div>
         <div class="govuk-radios__conditional" id="conditional-visa-5">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend">
             <h1 class="govuk-fieldset__heading">
-              <b>Select other immigration status</b>
+              <b>Select status</b>
             </h1>
           </legend>
           <div class="govuk-form-group">
@@ -204,15 +192,28 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                Transnational marriage abandonment scheme
+                Humanitarian protection
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="wales">
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                Refugee
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-5" name="whereDoYouLive" type="radio" value="northern-ireland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-5">
                Ukraine resettlement scheme
               </label>
             </div></div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="visa-3" name="visa" type="radio" value="refugee">
+          <label class="govuk-label govuk-radios__label" for="visa-3">
+            Transnational marriage abandonment scheme
+          </label>
+     
         </div>
     </div>
 
@@ -252,7 +253,7 @@
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v5/filtering/visa-status-dates.html"
+                href: "/agent/hrt-v6/filtering/visa-status-dates.html"
               }) }}
 
               {{ govukButton({

@@ -31,7 +31,7 @@ Travel reason
       </h1>
     </legend>
 
-    <p class="govuk-body">If the reason is not listed, <a class="govuk-link" href="/agent/hrt-v4/filtering/presence.html">skip this question</a>.</p>
+    <!-- <p class="govuk-body">If the reason is not listed, <a class="govuk-link" href="/agent/hrt-v4/filtering/presence.html">skip this question</a>.</p> -->
 
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
@@ -64,6 +64,13 @@ Travel reason
         Work
       </label>
     </div>
+    <div class="govuk-radios__divider">or</div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="exemption-8" name="exemptions" type="radio" value="true" >
+      <label class="govuk-label govuk-radios__label" for="exemption-8">
+        Other reason or not known
+      </label>
+    </div>
     </div>
   </fieldset>
 </div>
@@ -77,7 +84,7 @@ Travel reason
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v5/filtering/check-trip-details-1.html"
+                href: "/agent/hrt-v6/filtering/abroad-summary.html"
               }) }}
 
               {{ govukButton({
@@ -87,7 +94,7 @@ Travel reason
               }) }}
             </div>
 
-            <p><a class="govuk-link" href="#">Clear selection</a></p>
+            <!-- <p><a class="govuk-link" href="#">Clear selection</a></p> -->
 
             <script>
           function check() {

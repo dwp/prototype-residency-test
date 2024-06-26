@@ -26,9 +26,9 @@ dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h2 class="govuk-fieldset__heading">
+      <h1 class="govuk-fieldset__heading">
         Have they been abroad for more than 4 weeks at a time in the last 3 years?
-      </h2>
+      </h1>
     </legend>
     
    <div id="nationality-hint" class="govuk-hint">
@@ -82,12 +82,12 @@ function check1() {
     }
   }
   if (!hasSelection) {
-    window.location.href = "/agent/hrt-v5/filtering/abroad-error.html";
+    window.location.href = "/agent/hrt-v6/filtering/abroad-error.html";
   } else {
     if (document.getElementById("abroad-yes").checked) {
-        window.location.href = "/agent/hrt-v5/filtering/country.html"
+        window.location.href = "/agent/hrt-v6/filtering/country.html"
       } else {
-        window.location.href = "/agent/hrt-v5/outcome/check.html.html"
+        window.location.href = "/agent/hrt-v6/outcome/check.html.html"
       }}}
 </script>
 

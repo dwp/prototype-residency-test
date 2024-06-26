@@ -6,6 +6,7 @@ Past presence summary
 
 {% block beforeContent %}
 
+
     {{ super() }}
 
     {{ govukBackLink ({
@@ -20,30 +21,68 @@ Past presence summary
 <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <!-- <span class="govuk-caption-l">Past presence</span> -->
-
-          <h2 class="govuk-heading-l">You have added 1 trip</h2>
+          <h1 class="govuk-heading-l">Check your answers</h1>
           <div class="govuk-form-group">
-          
-            <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-                  Trip to <b>Spain</b>
-                </dt>
-                <dt class="govuk-summary-list__actions hmrc-summary-list__actions">
-                  <ul class="govuk-summary-list__actions-list">
-                    <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="/agent/hrt-v5/filtering/check-trip-details-1.html"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
-                    <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
-                  </ul>
-                </dt>
-              </div>
-            </dl>
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend">
-              <h1 class="govuk-fieldset__heading">
-                Total time: <b>13 weeks 4 days</b>
-              </h1>
-            </legend>
-          </div>
 
+            <h2 class="govuk-heading-m">Trip 1 details</h2>
+      <dl class="govuk-summary-list">
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Country
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            Spain
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/agent/hrt-v6/filtering/country.html">Change</a>
+          </dd> 
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Travel dates
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            20 Feb 2022 to 26 May 2022
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/agent/hrt-v6/filtering/abroad-dates.html">Change</a>
+          </dd> 
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Travel reason
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            Medical reason
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/agent/hrt-v6/filtering/travel-reason.html">Change</a>
+          </dd> 
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Total time
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            13 weeks 4 days
+          </dd>
+        </div>
+      </dl>  
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Remove Trip 1</a>
+      </p>
+
+      <br>
+
+      <p class="govuk-body">Total time for all: <b>13 weeks 4 days</b></p>
+
+          </div>
           <form method="post" novalidate action="">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
@@ -73,19 +112,18 @@ Past presence summary
 
               {% from "govuk/components/button/macro.njk" import govukButton %}
 
-              <div class="govuk-button-group">
-                {{ govukButton({
-                  text: "Continue",
-                  href: "/agent/hrt-v5/filtering/country-1.html"
-                 }) }}
-  
-                {{ govukButton({
-                  text: "Save and come back later",
-                  classes: "govuk-button--secondary",
-                  href: "#"
-                }) }}
-              </div>
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href: "/agent/hrt-v6/filtering/country-1.html"
+               }) }}
 
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "#"
+              }) }}
+            </div>
           </div>
           </form>
 
