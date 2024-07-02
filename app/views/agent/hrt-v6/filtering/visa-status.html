@@ -1,7 +1,7 @@
 {% extends "layouts/main-1.html" %}
 
 {% block pageTitle %}
-   Select nationality
+   Immigration status
 {% endblock %}
 
 {% block beforeContent %}
@@ -34,15 +34,9 @@
         
 <div class="govuk-form-group">
 
-      <h1 class="govuk-heading-l">
-        Immigration status
-      </h1>
+      <h1 class="govuk-heading-l">Immigration status</h1>
 
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h2 class="govuk-fieldset__heading">
-          What is their immigration status?
-        </h2>
-      </legend>
+      <h2 class="govuk-heading-m">What is their immigration status?</h2>
     
     <div class="govuk-radios" data-module="govuk-radios">
 
@@ -222,11 +216,9 @@
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        Do they have recourse to public funds?
-      </h1>
-    </legend>
+
+    <h2 class="govuk-heading-m">Do they have recourse to public funds?</h2>
+
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="yes" name="publicFunds" type="radio" value="yes">
