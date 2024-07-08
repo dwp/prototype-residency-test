@@ -1,7 +1,10 @@
 {% extends "layouts/main.html" %}
 
+
+{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
 {% set serviceName %}
- Residency test
+ Residency
+
 {% endset%}
 {% block header %}
 
@@ -17,7 +20,13 @@ container:true
 
 {% block beforeContent %}
 
+
+{% block pageTitle %}
+    Current address
+{% endblock %}
+
     {{ super() }}
+
 
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
@@ -29,6 +38,7 @@ container:true
         </span>
       </p>
     </div>
+
 
 {% endblock %}
 
@@ -45,11 +55,13 @@ container:true
   items: [
   {
     href: "",
-    text: "Accessibility statement (opens in new tab)"
+
+    text: "Accessibility statement"
   },
   {
-    href: "https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice-–-summary",
-    text: "Privacy (opens in new tab)"
+    href: "",
+    text: "Privacy notice"
+
   }
   ]
   }
