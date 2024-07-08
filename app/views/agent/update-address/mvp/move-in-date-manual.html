@@ -1,0 +1,93 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Start date
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            When did the customer start living at the new permanent address?
+          </h1>
+        </legend>
+        <div id="passport-issued-hint" class="govuk-hint">
+          For example, 27 3 2023.
+        </div>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day" name="start-date" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+<script>
+  function check3() {
+    console.log(document.getElementById("yes"))
+
+    if (document.getElementById("start-date-day").value && document.getElementById("start-date-month").value && document.getElementById("start-date-year").value ) {
+      window.location.href = "/agent/update-address/mvp/manual-entry-check.html"
+    } else {
+      window.location.href = "/agent/update-address/mvp/move-in-date-error-manual.html"
+    }
+
+  }
+</script>
+
+<button class="govuk-button" value= "true" data-module="govuk-button" onclick="check3()">Continue</button>
+
+<!-- <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Date not known
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you don't know the date when the customer moved in their new address, use the date DWP was notified of the change of address.
+  </div>
+</details> -->
+
+  </div>
+
+</div>
+
+{% endblock %}

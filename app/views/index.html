@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Residency prototypes
 {% endblock %}
 
 
@@ -125,8 +125,9 @@
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-		<h2 class="govuk-heading-m">View and update an address</h2>
+		<h2 class="govuk-heading-m">View and Update an Address</h2>
 		<p>Residency's journey for agents to view and update a customer's address.</p>
+
 		<p><strong class="govuk-tag govuk-tag--green">Completed</strong></p> 
 		<a href="/agent/agent-versions.html" class="govuk-button">Continue</a>
 
@@ -141,21 +142,9 @@
 
 		<h2 class="govuk-heading-m">Error pages</h2>
 		<p>List of error pages needed for our service.</p>
+
 		<p><strong class="govuk-tag govuk-tag--green">Completed</strong></p> 
-        <ul class="govuk-list">
-        <li>
-            <a class="govuk-link" href="/error_pages/agent/page-not-found-agent">Error 404</a>
-        </li>
-        <li>
-            <a class="govuk-link" href="/error_pages/agent/there-is-a-problem-with-the-service-agent">Error 500</a>
-        </li>
-        <li>
-            <a class="govuk-link" href="/error_pages/agent/service-unavailable-agent">Error 503</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/error_pages/agent/no-access-agent">No access</a>
-      </li>
-        </ul>
+		<a href="/agent/agent-versions.html" class="govuk-button">Continue</a>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -164,7 +153,16 @@
 		<p><strong class="govuk-tag govuk-tag--orange">In progress</strong></p> 
 		<a href="/agent/hrt-v2/agent-versions.html" class="govuk-button">Continue</a>
 
-           
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">  
+
+    <h2 class="govuk-heading-m">SQS UI</h2>
+		<p>Residency's designs for letting a user of SQS who wishes to delete a single message or all messages on the DLQ queue to confirm the operation before it is deleted.</p>
+		<p><strong class="govuk-tag govuk-tag--green">Completed</strong></p>
+		<a href="/agent/sqs/confirm-purge.html" class="govuk-button">View 'Confirm purge' screen</a> <br>
+		<a href="/agent/sqs/confirm-delete.html" class="govuk-button">View 'Confirm delete' screen</a>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">  
 
   </div>
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pathfinder">

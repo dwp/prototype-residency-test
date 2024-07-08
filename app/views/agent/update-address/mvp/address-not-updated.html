@@ -1,0 +1,47 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Address not updated
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    
+    <!-- <a href="javascript:history.back()" class="govuk-back-link">Back</a> -->
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">
+                  Address not updated
+                </h1>
+        
+            <p class="govuk-body">We could not update the customer’s address due to a technical problem. </p>
+
+            <p class="govuk-body">The address details were not saved. You will need to start again.</p>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Back to start",
+    href: "/agent/update-address/mvp/dashboard.html"
+  }) }}
+  
+</div>
+
+<!-- <div>
+  <a href="/agent/update-address/mvp/past-addresses/past-addresses.html" class="govuk-body-m">Past addresses
+</a>
+</div> -->
+        </div>
+
+</div>
+
+{% endblock %}

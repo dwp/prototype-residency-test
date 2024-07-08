@@ -7,17 +7,6 @@
 {% block beforeContent %}
 
     {{ super() }}
-
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag">
-          beta
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-        </span>
-      </p>
-    </div>
     
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -40,178 +29,204 @@
 
       </fieldset>
 
+      <br>
+
       <dl class="govuk-summary-list">
-       
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Claim details
+          </h3>
+        </legend>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
            Benefit
           </dt>
           
           <dd class="govuk-summary-list__value">
-            Pension Credit
+            Personal Independence Payment
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
-          </dd> 
+        
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Date of claim
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 Jan 2024
+          </dd>
+         
         </div>
       </dl>  
           
-            <dl class="govuk-summary-list">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                  Right to reside
-                </h1>
-              </legend>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                   Nationality
-                  </dt>
-                  
-                  <dd class="govuk-summary-list__value">
-                    French
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
-                    <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/nationality.html">Change</a> -->
-
-                  </dd> 
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                   Immigration status
-                  </dt>
-                  
-                  <dd class="govuk-summary-list__value">
-                    EU pre-settled
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/visa-status.html">Change</a> -->
-                    <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/visa-status.html">Change</a> -->
-
-                  </dd> 
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                   Share code
-                  </dt>
-                  
-                  <dd class="govuk-summary-list__value">
-                    9XY-6GY-2S2
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/visa-status.html">Change</a> -->
-                    <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/share-code.html">Change</a> -->
-
-                  </dd> 
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                   Expiration date
-                  </dt>
-                  
-                  <dd class="govuk-summary-list__value">
-                    27 Dec 2023
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/visa-status.html">Change</a> -->
-                    <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/share-code.html">Change</a> -->
-
-                  </dd> 
-                </div>
-              
-            </dl>  
+      <dl class="govuk-summary-list">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Right to reside
+          </h3>
+        </legend>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Nationality
+            </dt>
             
-            <dl class="govuk-summary-list">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                  Presence
-                </h1>
-              </legend>
-              
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Presence
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                   Lives in the UK
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
-                    <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
+            <dd class="govuk-summary-list__value">
+              French
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Immigration status
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              EU pre-settled
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Recourse to public funds
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Status valid from
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+            10 Jan 2020
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Status expiry date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10 Jan 2025
+            </dd>
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Share code
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              9XY 6GY 2S2
+            </dd>
+            
+          </div>
+         
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Share code expiry date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25 Apr 2024
+            </dd>
+            
+          </div>
+      </dl>  
+            
+      <dl class="govuk-summary-list">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Presence
+          </h3>
+        </legend>
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Lives in UK, Isle of Man or Channel Islands
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Yes
+            </dd>
+           
+          </div>
+      </dl>   
 
-                  </dd> 
-                </div>
-            </dl>   
+      <dl class="govuk-summary-list">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Past presence
+          </h3>
+        </legend>
+       
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            In UK, Isle of Man or Channel Islands for at least 104 weeks
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Yes
+          </dd>
+          
+        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Been abroad for more than 4 weeks at a time
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Yes
+            </dd>
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to Spain</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              20 Feb 2022 to 26 May 2022
+            </dt>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to France</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              15 May 2023 to 10 Jul 2023
+            </dt>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to United States</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              1 Oct 2023 to 5 Jan 2024
+            </dt>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Exemptions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+          </div>
 
-            <dl class="govuk-summary-list">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                  Past presence
-                </h1>
-              </legend>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Travel abroad
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 Yes
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="#">Evidence requried</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/presence.html">Change</a> -->
-                  <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/abroad-6months-3years.html">Change</a> -->
-
-                </dd> 
-                
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Travel destination
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  France
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/country.html">Change</a> -->
-                </dd> 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Travel dates
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  25 Feb 2023 to 26 Jun 2023
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/abroad-dates.html">Change</a> -->
-                </dd> 
-              </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Exemptions
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    None
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <!-- <a class="govuk-link" href="/agent/hrt-v3/filtering/exemptions.html">Change</a> -->
-                  </dd> 
-                </div>
-
-            </dl>   
+      </dl>  
 
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Save and continue",
+                text: "Continue",
                 href: "/agent/hrt-v4/outcome/evidence-decision-maker.html"
             
               }) }}
             
               {{ govukButton({
-                text: "Save and exit",
+                text: "Save and come back later",
                 classes: "govuk-button--secondary",
-                href: "/agent/hrt-v4/outcome/reference-number-saved.html"
+                href: "/agent/hrt-v4/progress-saved-dm.html"
               }) }}
             </div>
 

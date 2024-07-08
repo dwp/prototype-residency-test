@@ -1,0 +1,204 @@
+dwp-res-prototype{% extends 'layout-agent-no-details-hrt.html' %}
+
+{% block pageTitle %}
+    Case tasks
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-fieldset__heading">
+  Case tasks
+</h1>
+</legend>
+
+<div id="dob-hint" class="govuk-hint">
+  Enter the case reference number or benefit line to filter through the list.
+</div>
+
+<div><input class="govuk-input govuk-input--width-10" id="country" name="country" type="text" autocomplete="country"></div>
+
+<br>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Sort by
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="published">Recently added</option>
+    <option value="updated" selected>Recently updated</option>
+    <option value="comments">Reference number</option>
+    <option value="comments">Benefit line</option>
+    <option value="comments">Status</option>
+  </select>
+</div>
+
+<br>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Reference number</th>
+      <th scope="col" class="govuk-table__header">Benefit line</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">OPJ2123G</a></th>
+      <td class="govuk-table__cell">Pension Credit</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--red">
+          Waiting on
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">MNJ2123R</a></th>
+      <td class="govuk-table__cell">Carer’s Allowance</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">
+          In progress
+        </strong>
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">LKJ2123X</a></th>
+      <td class="govuk-table__cell">Pension Credit</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--blue">
+          To do
+        </strong>
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">XDJ2123V</a></th>
+      <td class="govuk-table__cell">Attendance Allowance</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          Completed
+        </strong>
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">REJ2123T</a></th>
+      <td class="govuk-table__cell">Attendance Allowance</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">
+          In progress
+        </strong>
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">TBJ2123G</a></th>
+      <td class="govuk-table__cell">Disability Living Allowance</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">
+          In progress
+        </strong>
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">GUJ2123M</a></th>
+      <td class="govuk-table__cell">Pension Credit</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--red">
+          Waiting on
+        </strong>
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">VPJ2123I</a></th>
+      <td class="govuk-table__cell">Personal Independence Payment</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--blue">
+         To do
+        </strong>
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">KDJ2123S</a></th>
+      <td class="govuk-table__cell">Pension Credit</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">
+          In progress
+        </strong>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+      {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+      {{ govukPagination({
+        previous: {
+          href: "reference-number.html"
+        },
+        next: {
+          href: "reference-number-3.html"
+        },
+        items: [
+          {
+            number: 1,
+            href: "reference-number.html"
+          },
+          {
+            number: 2,
+            current: true,
+            href: "reference-number-2.html"
+          },
+          {
+            number: 3,
+            href: "reference-number-3.html"
+          }
+        ]
+      }) }}
+
+      <!-- <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            The case task I am searching for is not listed
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If the case task you are looking for is not listed, you should check that the case reference number or benefit line are entered correctly.
+          <br>
+          <br>
+          If the case task is still not listed you can <a href="/agent/hrt-v4/outcome/reference-number-manual.html">enter the case reference number manually</a> instead.
+        </div>
+      </details> -->
+      
+            <!-- <div>
+              <a href="/agent/hrt-v4/outcome/reference-number-manual.html" class="govuk-body-m">The case task I am searching for is not listed
+            </a>
+            </div> -->
+      </fieldset>
+      </div>
+      
+      </div>
+      </div>
+      
+      {% endblock %}

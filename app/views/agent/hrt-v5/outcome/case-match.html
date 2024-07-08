@@ -1,0 +1,121 @@
+dwp-res-prototype{% extends 'layout-agent-no-details-hrt.html' %}
+
+{% block pageTitle %}
+Case task match
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <div class="govuk-notification-banner" role="region"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">We have found a case task that matches your input: <br> </p>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Reference number</th>
+          <th scope="col" class="govuk-table__header">Benefit line</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="/agent/hrt-v4/outcome/check-decision-maker.html">HDJ2123F</a></th>
+          <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+              To do
+            </strong>
+          </td>
+        </tr>
+        </tbody>
+        </table>
+  </div>
+</div>
+
+<fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      Do you want to process the case above?
+    </h1>
+  </legend>
+ <div id="changed-name-hint" class="govuk-hint">
+    If you select 'Yes', you will enter the case task above.
+  </div>
+  <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="yes" name="type" type="radio" value="true">
+      <label class="govuk-label govuk-radios__label" for="yes">
+        Yes, enter this case
+      </label>
+      <!-- <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+        Select Yes, if you want us to update your input.
+      </div> -->
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="no" name="type" type="radio" value="false">
+      <label class="govuk-label govuk-radios__label" for="no">
+        No, search again
+      </label>
+      <!-- <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+        The customer is expecting to live at this address for less than 13 weeks.
+      </div> -->
+    </div>
+  </div>
+  </fieldset>
+
+      <!-- <div>
+        <a href="/agent/hrt-v4/outcome/reference-number-manual.html" class="govuk-body-m">Search again
+      </a>
+      </div> -->
+</fieldset>
+</div>
+
+<button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button>
+
+<script>
+  function check() {
+    console.log('in function')
+    var radios = document.getElementsByName("type");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
+    }
+    if (!hasSelection) {
+      window.location.href = "/agent/hrt-v4/outcome/reference-number-match-error.html";
+    } else {
+      if (document.getElementById("yes").checked) {
+        window.location.href = "/agent/hrt-v4/outcome/check-right-to-reside.html"
+      } else {
+        window.location.href = "/agent/hrt-v4/outcome/reference-number-manual.html"
+      }}}
+</script>
+
+</div>
+</div>
+
+{% endblock %}

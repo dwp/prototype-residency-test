@@ -1,0 +1,74 @@
+{% extends 'layout-agent-no-details-hrt.html' %}
+
+{% block pageTitle %}
+    Asses a customer's HRT
+{% endblock %}
+
+{% block beforeContent %}
+
+<style>
+  .card {
+  background-color: rgb(227, 227, 227);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 auto;
+  }
+  </style>
+
+    {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <br>
+
+                <h1 class="govuk-heading-l">Determine a customer’s habitual residence</h1>
+
+                <br>
+
+                <!-- <div style="display: inline-block;">
+                <h2 class="govuk-heading-m"><a class="govuk-link" href="/agent/hrt-v4/identification/all.html">Collect case details</a></h2>
+                <p>
+                  Collect habitual residency details for a customer, or resume an existing case.
+                </p>
+                </div>
+
+
+                <div style="display: inline-block;">
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="/agent/hrt-v4/identification/all-dm.html">Record decision</a></h2>
+                <p>
+                  Review details and record a decision about a customer’s habitual residency, or resume a decision in progress.
+                </p>
+                </div> -->
+
+                <div class="govuk-grid-column-one-half" style="padding-left: 0; padding-right: 20px;">
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="/agent/hrt-v5/identification/all.html">Collect case details</a></h2>
+                  <p class="govuk-body"> Collect habitual residence details for a customer, or resume an existing case.</p>
+                  
+                </div>
+
+                <div class="govuk-grid-column-one-half" style="padding: 0;">
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="/agent/hrt-v5/identification/all-dm.html">View case details or record decision</a></h2>
+                  <p class="govuk-body">View details or record a decision about a customer’s habitual residence, or resume a decision in progress.</p>
+                  
+                </div>
+
+           
+          </div>
+          </form>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

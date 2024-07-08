@@ -8,17 +8,6 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
     {{ super() }}
 
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag">
-          beta
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-        </span>
-      </p>
-    </div>
-
 {% endblock %}
 
 {% block content %}
@@ -27,9 +16,25 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
         <div class="govuk-grid-column-two-thirds">
 
+          <!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Your response has been recorded
+    </h3>
+    <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p>
+  </div>
+</div> -->
+
 <div class="govuk-panel govuk-panel--confirmation">
   <h1 class="govuk-panel__title">
-    Customer details submitted
+    Habitual residency details complete
   </h1>
   <div class="govuk-panel__body">
     Case reference number<br><strong>HDJ2123F</strong>
@@ -38,34 +43,14 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 <br>
 <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
 <h2 class="govuk-heading-m">What to do next</h2>
+
 <p class="govuk-body">
-  Send the case to a decision maker to review the customer's details.
+  You can continue processing the rest of the claim until a decision is needed on the customer’s habitual residency.
 </p>
 
-{{ govukButton({
-  text: "Send case",
-href: "/agent/hrt-v4b/outcome/end-processing-agent-1.html"
+<p class="govuk-body govuk-!-margin-bottom-0"><a href="/agent/hrt-v4b/outcome/check-decision-maker.html" class="govuk-link">Make a decision on this case</a></p>
 
-}) }}
-
-<!-- <p class="govuk-body">
-  Ask the customer to provide proof of the following: 
-</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>none</li>
-
-</ul> -->
-
-<!-- {% from "govuk/components/button/macro.njk" import govukButton %}
-
-<div class="govuk-button-group">
-
-  {{ govukButton({
-    text: "Generate list of evidence required",
-    classes: "govuk-button--secondary",
-    href: "#"
-  }) }}
-</div> -->
+</fieldset>
 
              <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
   Continue

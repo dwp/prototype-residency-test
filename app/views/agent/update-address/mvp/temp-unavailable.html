@@ -1,0 +1,36 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    Service unavailable
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">You can only update a permanent address with this online service currently</h1>
+      <p class="govuk-body">To update a temporary address, use your regular processes.</p>
+<br>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  
+  {{ govukButton({
+    text: "Back to current address",
+    href: "/agent/update-address/mvp/current-address.html"
+  }) }}
+
+</div>
+
+       <!-- <p class="govuk-body"> When the functionality is available, you will have to start again.</p> -->
+    </div>
+  </div>
+{% endblock %}

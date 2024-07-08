@@ -1,0 +1,127 @@
+dwp-res-prototype{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+   Response recorded
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- <div class="govuk-exit-this-page" data-module="govuk-exit-this-page"><a href="/agent/hrt-v4/outcome/reference-number.html" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-exit-this-page__button govuk-js-exit-this-page-button" data-module="govuk-button" rel="nofollow noreferrer">
+  <span class="govuk-visually-hidden">Emergency</span> Exit this page
+</a></div> -->
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Your response regarding case <b> HDJ2123F </b> has been recorded. John Smith</b> is habitually resident.
+    </h3>
+    <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
+  </div>
+</div>
+
+<div class="govuk-inset-text">
+  You can find more about the reason behind your determination below.
+</div>
+
+<!-- <p class="govuk-body">You can find more about the reason behind your determination below.</p> -->
+
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Right to reside
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <p class="govuk-body"><b>John Smith</b> has the right to reside in the UK, Isle of Man or Channel Islands.</p>
+      <p class="govuk-body">You have reviewed the following evidence:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Proof nationality</li>
+          <li>Proof of immigration status</li>
+          </ul>
+      </p>
+
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          Presence
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      <p class="govuk-body"><b>John Smith</b> satisfies the presence conditions.</p>
+      <p class="govuk-body">You have reviewed the following evidence:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Proof of presence in the UK, Isle of Man or Channel Islands</li>
+          </ul>
+      </p>
+
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+          Past presence
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+      <p class="govuk-body"><b>John Smith</b> satisfies the past presence test.</p>
+      <p class="govuk-body">You have reviewed the following evidence:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Proof of travel abroad</li>
+          </ul>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<!-- <p class="govuk-body">Please continue with the claim process.</p> -->
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Back to case tasks",
+  href: "/agent/hrt-v4/outcome/reference-number-done.html"
+}) }}
+
+</form>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}

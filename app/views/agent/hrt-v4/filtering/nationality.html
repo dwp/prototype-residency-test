@@ -1,4 +1,4 @@
-dwp-res-prototype{% extends 'layout-agent.html' %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
    Select nationality
@@ -12,7 +12,7 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
       Beta
     </strong>
     <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      This is a new service – to help us improve it, <a class="govuk-link" href="https://forms.microsoft.com/e/mR3DLwkxg7" target="_blank">give feedback (opens in new tab)</a>.
     </span>
   </p>
 </div>
@@ -97,7 +97,7 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
 <div class="govuk-button-group">
   <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">
-    Save and continue
+    Continue
     </button>
   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Save and come back later
@@ -119,10 +119,10 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
       window.location.href = "/agent/hrt-v4/filtering/nationality-error.html";
     } else {
         if (document.getElementById("nationality").checked) {
-          window.location.href = "/agent/hrt-v4/filtering/presence.html"
+          window.location.href = "/agent/hrt-v4b/filtering/presence.html"
         } else {
           if (document.getElementById("nationality-2").checked) {
-          window.location.href = "/agent/hrt-v4/filtering/presence.html"
+          window.location.href = "/agent/hrt-v4b/filtering/presence.html"
           } else{ 
             window.location.href = "/agent/hrt-v4/filtering/visa-status.html"
         }

@@ -1,0 +1,135 @@
+{% extends 'layout-agent-no-details-hrt.html' %}
+
+{% block pageTitle %}
+    Additional customer's details
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/citizen/habitual_residency_test/simple_hrt_v8a/fuzzy_logic.html" class="form">
+            <!-- <span class="govuk-caption-l">Identification</span> -->
+
+                <h1 class="govuk-heading-l">Additional customer’s details</h1>
+             
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">
+                    First name
+                  </label>
+                  <input class="govuk-input" id="full-name" name="fullName" type="text" value="Joe" spellcheck="false" autocomplete="name">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">
+                    Middle name
+                  </label>
+                  <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">
+                    Last name
+                  </label>
+                  <input class="govuk-input" id="full-name" name="fullName" type="text" value="Smith" spellcheck="false" autocomplete="name">
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                    <legend class="govuk-fieldset__legend">
+                      Date of birth
+                    </legend>
+                    <div id="passport-issued-hint" class="govuk-hint">
+                      For example, 27 3 2007.
+                    </div>
+                    <div class="govuk-date-input" id="passport-issued">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" value="4" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" value="6" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" value="1952" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-postcode">
+                    Postcode
+                  </label>
+                  <input class="govuk-input govuk-input--width-5" id="address-postcode" name="address-postcode" type="text" value="BA1 9PJ" autocomplete="postal-code">
+                </div>
+              
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-line-1">
+                    Building number or name
+                  </label>
+                 <div id="searchString-hint" class="govuk-hint">
+                  For example, 15 or Prospect Cottage.
+              </div>
+                  <input class="govuk-input govuk-input--width-10" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="telephone-number">
+                    Telephone number
+                  </label>
+                  <div id="telephone-number-hint" class="govuk-hint">
+                    For international numbers include the country code.
+                  </div>
+                  <input class="govuk-input govuk-input--width-10" id="telephone-number" name="telephoneNumber" type="tel" aria-describedby="telephone-number-hint" autocomplete="tel">
+                </div>
+  
+<!--   
+               <button class="govuk-button" data-module="govuk-button" >
+    Continue
+  </button> -->
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Find customer",
+    href: "/agent/hrt-v5/filtering/benefit.html"
+  }) }}
+           
+          </div>
+          </form>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

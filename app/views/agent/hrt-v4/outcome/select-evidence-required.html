@@ -7,17 +7,6 @@
 {% block beforeContent %}
 
     {{ super() }}
-
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag">
-          beta
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-        </span>
-      </p>
-    </div>
     
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -29,6 +18,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Evidence</span>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
@@ -54,6 +44,18 @@
               </label>
             </div>
             <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="countries-1" name="countries" type="checkbox" value="portugal">
+              <label class="govuk-label govuk-checkboxes__label" for="countries-1">
+                Proof of recourse to public funds
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="countries-1" name="countries" type="checkbox" value="portugal">
+              <label class="govuk-label govuk-checkboxes__label" for="countries-1">
+                Proof of being exempt from immigration control
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="other">
               <label class="govuk-label govuk-checkboxes__label" for="countries-2">
                 Proof of presence in the UK, Isle of Man or Channel Islands
@@ -75,22 +77,35 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
               <label class="govuk-label govuk-checkboxes__label" for="countries-5">
-                None
+                No evidence required
               </label>
             </div>
           </div>
         </fieldset>
       </div>
 
-            {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
             <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href: "/agent/hrt-v4/outcome/check.html"
+              }) }}
+
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "#"
+              }) }}
+            </div>
+
+            <!-- <div class="govuk-button-group">
               {{ govukButton({
                 text: "Confirm",
                 href: "/agent/hrt-v4/outcome/end-processing-agent.html"
 
               }) }}
-            </div>
+            </div> -->
 
     </div>
 </div>

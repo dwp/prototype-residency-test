@@ -1,23 +1,12 @@
 {% extends 'layout-agent.html' %}
 
 {% block pageTitle %}
-Error - UK address
+Error - Find address
 {% endblock %}
 
 {% block beforeContent %}
 
 {{ super() }}
-
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -28,24 +17,24 @@ Error - UK address
 
 {% block content %}
 
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-    <h2 class="govuk-error-summary__title" id="error-summary-title">
-      There is a problem
-    </h2>
-    <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="#address-postcode">Enter a full UK, Isle of Man or Channel Islands postcode</a>
-        </li>
-        <li>
-          <a href="#address-number">Enter a building number or name</a>
-        </li>
-      </ul>
-    </div>
-    </div>
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#address-postcode">Enter a full UK, Isle of Man or Channel Islands postcode, for example, AA3 1AB</a>
+          </li>
+          <li>
+            <a href="#address-number">Enter a building number or name</a>
+          </li>
+        </ul>
+      </div>
+      </div>
 
     <div class="govuk-form-group govuk-form-group--error">
 <fieldset class="govuk-fieldset">
@@ -69,7 +58,7 @@ Error - UK address
     For example, AA3 1AB.
 </div>
   <p id="address-postcode-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter a full UK, Isle of Man or Channel Islands postcode
+    <span class="govuk-visually-hidden">Error:</span> Enter a full UK, Isle of Man or Channel Islands postcode, for example, AA3 1AB
   </p>
   <input class="govuk-input govuk-input--width-5 govuk-input--error" id="address-postcode" name="address-postcode" type="text" aria-describedby="address-postcode-error" autocomplete="address-postcode">
 

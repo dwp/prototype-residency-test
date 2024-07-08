@@ -8,17 +8,6 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
     {{ super() }}
 
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag">
-          Beta
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-        </span>
-      </p>
-    </div>
-
     {{ govukBackLink ({
         text: 'Back',
         href: 'javascript:history.back()'
@@ -36,11 +25,15 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
   <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Based on the information you have reviewed, are they habitually resident?
+        Is the customer habitually resident?
       </h1>
     </legend>
+
+    <div id="changedName-hint" class="govuk-hint">
+      You must base your decision on the reviewed information and evidence.
+    </div>
   
-    <div class="govuk-radios govuk-radios--inline">
+    <div class="govuk-radios govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
         <label class="govuk-label govuk-radios__label" for="nationality">
@@ -62,15 +55,15 @@ dwp-res-prototype{% extends 'layout-agent.html' %}
 
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Save and continue",
+    text: "Continue",
     href: "/agent/hrt-v4/outcome/check-dm.html"
 
   }) }}
 
   {{ govukButton({
-    text: "Save and exit",
+    text: "Save and come back later",
     classes: "govuk-button--secondary",
-    href: "/agent/hrt-v4/outcome/reference-number-save.html"
+    href: "/agent/hrt-v4/progress-saved-dm.html"
   }) }}
 </div>
 

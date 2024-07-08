@@ -1,0 +1,45 @@
+{% extends 'layout-agent-no-details-hrt.html' %}
+
+{% block pageTitle %}
+    No match
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+  <h1 class="govuk-heading-l">Customer not found</h1>
+
+  <p>There is no record matching <b>Joe Smith</b>, <b>4 6 1952</b> and <b>BA1 9PJ</b>.</p>
+
+  <p>Check the customer’s details and try again.</p>
+
+  <p>If you keep getting this message, try searching for the customer in Searchlight.</p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Go back",
+      href: "/agent/hrt-v5/identification/all.html"
+
+    }) }}
+  </div>
+ 
+ </div> 
+ </div>
+
+{% endblock %}

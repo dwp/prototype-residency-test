@@ -1,0 +1,137 @@
+dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
+
+{% block pageTitle %}
+Past presence summary
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <!-- <span class="govuk-caption-l">Past presence</span> -->
+
+          <h2 class="govuk-heading-l">You have added 1 trip</h2>
+          <div class="govuk-form-group">
+          
+            <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                  Trip to <b>Spain</b>
+                </dt>
+                <dt class="govuk-summary-list__actions hmrc-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="/agent/hrt-v5/filtering/check-trip-details-1.html"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
+                    <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
+                  </ul>
+                </dt>
+              </div>
+            </dl>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+              <h1 class="govuk-fieldset__heading">
+                Total time: <b>13 weeks 4 days</b>
+              </h1>
+            </legend>
+          </div>
+
+          <form method="post" novalidate action="">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
+                  Do you need to add another trip?
+                </legend>
+                <!-- <div id="add-another-hint" class="govuk-hint">
+                  You must tell us about all trips abroad.
+                </div> -->
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="add-another">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="add-another-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+          
+              </fieldset>
+              <br>  
+
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Continue",
+                  href: "/agent/hrt-v5/filtering/country-1.html"
+                 }) }}
+  
+                {{ govukButton({
+                  text: "Save and come back later",
+                  classes: "govuk-button--secondary",
+                  href: "#"
+                }) }}
+              </div>
+
+          </div>
+          </form>
+
+<!-- {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "What to do if the customer has traveled from several countries?",
+  text: "If the customer has travelled from several countries, enter the one they have spent the most time in."
+}) }} -->
+                  
+<!-- <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+  Continue
+</button> -->
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("presence");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/continue_application_error.html";
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/confirm_residence.html"
+
+  }
+}
+</script>
+
+        </div>
+
+</div>
+ 
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

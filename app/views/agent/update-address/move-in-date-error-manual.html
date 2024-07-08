@@ -8,17 +8,6 @@ Error - Start date
 
 {{ super() }}
 
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
   
 {% endblock %}
@@ -37,10 +26,7 @@ Error - Start date
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#passport-issued-day">Enter a start date</a>
-            </li>
-            <li>
-              <a href="#passport-issued-day">The start date must be in the past</a>
+              <a href="#start-date-day">Start date must be from 1 January 2023 to 5 April 2024</a>
             </li>
           </ul>
         </div>
@@ -58,12 +44,12 @@ Error - Start date
       For example, 27 3 2023.
     </div>
     <p id="passport-issued-error" class="govuk-error-message">
-      <span class="govuk-visually-hidden">Error:</span> Enter a start date
+      <span class="govuk-visually-hidden">Error:</span>Start date must be from 1 January 2023 to 5 April 2024
     </p>
-    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input">
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          <label class="govuk-label govuk-date-input__label" for="start-date-day">
             Day
           </label>
           <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="start-date-day" name="passport-issued-day" type="text" inputmode="numeric">
@@ -71,7 +57,7 @@ Error - Start date
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          <label class="govuk-label govuk-date-input__label" for="start-date-month">
             Month
           </label>
           <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="start-date-month" name="passport-issued-month" type="text" inputmode="numeric">
@@ -79,7 +65,7 @@ Error - Start date
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          <label class="govuk-label govuk-date-input__label" for="start-date-year">
             Year
           </label>
           <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="start-date-year" name="passport-issued-year" type="text" inputmode="numeric">

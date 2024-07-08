@@ -1,0 +1,55 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    No results found
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+{% endblock %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">No address found</h1>
+  <p>We could not find an address that matches <b>NE3 1YL</b> and <b>5</b>.</p>
+  <p>
+    Follow these steps:
+    <ol class="govuk-list govuk-list--number">
+      <li>Check the format of any flat numbers - for example, Flat 2/2 may be known as Flat 4.</li>
+      <li>Confirm the postcode and building number or name - if any are incorrect, <a href="/agent/update-address/update-address-1.html">search again</a>.</li>
+      <li>If you have done the first 2 steps, and the address is still not listed, then you can <a href="/agent/update-address/update-address-manual-entry.html">enter the address manually</a>.</li>
+    </ol>
+  </p>
+
+  <!-- <p><a href="/agent/update-address/update-address-1.html">Search again</a></p> -->
+  <!-- <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Enter address manually
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      If the address you are looking for is not listed, you should check:
+      <ul>
+        <li>
+          the postcode and building number or name are correct
+        </li>
+        <li>
+          how any flat numbers are displayed, for example Flat 2/2 could also be known as Flat 4
+        </li>
+      </ul>
+      If the customer's address is still not listed you can <a href="/agent/update-address/update-address-manual-entry.html">enter the customer's address details manually</a> instead, but this may make it more difficult to search for the address in future.
+    </div>
+  </details> -->
+  <!-- <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p> -->
+  </div> 
+</div>
+{% endblock %}
