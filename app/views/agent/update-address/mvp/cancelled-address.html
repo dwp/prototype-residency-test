@@ -10,9 +10,6 @@
     
     <!-- <a href="javascript:history.back()" class="govuk-back-link">Back</a> -->
 
-    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
-      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
-
 {% endblock %}
 
 {% block content %}
@@ -33,97 +30,91 @@
             </div>
           </div>
 
-     
           <h1 class="govuk-heading-l">
                   Customer’s address information
                 </h1>
-            
+          
 
-            {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+     Current address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      18 Burdett House <br> Main Street <br> Guildford <br> GU79 6YW
+      </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
+      
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Start date
+    </dt>
+     <dd class="govuk-summary-list__value">
+      5 January 2021
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
+  
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address type
+    </dt>
+     <dd class="govuk-summary-list__value">
+      <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
+        Permanent residential
+      </strong>
+    </dd>
+    
+  </div>
+  <!-- <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address status
+    </dt>
+     <dd class="govuk-summary-list__value">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: none;">
+        Person Without Accommodation (PWA)
+      </strong>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd> 
+    
+  </div> -->
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Updated
+    </dt>
+     <dd class="govuk-summary-list__value">
+     7 January 2021
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
+  
+  </div>
+  </dl>
 
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                 Current address
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  5 Wellington House <br> Windsor Street <br> South Gosforth<br> Newcastle upon Tyne <br> NE3 1YL
-                  </dd>
-                  <!-- <dd class="govuk-summary-list__actions">
-                  </dd>  -->
-                  
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Start date
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  20 May 2023
-                </dd>
-                  <!-- <dd class="govuk-summary-list__actions">
-                </dd>  -->
-              
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Address type
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-                    Permanent residential
-                  </strong>
-                </dd>
-                <!-- <dd class="govuk-summary-list__actions">
-                </dd>  -->
-                
-              </div>
-              <!-- <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Address reason
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--grey" style="max-width: none;">
-                    Residential
-                  </strong>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                </dd> 
-                
-              </div> -->
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Updated
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  24 May 2023
-                </dd>
-                <!-- <dd class="govuk-summary-list__actions">
-                </dd>  -->
-              
-              </div>
-              </dl>
-
-            {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Continue",
-    href: "/agent/update-address/dashboard.html"
+    text: "Confirm",
+    href: "/agent/update-address/mvp/dashboard.html"
   }) }}
-<!-- 
+
   {{ govukButton({
-    text: "Change",
+    text: "Add new address",
     classes: "govuk-button--secondary",
-    href: "/agent/update-address/uk-or-international.html"
-  }) }} -->
+    href: "/agent/update-address/mvp/perm-or-temp.html"
+  }) }}
+  
 </div>
 
 <!-- <div>
-  <a href="/agent/updated-address-past-addresses.html" class="govuk-body-m">Past addresses
+  <a href="/agent/update-address/mvp/past-addresses/past-addresses.html" class="govuk-body-m">Past addresses
 </a>
 </div> -->
-            </form>
-
         </div>
 
 </div>
