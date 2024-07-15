@@ -45,7 +45,7 @@
           <label class="govuk-label govuk-radios__label" for="visa">
             EU Settlement Scheme
           </label>
-          <div id="EU-hint" class="govuk-hint govuk-radios__hint">For example, pre-settled or settled status.</div>
+          <div id="EU-hint" class="govuk-hint govuk-radios__hint">For example, pre-settled or settled status. Includes applications awaiting decision.</div>
         </div>
         <div class="govuk-radios__conditional" id="conditional-visa">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend">
@@ -96,27 +96,16 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                Indefinite leave to remain
+                Indefinite leave to remain or enter
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                Indefinite leave to enter
+              <input class="govuk-radios__input" id="whereDoYouLive-1" name="whereDoYouLive" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-1">
+                Indefinite leave to remain or enter (outside the Immigration Rules)
               </label>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                Indefinite leave to remain (outside the Immigration Rules)
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-                Indefinite leave to enter (outside the Immigration Rules)
-              </label>
-            </div></div>
+           </div>
         </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="visa-2" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-2">
@@ -135,36 +124,55 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                Limited leave to remain
+                Limited leave to remain or enter
               </label>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                Limited leave to enter
-              </label>
-            </div>
+           
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                Limited leave to remain (outside the Immigration Rules)
+                Limited leave to remain or enter (outside the Immigration Rules)
               </label>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-                Limited leave to enter (outside the Immigration Rules)
-              </label>
-            </div></div>
+            </div>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="visa-5" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-5">
-          <label class="govuk-label govuk-radios__label" for="nationality-5">
-            Resettlement schemes, humanitarian or refugee
+          <input class="govuk-radios__input" id="visa-3" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-3">
+          <label class="govuk-label govuk-radios__label" for="visa-3">
+            Humanitarian or refugee
+          </label>
+
+        </div>
+        <div class="govuk-radios__conditional" id="conditional-visa-3">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select status</b>
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Humanitarian protection
+              </label>
+            </div>
+           
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                Refugee
+              </label>
+            </div>
+            </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="visa-4" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-4">
+          <label class="govuk-label govuk-radios__label" for="visa-4">
+            Afghan, Ukraine or transnational marriage abandonment schemes
           </label>
           <!-- <div id="other-hint" class="govuk-hint govuk-radios__hint">For example, Afghan or Ukrainian resettlement scheme, or transnational marriage abandonment scheme.</div> -->
         </div>
-        <div class="govuk-radios__conditional" id="conditional-visa-5">
+        <div class="govuk-radios__conditional" id="conditional-visa-4">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend">
             <h1 class="govuk-fieldset__heading">
               <b>Select status</b>
@@ -184,30 +192,25 @@
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                Humanitarian protection
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="visa" type="radio" value="refugee">
+              <label class="govuk-label govuk-radios__label" for="visa-3">
+                Transnational marriage abandonment scheme
               </label>
+         
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="wales">
+              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-                Refugee
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-5" name="whereDoYouLive" type="radio" value="northern-ireland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-5">
-               Ukraine resettlement scheme
+               Ukraine schemes
               </label>
             </div></div>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="visa-3" name="visa" type="radio" value="refugee">
-          <label class="govuk-label govuk-radios__label" for="visa-3">
-            Transnational marriage abandonment scheme
+          <input class="govuk-radios__input" id="visa-5" name="visa" type="radio" value="foreign">
+          <label class="govuk-label govuk-radios__label" for="visa-5">
+            Frontier worker
           </label>
-     
+
         </div>
     </div>
 
@@ -217,7 +220,15 @@
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
 
-    <h2 class="govuk-heading-m">Do they have recourse to public funds?</h2>
+    <!-- <h2 class="govuk-heading-m">Do they have recourse to public funds?</h2> -->
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Do they have recourse to public funds?
+      </h2>
+    </legend>
+    <div id="public-funds-hint" class="govuk-hint">
+      If they are subject to immigration control, select no.
+    </div>
 
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
