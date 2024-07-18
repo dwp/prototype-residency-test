@@ -1,11 +1,10 @@
 {% extends "layout-agent-hrt.html" %}
 
 {% block pageTitle %}
-   Select nationality
+   Nationality
 {% endblock %}
 
 {% block beforeContent %}
-
 
     {{ super() }}
 
@@ -27,18 +26,10 @@
         What is their nationality?
       </h1>
 
-      <!-- <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-             What is their nationality?
-            </h1>
-          </legend> -->
-
     <div class="govuk-form-group">
-      <div id="nationality-hint" class="govuk-hint">
-        Enter their nationality in English.
-      </div>
+      <label class="govuk-label" for="nationality">
+        Enter their nationality
+      </label>
       <input class="govuk-input govuk-!-width-two-thirds" id="nationality" name="nationality" type="text" autocomplete="nationality">
     </div>
 
@@ -54,15 +45,13 @@
       </div>
       </div>
 
-
-  </fieldset>
 </div>
 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {{ govukDetails({
   summaryText: "If the customer has dual nationality or citizenship",
-  text: "Select the nationality on the identity documents you are using to process this case."
+  text: "Enter the nationality on the identity documents you are using to process this case. You can add their other nationality later."
 }) }}
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -70,7 +59,7 @@
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v6/filtering/visa-status.html"
+                href: "/agent/hrt-v6/filtering/dual-nationality.html"
 
               }) }}
 
