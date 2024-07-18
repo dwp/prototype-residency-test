@@ -1,7 +1,7 @@
 {% extends 'layouts/main-1.html' %}
 
 {% block pageTitle %}
-Share code
+Dual nationality
 {% endblock %}
 
 {% block beforeContent %}
@@ -45,15 +45,10 @@ Share code
           <!-- <span class="govuk-caption-l">Right to reside</span> -->
 
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        Do they have a share code?
+      <h1 class="govuk-heading-l">
+        Do they have dual nationality?
       </h1>
-    </legend>
-        
-        <div id="nationality-hint" class="govuk-hint">
-          This is a unique code issued by UK Visas and Immigration. It helps individuals to prove their immigration status in the UK.</div>
+
 
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
@@ -64,53 +59,10 @@ Share code
       </div>
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
         <div class="govuk-form-group">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
-            <h2 class="govuk-fieldset__heading">
-              <b>Share code</b>
-            </h2>
-          </legend>
-          <div id="postcode-hint" class="govuk-hint">
-            For example, A12 345 67G.
-        </div>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
-        </div>
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend">
-              <h1 class="govuk-fieldset__heading">
-                <b>Share code expiry date</b>
-              </h1>
-            </legend>
-            <div id="passport-issued-hint" class="govuk-hint">
-              For example, 27 3 2023.
-            </div>
-            <div class="govuk-date-input" id="passport-issued">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                    Day
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                    Year
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
-                </div>
-              </div>
-            </div>
-          </fieldset>
+          <label class="govuk-label" for="other-nationality">
+            Enter their other nationaliy
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
         </div>
       </div>
       <div class="govuk-radios__item">
@@ -126,7 +78,7 @@ Share code
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Continue",
-      href: "/agent/hrt-v6/filtering/presence.html"
+      href: "/agent/hrt-v6/filtering/visa-status.html"
   
     }) }}
   
