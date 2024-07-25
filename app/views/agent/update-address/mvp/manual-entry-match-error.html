@@ -17,6 +17,9 @@
 
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
 <div class="govuk-error-summary" data-module="govuk-error-summary">
   <div role="alert">
     <h2 class="govuk-error-summary__title">
@@ -32,10 +35,6 @@
   </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <div class="govuk-form-group govuk-form-group--error">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             Matching address found
@@ -49,7 +48,7 @@
           </strong>
         </div>
 
-<div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h1 class="govuk-fieldset__heading">
@@ -75,9 +74,9 @@
     </div>
     </fieldset>
   </div>
-</div>
 
   <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button>
+</div>
 
 <script>
   function check() {
