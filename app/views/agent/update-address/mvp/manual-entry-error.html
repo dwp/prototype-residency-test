@@ -28,13 +28,10 @@ Error - Manual address entry
         <a href="#address-line-1">Enter address line 1</a>
       </li>
       <li>
-        <a href="#address-town">Enter town or city</a>
+        <a href="#address-town">Enter a town or city</a>
       </li>
       <li>
         <a href="#address-postcode">Enter a full UK, Isle of Man or Channel Islands postcode, for example, AA3 1AB</a>
-      </li>
-      <li>
-        <a href="#location">Select a country</a>
       </li>
     </ul>
   </div>
@@ -108,26 +105,6 @@ Error - Manual address entry
         <input class="govuk-input govuk-input--width-10 govuk-input--error" id="address-postcode" name="address-postcode" type="text"  aria-describedby="address-postcode-error" autocomplete="postal-code">
 
     </div>
-
-    <div class="govuk-form-group govuk-form-group--error">
-      <label class="govuk-label" for="location">
-        Country
-      </label>
-      <p id="address-postcode-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Select a country
-      </p>
-      <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
-        <option value="choose" selected>Select country</option>
-        <option value="eastmidlands">England</option>
-        <option value="eastofengland">Scotland</option>
-        <option value="london">Wales</option>
-        <option value="northeast">Northern Ireland</option>
-        <option value="northwest">Isle of Man</option>
-        <option value="southeast">Jersey</option>
-        <option value="southwest">Guernsey</option>
-      </select>
-    </div>
-
     </div>
 
     <button class="govuk-button" value= "true" data-module="govuk-button" style="margin-bottom:50px;" onclick="check3()" >Continue</button>
@@ -146,7 +123,7 @@ Error - Manual address entry
     if (document.getElementById("address-line-1").value && document.getElementById("address-town").value && document.getElementById("address-postcode").value ) {
       window.location.href = "/agent/update-address/mvp/manual-entry-match.html"
     } else {
-      window.location.href = "/agent/update-address/mvp/manual-entry-error.html"
+      window.location.href = "/agent/update-address/mvp/manual-entry-error-old.html"
     }
 
   }
