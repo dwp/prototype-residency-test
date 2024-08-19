@@ -1,0 +1,122 @@
+{% extends 'layout-agent.html' %}
+
+{% block pageTitle %}
+    	Customer’s address information
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    
+    <!-- <a href="javascript:history.back()" class="govuk-back-link">Back</a> -->
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">
+                You cancelled the address update. The customer’s address has not been updated.
+              </p>
+            </div>
+          </div>
+
+          <h1 class="govuk-heading-l">
+                  Customer’s address information
+                </h1>
+          
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+     Current address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      18 Burdett House <br> Main Street <br> Guildford <br> GU79 6YW <br> England
+      </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
+      
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Start date
+    </dt>
+     <dd class="govuk-summary-list__value">
+      5 January 2021
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
+  
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address type
+    </dt>
+     <dd class="govuk-summary-list__value">
+      <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
+        Permanent residential
+      </strong>
+    </dd>
+    
+  </div>
+  <!-- <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address status
+    </dt>
+     <dd class="govuk-summary-list__value">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: none;">
+        Person Without Accommodation (PWA)
+      </strong>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd> 
+    
+  </div> -->
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Updated
+    </dt>
+     <dd class="govuk-summary-list__value">
+     7 January 2021
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+    </dd>  -->
+  
+  </div>
+  </dl>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Confirm",
+    href: "/agent/update-address/mvp/dashboard.html"
+  }) }}
+
+  {{ govukButton({
+    text: "Add new address",
+    classes: "govuk-button--secondary",
+    href: "/agent/update-address/mvp/perm-or-temp.html"
+  }) }}
+  
+</div>
+
+<!-- <div>
+  <a href="/agent/update-address/mvp/past-addresses/past-addresses.html" class="govuk-body-m">Past addresses
+</a>
+</div> -->
+        </div>
+
+</div>
+
+{% endblock %}
