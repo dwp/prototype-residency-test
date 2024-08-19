@@ -56,23 +56,20 @@ container:true
 {% if useAutoStoreData %}
   {% block footer %}
 
-  {% from "internal-service-footer/macro.njk" import dwpFooter %}
-
-  {{ dwpFooter({
-  meta: {
-  visuallyHiddenTitle: "Support links",
-  items: [
-  {
-    href: "",
-    text: "Accessibility statement (opens in new tab)"
-  },
-  {
-    href: "https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice-–-summary",
-    text: "Privacy (opens in new tab)"
-  }
-  ]
-  }
-  }) }} 
+  <footer class="govuk-footer">
+    <div class="govuk-width-container">
+    <h2 class="govuk-visually-hidden">Support links</h2>
+    <ul class="govuk-footer__inline-list">
+      <li class="govuk-footer__inline-list-item">
+        <a class="govuk-footer__link" rel="noreferrer noopener" target="_blank" href="">Accessibility statement (opens in new tab)</a>
+      </li>
+      <li class="govuk-footer__inline-list-item">
+        <a class="govuk-footer__link" rel="noreferrer noopener" target="_blank" href="https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice-–-summary">Privacy (opens in new tab)</a>
+      </li>
+    </ul>
+    </div>
+    </footer>
+    
   {% endblock %}
 {% endif %}
 
