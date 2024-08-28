@@ -33,6 +33,17 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">
+        Case details and decision summary
+      </h1>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body"><b>Status:</b> <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
+          Completed
+        </strong></p>
+        <p class="govuk-body"><b>Outcome:</b> Customer is habitually resident.</p>
+      </div>
+
             <form method="post">
 
                 <div class="govuk-tabs" data-module="govuk-tabs">
@@ -47,30 +58,13 @@
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#decision">
-        Decision
+        Decision summary
       </a>
     </li>
   </ul>
   <div class="govuk-tabs__panel" id="details">
 
     <h1 class="govuk-heading-l">Case details</h1>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-           Status
-          </dt>
-          
-          <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-                Complete: habitually resident
-              </strong>
-          </dd>
-        
-        </div>
-      </dl> 
 
     <h2 class="govuk-heading-m">Claim details</h2>
 
@@ -115,7 +109,7 @@
           </dt>
           
           <dd class="govuk-summary-list__value">
-            EU pre-settled
+            Pre-settled (limited leave to remain)
           </dd>
          
         </div>
@@ -139,7 +133,7 @@
           </dd>
          
         </div>
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
            Status expiry date
           </dt>
@@ -147,7 +141,7 @@
             10 Jan 2025
           </dd>
           
-        </div>
+        </div> -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
            Has share code
@@ -186,7 +180,7 @@
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Lives in Great Britain
+            Currently in Great Britain
           </dt>
           <dd class="govuk-summary-list__value">
            No
@@ -198,7 +192,7 @@
             Exemption from presence in Great Britain
           </dt>
           <dd class="govuk-summary-list__value">
-           I do not know
+           Armed forces or family member
           </dd>
          
         </div>
@@ -271,137 +265,38 @@
  
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="decision">
    
-    <h1 class="govuk-heading-l">Decision</h1>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-           Status
-          </dt>
-          
-          <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--green" style="max-width: none;">
-                Complete: habitually resident
-              </strong>
-          </dd>
-        
-        </div>
-      </dl> 
-    
-    <h2 class="govuk-heading-m">Presence exemption</h2>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-         Is previously recorded exemption correct
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p>No
-        </dd>
-       
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Updated exemption
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p>Airmen
-        </dd>
-       
-      </div>
-    </dl>  
-
-<h2 class="govuk-heading-m">Evidence reviewed</h2>
-  
-    <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-           Nationality and immigration status
-          </dt>
-          
-          <dd class="govuk-summary-list__value">
-          <ul class="govuk-list govuk-list--bullet">
-          <li>Proof of nationality</li>
-          <li>Proof of immigration status</li>
-          </ul>
-          </dd>
-         
-        </div>          
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-           Presence
-          </dt>
-          
-          <dd class="govuk-summary-list__value">
-            Proof of presence in Great Britain
-          </dd>
-         
-        </div>    
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-           Past presence
-          </dt>
-          
-          <dd class="govuk-summary-list__value">
-            No evidence required
-          </dd>
-          
-        </div>      
-    </dl>   
-
-<h2 class="govuk-heading-m">Decisions recorded</h2>
-
-    <dl class="govuk-summary-list">
-     
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-         Recourse to public funds
-        </dt>
-        
-        <dd class="govuk-summary-list__value">
-          Yes
-        </dd>
-        
-        
-      </div>   
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Meets presence condition 
-          </dt>
-          <dd class="govuk-summary-list__value">
-           Yes
-          </dd>
-          
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Passes the past presence test
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          
-        </div>
-
-    </dl>   
+    <h1 class="govuk-heading-l">Decision summary</h1>
 
     <h2 class="govuk-heading-m">Habitual residence</h2>
+                      
+    <p class="govuk-body">John Smith is habitually resident.</p>
 
-    <dl class="govuk-summary-list">
-     
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Habitually resident
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-        
-        </div>
+    <h2 class="govuk-heading-m">Nationality and immigration status</h2>
+                      
+    <p class="govuk-body">John Smith has recourse to public funds and, if applicable, an immigration status that allows this.</p>
+<p class="govuk-body">Evidence reviewed:
+<ul class="govuk-list govuk-list--bullet">
+<li>Proof of nationality</li>
+<li>Proof of immigration status</li>
+<li>Proof of recourse to public funds</li>
+<li>Proof of being exempt from immigration control</li>
+</ul>
+</p>
 
-    </dl>   
+<h2 class="govuk-heading-m">Presence</h2>
+<p class="govuk-body">John Smith has the following exemption from being present in Great Britain: Airmen.</p>
+<p class="govuk-body">John Smith meets the presence condition.</p>
+<p class="govuk-body">Evidence reviewed:
+<ul class="govuk-list govuk-list--bullet">
+<li>Proof of presence in Great Britain</li>
+</ul>
+</p>
+
+<h2 class="govuk-heading-m">Past Presence</h2>
+<p class="govuk-body">John Smith passes the past presence test.</p>
+<p class="govuk-body">Evidence reviewed:
+<li>Proof of travel abroad</li>
+</p>
 
   </div>
 
