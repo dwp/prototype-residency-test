@@ -1,0 +1,240 @@
+{% extends 'layout-agent-hrt.html' %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ 
+          <h1 class="govuk-heading-l">Case details</h1>
+      <h2 class="govuk-heading-m">Claim details</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+           Benefit
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            Personal Independence Payment
+          </dd>
+        
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Date of claim
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 Jan 2024
+          </dd>
+         
+        </div>
+      </dl>  
+          
+      <h2 class="govuk-heading-m">Nationality and immigration status</h2>
+
+      <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+             Nationality
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              French
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Immigration status
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              Pre-settled (limited leave to remain)
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Recourse to public funds
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Status valid from
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+            10 Jan 2020
+            </dd>
+           
+          </div>
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Status expiry date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10 Jan 2025
+            </dd>
+            
+          </div> -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Has share code
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Share code
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              9XY 6GY 2S2
+            </dd>
+            
+          </div>
+         
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Share code expiry date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25 Oct 2024
+            </dd>
+            
+          </div>
+      </dl>  
+
+      <h2 class="govuk-heading-m">Presence</h2>
+    
+      <dl class="govuk-summary-list">
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              Currently in Great Britain
+            </dt>
+            <dd class="govuk-summary-list__value">
+             No
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Exemption from presence in Great Britain
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Armed forces or family member
+            </dd>
+           
+          </div>
+      </dl>   
+
+      <h2 class="govuk-heading-m">Past presence</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Exemption from past presence test
+          </dt>
+          <dd class="govuk-summary-list__value">
+           None
+          </dd>
+          
+        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Been abroad for more than 4 weeks at a time
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Yes
+            </dd>
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to Spain</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                <li>20 Feb 2022 to 26 May 2022</li>
+                <li>Reason: Medical reason</li>
+                <li>Total time: 13 weeks 4 days</li>
+            </dt>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to France</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                <li>15 May 2023 to 10 Jul 2023</li>
+                <li>Reason: Visiting family</li>
+                <li>Total time: 8 weeks</li>
+            </dt>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Trip to United States</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <li>	1 Oct 2023 to 5 Jan 2024</li>
+              <li>Reason: Work</li>
+              <li>Total time: 13 weeks 5 days</li>
+            </dt>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              <b>Total time abroad</b>
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              35 weeks 2 days
+            </dt>
+          </div>
+      </dl>  
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href: "/agent/hrt-v8/outcome/check-exemptions-presence.html"
+            
+              }) }}
+            
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "/agent/hrt-v8/progress-saved-dm.html"
+              }) }}
+            </div>
+
+            <!-- <div>
+              <a href="/agent/hrt-v4/outcome/evidence-dm.html" class="govuk-body-m">Evidence provided
+            </a>
+            </div> -->
+
+    </div>
+</div>
+
+{% endblock %}

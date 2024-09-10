@@ -1,0 +1,54 @@
+{% extends 'layout-agent-no-details-hrt.html' %}
+
+{% block pageTitle %}
+    Asses a customer's HRT
+{% endblock %}
+
+{% block beforeContent %}
+
+<style>
+  .card {
+  background-color: rgb(227, 227, 227);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 auto;
+  }
+  </style>
+
+    {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Determine a customer’s habitual residence</h1>
+
+                <div class="govuk-grid-column-one-half" style="padding-left: 0;">
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="/agent/hrt-v8/identification/all.html">Collect or view case details</a></h2>
+                  <p class="govuk-body">Collect habitual residence details for a new or existing case, or view case details for a customer.</p>
+                  
+                </div>
+
+                <div class="govuk-grid-column-one-half">
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="/agent/hrt-v8/identification/all-dm.html">Record or view decision</a></h2>
+                  <p class="govuk-body">Record or view a decision about a customer’s habitual residence, or resume a decision in progress.</p>
+                  
+                </div>
+
+           
+          </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}
