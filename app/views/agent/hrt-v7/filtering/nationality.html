@@ -1,0 +1,104 @@
+{% extends "layout-agent-hrt.html" %}
+
+{% block pageTitle %}
+   Nationality
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+        
+<div class="govuk-form-group">
+      <h1 class="govuk-heading-l">
+        What is their nationality?
+      </h1>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="nationality">
+        Enter their nationality
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="nationality" name="nationality" type="text" autocomplete="nationality">
+    </div>
+
+</div>
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "If they have dual nationality or citizenship",
+  text: "Enter the nationality on the identity documents you are using to process this case. You can add their other nationality later."
+}) }}
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "If they are stateless",
+  text: "If they are not considered a national of any state, enter their nationality as Stateless."
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href: "/agent/hrt-v7/filtering/dual-nationality.html"
+
+              }) }}
+
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "#"
+              }) }}
+            </div>
+
+<!-- <script>
+  function check() {
+    console.log('in function')
+    var radios = document.getElementsByName("nationality");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
+    }
+    if (!hasSelection) {
+      window.location.href = "/agent/hrt-v4/filtering/nationality-error.html";
+    } else {
+        if (document.getElementById("nationality").checked) {
+          window.location.href = "/agent/hrt-v4b/filtering/presence.html"
+        } else {
+          if (document.getElementById("nationality-2").checked) {
+          window.location.href = "/agent/hrt-v4b/filtering/presence.html"
+          } else{ 
+            window.location.href = "/agent/hrt-v4/filtering/visa-status.html"
+        }
+      }
+    }
+  }
+</script> -->
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}
