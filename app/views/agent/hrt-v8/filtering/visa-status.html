@@ -1,0 +1,285 @@
+{% extends "layouts/main-1.html" %}
+
+{% block pageTitle %}
+   Immigration status
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – to help us improve it, <a class="govuk-link" href="https://forms.microsoft.com/e/mR3DLwkxg7" target="_blank">give feedback (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+        
+<div class="govuk-form-group">
+
+      <h1 class="govuk-heading-l">Immigration status</h1>
+
+      <h2 class="govuk-heading-m">What is their immigration status?</h2>
+    
+    <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="visa" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa">
+          <label class="govuk-label govuk-radios__label" for="visa">
+            EU Settlement Scheme
+          </label>
+          <div id="EU-hint" class="govuk-hint govuk-radios__hint">For example, pre-settled or settled status. Includes applications awaiting decision.</div>
+        </div>
+        <div class="govuk-radios__conditional" id="conditional-visa">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select status</b>
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Pre-settled (limited leave to remain)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                Settled (indefinite leave to remain)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                Certificate of Application (application pending)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+               Family member permit
+              </label>
+            </div></div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="visa-1" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-1">
+          <label class="govuk-label govuk-radios__label" for="visa-1">
+            Indefinite leave to remain or enter
+          </label>
+
+        </div>
+        <div class="govuk-radios__conditional" id="conditional-visa-1">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select indefinite leave type</b>
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Indefinite leave to remain or enter
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-1" name="whereDoYouLive" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-1">
+                Indefinite leave to remain or enter (outside the Immigration Rules)
+              </label>
+            </div>
+           </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="visa-2" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-2">
+          <label class="govuk-label govuk-radios__label" for="visa-2">
+            Limited leave to remain or enter
+          </label>
+
+        </div>
+        <div class="govuk-radios__conditional" id="conditional-visa-2">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select limited leave type</b>
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Limited leave to remain or enter
+              </label>
+            </div>
+           
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                Limited leave to remain or enter (outside the Immigration Rules)
+              </label>
+            </div>
+            </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="visa-3" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-3">
+          <label class="govuk-label govuk-radios__label" for="visa-3">
+            Humanitarian protection or refugee
+          </label>
+
+        </div>
+        <div class="govuk-radios__conditional" id="conditional-visa-3">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select status</b>
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Humanitarian protection
+              </label>
+            </div>
+           
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                Refugee
+              </label>
+            </div>
+            </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="visa-4" name="visa" type="radio" value="foreign" data-aria-controls="conditional-visa-4">
+          <label class="govuk-label govuk-radios__label" for="visa-4">
+            Afghan, Ukraine or transnational marriage abandonment schemes
+          </label>
+          <!-- <div id="other-hint" class="govuk-hint govuk-radios__hint">For example, Afghan or Ukrainian resettlement scheme, or transnational marriage abandonment scheme.</div> -->
+        </div>
+        <div class="govuk-radios__conditional" id="conditional-visa-4">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              <b>Select status</b>
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="afghan-1">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Afghan Citizens Resettlement Scheme
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-1" name="whereDoYouLive" type="radio" value="afghan-2">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-1">
+                Afghan Locally Employed Staff scheme
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="afghan-3">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                Afghan Relocations and Assistance Policy scheme
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="refugee">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                Transnational marriage abandonment scheme
+              </label>
+         
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="ukraine">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+               Ukraine schemes
+              </label>
+            </div></div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="visa-5" name="visa" type="radio" value="foreign">
+          <label class="govuk-label govuk-radios__label" for="visa-5">
+            Frontier worker
+          </label>
+
+        </div>
+    </div>
+
+  </fieldset>
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+
+    <!-- <h2 class="govuk-heading-m">Do they have recourse to public funds?</h2> -->
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Do they have recourse to public funds?
+      </h2>
+    </legend>
+    <div id="public-funds-hint" class="govuk-hint">
+      If they are subject to immigration control, select ‘No’.
+    </div>
+
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="yes" name="publicFunds" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="no" name="publicFunds" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="no">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+             <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
+  Continue
+</button> -->
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href: "/agent/hrt-v8/filtering/visa-status-dates.html"
+              }) }}
+
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "#"
+              }) }}
+            </div>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}
