@@ -1,0 +1,124 @@
+{% extends 'layout-agent-hrt-v8-with-back.html' %}
+
+{% block pageTitle %}
+HRT cases
+{% endblock %}
+
+{% block beforeContent %}
+
+
+    {{ super() }}
+
+{% endblock %}
+
+  {% block content %}
+
+  {% if data['nationality'] == 'other' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html' | redirect | safe }}
+{% endif %}
+
+{% if data['nationality'] == '' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2_error.html' | redirect | safe }}
+
+  {% endif %}
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Success
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <h3 class="govuk-notification-banner__heading">
+                Your progress has been saved
+              </h3>
+              <p class="govuk-body">To return to this case, go to <a class="govuk-notification-banner__link" href="/agent/hrt-v8/assess-hrt.html">collect or view case details</a> and search for this customer again.</p>
+            </div>
+          </div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="test-cases-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Habitual residence cases
+      </h1>
+    </legend>
+        
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Created</th>
+          <th scope="col" class="govuk-table__header">Updated</th>
+          <th scope="col" class="govuk-table__header">Benefit line</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 Mar 2024</td>
+          <td class="govuk-table__cell">12 Mar 2026</td>
+          <td class="govuk-table__cell">Personal Independence Payment</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Details incomplete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v8/saved-details.html">Resume</a></td>
+
+        </tr>
+       
+      </tbody>
+    </table>
+
+  </fieldset>
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Find a customer",
+      href: "/agent/hrt-v8/identification/all.html"
+  
+    }) }}
+
+  </div>
+
+</div>
+                
+<!-- <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+  Continue
+</button>
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("presence");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/agent/hrt-v4/filtering/presence-error.html";
+  } else {
+      if (document.getElementById("presence-yes").checked) {
+        window.location.href = "/agent/hrt-v4/filtering/abroad-6months-3years.html"
+      } else {
+        window.location.href = "/agent/hrt-v4/outcome/check-outside-UK.html"
+      }}}
+</script> -->
+
+
+        </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+dwp-res-prototype{% extends 'layout-agent-hrt-v8.html' %}
+
+{% block pageTitle %}
+   Response recorded
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- <div class="govuk-exit-this-page" data-module="govuk-exit-this-page"><a href="/agent/hrt-v4/outcome/reference-number.html" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-exit-this-page__button govuk-js-exit-this-page-button" data-module="govuk-button" rel="nofollow noreferrer">
+  <span class="govuk-visually-hidden">Emergency</span> Exit this page
+</a></div> -->
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                  <div class="govuk-panel govuk-panel--confirmation">
+                    <h1 class="govuk-panel__title">
+                      Decision recorded
+                    </h1>
+                    <div class="govuk-panel__body">
+                      Outcome<br><strong>Customer is habitually resident</strong>
+                    </div>
+                  </div>
+                  <p class="govuk-body">You can now continue processing the claim.</p>
+                  <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Show decision summary
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <h2 class="govuk-heading-m">Habitual residence</h2>
+                      
+                      <p class="govuk-body">John Smith is habitually resident.</p>
+                  
+                  <h2 class="govuk-heading-m">Nationality and immigration status</h2>
+                      
+                      <p class="govuk-body">John Smith has recourse to public funds and, if applicable, an immigration status that allows this.</p>
+      <p class="govuk-body">Evidence reviewed:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Proof of nationality</li>
+          <li>Proof of immigration status</li>
+          <li>Proof of recourse to public funds</li>
+          <li>Proof of being exempt from immigration control</li>
+          </ul>
+      </p>
+      <h2 class="govuk-heading-m">Presence</h2>
+      <p class="govuk-body">John Smith has the following exemption from being present in Great Britain: Airmen.</p>
+      <p class="govuk-body">John Smith meets the presence condition.</p>
+      <p class="govuk-body">Evidence reviewed:
+      <ul class="govuk-list govuk-list--bullet">
+      <li>Proof of presence in Great Britain</li>
+          </ul>
+      </p>
+
+      <h2 class="govuk-heading-m">Past presence</h2>
+      <p class="govuk-body">John Smith passes the past presence test.</p>
+      <p class="govuk-body">Evidence reviewed:
+          <li>Proof of travel abroad</li>
+      </p>
+
+                    </div>
+                  </details>
+                  <h2 class="govuk-heading-m">If you need to process another case</h2>
+                  <p class="govuk-body">
+                    <a href="/agent/hrt-v8/identification/all-dm.html" class="govuk-link">Find a customer</a>
+                  </p>
+
+<!-- {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Back to case tasks",
+  href: "/agent/hrt-v4/outcome/reference-number-done.html"
+}) }} -->
+
+</form>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}
