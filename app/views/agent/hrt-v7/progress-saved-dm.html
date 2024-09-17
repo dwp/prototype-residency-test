@@ -42,7 +42,7 @@ HRT cases
               <h3 class="govuk-notification-banner__heading">
                 Your progress has been saved
               </h3>
-              <p class="govuk-body">To return to this case, go to <a class="govuk-notification-banner__link" href="/agent/hrt-5/assess-hrt.html">record decision</a> and search for the customer again.</p>
+              <p class="govuk-body">To return to this case, go to <a class="govuk-notification-banner__link" href="/agent/hrt-v7/assess-hrt.html">record or view decision</a> and search for this customer again.</p>
             </div>
           </div>
 
@@ -53,14 +53,6 @@ HRT cases
         Habitual residence cases
       </h1>
     </legend>
-
-    <br>
-
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        Customer’s existing cases
-      </h1>
-    </legend>
         
     <table class="govuk-table">
       <thead class="govuk-table__head">
@@ -68,7 +60,7 @@ HRT cases
           <th scope="col" class="govuk-table__header">Created</th>
           <th scope="col" class="govuk-table__header">Updated</th>
           <th scope="col" class="govuk-table__header">Benefit line</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Status</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
           <th scope="col" class="govuk-table__header">Action</th>
 
         </tr>
@@ -81,10 +73,10 @@ HRT cases
 
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--light-blue">
-              In progress
+              Decision in progress
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="javascript:history.back()">Resume</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v7/saved-details-dm.html">Resume</a></td>
 
         </tr>
        
@@ -92,6 +84,15 @@ HRT cases
     </table>
 
   </fieldset>
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Find a customer",
+      href: "/agent/hrt-v7/identification/all-dm.html"
+  
+    }) }}
+
+  </div>
 
 </div>
 
