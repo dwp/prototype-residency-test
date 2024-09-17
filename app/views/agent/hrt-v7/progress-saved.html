@@ -42,7 +42,7 @@ HRT cases
               <h3 class="govuk-notification-banner__heading">
                 Your progress has been saved
               </h3>
-              <p class="govuk-body">Your saved progress will expire on 12 March 2026. <br> To return to this case, go to <a class="govuk-notification-banner__link" href="#">view details</a> and search for the customer again.</p>
+              <p class="govuk-body">To return to this case, go to <a class="govuk-notification-banner__link" href="/agent/hrt-v7/assess-hrt.html">collect or view case details</a> and search for this customer again.</p>
             </div>
           </div>
 
@@ -53,20 +53,12 @@ HRT cases
         Habitual residence cases
       </h1>
     </legend>
-
-    <br>
-
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        Customer’s existing cases
-      </h1>
-    </legend>
         
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Created</th>
-          <th scope="col" class="govuk-table__header">Expires</th>
+          <th scope="col" class="govuk-table__header">Updated</th>
           <th scope="col" class="govuk-table__header">Benefit line</th>
           <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
           <th scope="col" class="govuk-table__header">Action</th>
@@ -80,69 +72,23 @@ HRT cases
           <td class="govuk-table__cell">Personal Independence Payment</td>
 
           <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--blue">
-              In progress
+            <strong class="govuk-tag govuk-tag--yellow">
+              Details incomplete
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v5/saved-details.html">Resume</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v7/saved-details.html">Resume</a></td>
 
         </tr>
-        <!-- <tr class="govuk-table__row">
-          <td class="govuk-table__cell">23 Feb 2024</td>
-          <td class="govuk-table__cell">23 Feb 2026</td>
-
-          <td class="govuk-table__cell">Attendance Allowance</td>
-
-          <td class="govuk-table__cell">
-
-            <strong class="govuk-tag govuk-tag--green">
-              Submitted
-            </strong>
-          </td>
-          <td class="govuk-table__cell"></td>
-
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">15 Apr 2024</td>
-          <td class="govuk-table__cell">15 Apr 2026</td>
-
-          <td class="govuk-table__cell">Pension Credit</td>
-
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--blue">
-              In progress
-            </strong>
-          </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Resume</a></td>
-
-
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">4 Mar 2022</td>
-          <td class="govuk-table__cell">4 Mar 2024</td>
-
-
-          <td class="govuk-table__cell">Attendance Allowance</td>
-
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--grey">
-              Expired
-            </strong>
-          </td>
-          <td class="govuk-table__cell"></td>
-
-        </tr> -->
        
       </tbody>
     </table>
 
   </fieldset>
-  <br>
 
   <div class="govuk-button-group">
     {{ govukButton({
-      text: "Start a new case",
-      href: "/agent/hrt-v5/filtering/benefit.html"
+      text: "Find a customer",
+      href: "/agent/hrt-v7/identification/all.html"
   
     }) }}
 
