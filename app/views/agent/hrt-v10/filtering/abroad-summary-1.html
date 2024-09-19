@@ -1,0 +1,216 @@
+dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
+
+{% block pageTitle %}
+Past presence summary
+{% endblock %}
+
+{% block beforeContent %}
+
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <!-- <span class="govuk-caption-l">Past presence</span> -->
+          <h1 class="govuk-heading-l">Check your answers</h1>
+          <div class="govuk-form-group">
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">
+                  Trip 1 details
+                </h2>
+                <ul class="govuk-summary-card__actions">
+                  <li class="govuk-summary-card__action">
+                    <a class="govuk-link" href="/agent/hrt-v10/filtering/remove-trip.html">Remove<span class="govuk-visually-hidden"> of University of Gloucestershire (University of Gloucestershire)</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Country
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Spain
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="/agent/hrt-v10/filtering/country.html">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Travel dates
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      20 Feb 2022 to 26 May 2022
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="/agent/hrt-v10/filtering/abroad-dates.html">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Travel reason
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Holiday
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="/agent/hrt-v10/filtering/travel-reason.html">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Total time
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      13 weeks 4 days
+                    </dd>
+                  
+                  </div>
+                </dl>
+              </div>
+            </div>
+  
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">
+                  Trip 2 details
+                </h2>
+                <ul class="govuk-summary-card__actions">
+                  <li class="govuk-summary-card__action">
+                    <a class="govuk-link" href="/agent/hrt-v10/filtering/remove-trip-1.html">Remove<span class="govuk-visually-hidden"> of University of Gloucestershire (University of Gloucestershire)</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Country
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      France
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="/agent/hrt-v10/filtering/country-1.html">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Travel dates
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      15 May 2023 to 10 Jul 2023
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="/agent/hrt-v10/filtering/abroad-dates-1.html">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Travel reason
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Visiting family
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="/agent/hrt-v10/filtering/travel-reason-1.html">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Total time
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      8 weeks
+                    </dd>
+                  
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+      <p class="govuk-body"><b>Total time for all:</b> 21 weeks 4 days</p>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you need to add another trip?
+                </h1>
+              </legend>
+      
+                      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes">
+                          <label class="govuk-label govuk-radios__label" for="add-another">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No">
+                          <label class="govuk-label govuk-radios__label" for="add-another-2">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                
+                    </fieldset>
+              </div> 
+
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href: "/agent/hrt-v10/filtering/country-2.html"
+               }) }}
+
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "#"
+              }) }}
+            </div>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("presence");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/continue_application_error.html";
+  } else {
+    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/confirm_residence.html"
+
+  }
+}
+</script>
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

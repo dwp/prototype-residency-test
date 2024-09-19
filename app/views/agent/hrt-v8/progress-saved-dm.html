@@ -1,4 +1,4 @@
-{% extends 'layout-agent-hrt-v8-with-back.html' %}
+{% extends 'layout-agent-hrt.html' %}
 
 {% block pageTitle %}
 HRT cases
@@ -9,6 +9,10 @@ HRT cases
 
     {{ super() }}
 
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
 
 {% endblock %}
 

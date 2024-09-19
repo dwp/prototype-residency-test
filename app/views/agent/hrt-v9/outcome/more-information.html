@@ -1,0 +1,37 @@
+{% extends 'layout-agent-hrt-v9-with-back.html' %}
+
+{% block pageTitle %}
+    More information needed
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <!-- <a href="javascript:history.back()" class="govuk-back-link">Back</a> -->
+    
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">What to do next if you need more information</h2>
+      <p class="govuk-body">
+        Complete the additional checks offline and return to record your decision.
+      </p>
+      
+      <p class="govuk-body">Your progress has been saved.</p>
+      <p class="govuk-body">To return to this case, 
+        <a href="/agent/hrt-v9/hrt-test-cases-dm.html" class="govuk-link">go to habitual residence cases</a>.
+      </p>
+      <h2 class="govuk-heading-m">If you need to process another case</h2>
+      <p class="govuk-body">
+        <a href="/agent/hrt-v9/identification/all-dm.html" class="govuk-link">Find another case</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

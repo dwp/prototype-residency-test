@@ -1,0 +1,153 @@
+{% extends 'layout-agent-hrt-v9-with-back.html' %}
+
+{% block pageTitle %}
+    Review saved details
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Review saved details
+      </h1>
+
+  <p class="govuk-body">
+    The following details have been saved so far.
+  </p>
+
+  <h2 class="govuk-heading-m">EU Treaty Rights</h2>
+
+  <dl class="govuk-summary-list">
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       EU treaty right exercised
+      </dt>
+      
+      <dd class="govuk-summary-list__value">
+        Self-employed
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
+        <!-- <a class="govuk-link" href="/agent/hrt-v9/outcome/eu-treaty-rights.html">Change</a> -->
+
+      </dd> 
+    </div>      
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Rationale documented
+      </dt>
+      
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
+        <!-- <a class="govuk-link" href="/agent/hrt-v9/outcome/eu-treaty-rights-rationale.html">Change</a> -->
+
+      </dd> 
+    </div>  
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      At risk of destitution
+      </dt>
+      
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
+        <!-- <a class="govuk-link" href="/agent/hrt-v9/outcome/destitution.html">Change</a> -->
+
+      </dd> 
+    </div> 
+</dl> 
+
+<h2 class="govuk-heading-m">Evidence reviewed</h2>
+      
+<dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Right to reside
+      </dt>
+      
+      <dd class="govuk-summary-list__value">
+      <ul class="govuk-list govuk-list--bullet">
+      <li>Proof of nationality</li>
+      <li>Proof of immigration status</li>
+      <li>Proof of EU treaty right</li>
+      </ul>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
+        <!-- <a class="govuk-link" href="/agent/hrt-v9/outcome/evidence-decision-maker-pc.html">Change</a> -->
+
+      </dd> 
+    </div>          
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Presence
+      </dt>
+      
+      <dd class="govuk-summary-list__value">
+        Proof of presence in Great Britain
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
+        <!-- <a class="govuk-link" href="/agent/hrt-v9/outcome/evidence-decision-maker-pc.html">Change</a> -->
+
+      </dd> 
+    </div>    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Habitual residence test exemption
+      </dt>
+      
+      <dd class="govuk-summary-list__value">
+        No evidence required
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
+        <!-- <a class="govuk-link" href="/agent/hrt-v9/outcome/evidence-decision-maker-pc.html">Change</a> -->
+
+      </dd> 
+    </div> 
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Travel abroad
+      </dt>
+      
+      <dd class="govuk-summary-list__value">
+        No evidence required
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a class="govuk-link" href="#">Evidence required</a> <br> <br> <a class="govuk-link" href="/agent/hrt-v3/filtering/benefit.html">Change</a> -->
+        <!-- <a class="govuk-link" href="/agent/hrt-v9/outcome/evidence-decision-maker-pc.html">Change</a> -->
+
+      </dd> 
+    </div>      
+</dl>  
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Continue",
+              href: "/agent/hrt-v9/outcome/check-decision-maker-pc.html"
+            }) }}
+
+            <!-- <div>
+              <a href="/agent/hrt-v3/outcome/evidence.html" class="govuk-body-m">Request and provide evidence
+            </a>
+            </div> -->
+    </div>
+</div>
+
+{% endblock %}

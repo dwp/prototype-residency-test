@@ -1,0 +1,80 @@
+dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
+
+{% block pageTitle %}
+   Customer details submitted
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Habitual residence details complete
+  </h1>
+  <!-- <div class="govuk-panel__body">
+    Case reference number<br><strong>HDJ2123F</strong>
+  </div> -->
+</div>
+<br>
+<!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
+<h2 class="govuk-heading-m">What to do next</h2>
+
+<p class="govuk-body">
+  You can continue processing the rest of the claim until a decision is needed on the customer’s habitual residence.
+</p>
+
+<p class="govuk-body govuk-!-margin-bottom-0"><a href="/agent/hrt-v10/outcome/check-decision-maker.html" class="govuk-link">Make a decision on this case</a></p>
+
+<br>
+<br> 
+<h3 class="govuk-heading-s">If you need to collect case details for another customer</h3>
+<p class="govuk-body">
+  <a href="/agent/hrt-v10/identification/all.html" class="govuk-link">Find a customer</a>
+</p>
+           
+</form>
+            <script>
+          function check() {
+    console.log('in function')
+    var radios = document.getElementsByName("nationality");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
+    }
+    if (!hasSelection) {
+      window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_1_error.html";
+    } else {
+      if (document.getElementById("nationality").checked || (document.getElementById("nationality-2").checked )) {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/presence.html"
+      } else {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html"
+      }
+
+  
+    }
+  }
+              </script>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

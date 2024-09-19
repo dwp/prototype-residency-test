@@ -1,4 +1,4 @@
-dwp-res-prototype{% extends 'layout-agent-hrt-v8-with-back.html' %}
+dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
 
 {% block pageTitle %}
 Immigration status dates
@@ -7,6 +7,11 @@ Immigration status dates
 {% block beforeContent %}
 
     {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
 
 {% endblock %}
 
@@ -115,7 +120,7 @@ Immigration status dates
               {{ govukButton({
                 text: "Save and come back later",
                 classes: "govuk-button--secondary",
-                href: "/agent/hrt-v8/progress-saved.html"
+                href: "#"
               }) }}
             </div>
 

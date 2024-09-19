@@ -1,4 +1,4 @@
-dwp-res-prototype{% extends 'layout-agent-hrt-v8-with-back.html' %}
+dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
 
 {% block pageTitle %}
 Past presence summary
@@ -9,6 +9,10 @@ Past presence summary
 
     {{ super() }}
 
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
 
 {% endblock %}
 
@@ -178,7 +182,7 @@ Past presence summary
               {{ govukButton({
                 text: "Save and come back later",
                 classes: "govuk-button--secondary",
-                href: "/agent/hrt-v8/progress-saved.html"
+                href: "#"
               }) }}
             </div>
 

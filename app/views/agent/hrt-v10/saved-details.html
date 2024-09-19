@@ -1,0 +1,124 @@
+{% extends 'layout-agent-hrt.html' %}
+
+{% block pageTitle %}
+    Review saved details
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <!-- <p style="float: right; margin-top:15px;" class="dwp-language-toggle" aria-label="Language toggle" > English | <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+      <a href="?lang=cy" class="govuk-link">Cymraeg</a> </p> -->
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">
+            Review saved details
+          </h1>
+
+      <p class="govuk-body">
+        The following details have been saved so far.
+      </p>
+
+      <h2 class="govuk-heading-m">Claim details</h2>
+      
+      <dl class="govuk-summary-list">
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Benefit
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            Personal Independence Payment
+          </dd>
+      
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Date of claim
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 Jan 2024
+          </dd>
+        
+        </div>
+      </dl>  
+          
+      <h2 class="govuk-heading-m">Nationality and immigration status</h2>
+
+      <dl class="govuk-summary-list">
+       
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Nationality
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              French
+            </dd>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Immigration status
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              Pre-settled (limited leave to remain)
+            </dd>
+        
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Recourse to public funds
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Status valid from
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+            10 Jan 2020
+            </dd>
+       
+          </div>
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Status expiry date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10 Jan 2025
+            </dd>
+        
+          </div> -->
+          </dl>
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Continue",
+              href: "/agent/hrt-v10/filtering/benefit.html"
+            }) }}
+
+            <!-- <div>
+              <a href="/agent/hrt-v4/outcome/evidence.html" class="govuk-body-m">Request and provide evidence
+            </a>
+            </div> -->
+    </div>
+</div>
+
+{% endblock %}

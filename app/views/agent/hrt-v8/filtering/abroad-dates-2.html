@@ -1,4 +1,4 @@
-dwp-res-prototype{% extends 'layout-agent-hrt-v8-with-back.html' %}
+dwp-res-prototype{% extends 'layout-agent-hrt.html' %}
 
 {% block pageTitle %}
    Dates abroad
@@ -9,6 +9,10 @@ dwp-res-prototype{% extends 'layout-agent-hrt-v8-with-back.html' %}
 
     {{ super() }}
 
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
 
 {% endblock %}
 
@@ -115,7 +119,7 @@ dwp-res-prototype{% extends 'layout-agent-hrt-v8-with-back.html' %}
               {{ govukButton({
                 text: "Save and come back later",
                 classes: "govuk-button--secondary",
-                href: "/agent/hrt-v8/progress-saved.html"
+                href: "#"
               }) }}
             </div>
            
