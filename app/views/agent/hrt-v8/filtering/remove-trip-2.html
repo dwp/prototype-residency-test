@@ -1,4 +1,4 @@
-{% extends 'layout-agent-hrt-v8-with-back.html' %}
+{% extends 'layout-agent-hrt.html' %}
 
 {% block pageTitle %}
 Presence
@@ -8,7 +8,12 @@ Presence
 
 
     {{ super() }}
-    
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
 {% endblock %}
 
   {% block content %}
@@ -65,7 +70,7 @@ Presence
     {{ govukButton({
       text: "Save and come back later",
       classes: "govuk-button--secondary",
-      href: "/agent/hrt-v8/progress-saved.html"
+      href: "#"
     }) }}
   </div>
 

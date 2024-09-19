@@ -1,4 +1,4 @@
-{% extends 'layout-agent-hrt-v8-with-back.html' %}
+{% extends 'layouts/main-1.html' %}
 
 {% block pageTitle %}
 Check presence exemption
@@ -6,7 +6,23 @@ Check presence exemption
 
 {% block beforeContent %}
 
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – to help us improve it, <a class="govuk-link" href="https://forms.microsoft.com/e/mR3DLwkxg7" target="_blank">give feedback (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+
     {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
 
 {% endblock %}
 
