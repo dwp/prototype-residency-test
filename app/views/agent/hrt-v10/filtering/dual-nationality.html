@@ -53,20 +53,12 @@ Dual nationality
       </legend>
 
 
-    <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="yes" name="answer" type="radio" value="yes" data-aria-controls="conditional-yes">
+        <input class="govuk-radios__input" id="yes" name="answer" type="radio" value="yes">
         <label class="govuk-label govuk-radios__label" for="yes">
           Yes
         </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="other-nationality">
-            Enter their other nationality
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-        </div>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="no" name="answer" type="radio" value="no">
@@ -75,12 +67,13 @@ Dual nationality
         </label>
       </div>
 
-  <br>
+    </div>
+  </div>
 
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Continue",
-      href: "/agent/hrt-v10/filtering/visa-status.html"
+      href: "/agent/hrt-v10/filtering/dual-nationality-continued.html"
   
     }) }}
   
@@ -90,8 +83,6 @@ Dual nationality
       href: "#"
     }) }}
   </div>
-
-</div>
                 
 <!-- <button class="govuk-button" data-module="govuk-button" onclick="check1()">
   Continue
