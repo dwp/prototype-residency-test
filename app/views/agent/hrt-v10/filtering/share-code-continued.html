@@ -48,36 +48,70 @@ Share code
   <fieldset class="govuk-fieldset" aria-describedby="presence-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Do they have a share code?
+        Share code details
       </h1>
     </legend>
-        
-        <div id="nationality-hint" class="govuk-hint">
-          This is a unique code issued by UK Visas and Immigration. It helps individuals to prove their immigration status in the UK.</div>
 
-    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="yes" name="answer" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="yes">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="no" name="answer" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="no">
-          No
-        </label>
-      </div>
-      </div>
-  </fieldset>
-  </div>
+    <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">
+          Share code
+        </h2>
+      </legend>
+      <div id="postcode-hint" class="govuk-hint">
+        For example, A12 345 67G.
+    </div>
+      <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Share code expiry date
+          </h2>
+        </legend>
+        <div id="passport-issued-hint" class="govuk-hint">
+          For example, 27 11 2024.
+        </div>
+        <div class="govuk-date-input" id="visa-expiry">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="visa-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="visa-day" name="visa-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="visa-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="visa-month" name="visa-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="visa-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="visa-year" name="visa-year" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    </fieldset>
+    </div>
+   
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Continue",
-      href: "/agent/hrt-v10/filtering/share-code-continued.html"
+      href: "/agent/hrt-v10/filtering/presence.html"
   
     }) }}
   
