@@ -38,11 +38,14 @@
     
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h2 class="govuk-fieldset__heading">
               EU Settlement Scheme
             </h2>
           </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+            Includes applications awaiting decision.
+          </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
@@ -74,7 +77,7 @@
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h2 class="govuk-fieldset__heading">
                 Indefinite leave to remain
               </h2>
@@ -98,7 +101,7 @@
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h2 class="govuk-fieldset__heading">
                 Limited leave to remain
               </h2>
@@ -123,9 +126,9 @@
 
     <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h2 class="govuk-fieldset__heading">
-                Humanitarian protection, refugee or frontier worker
+                Humanitarian protection or refugee
               </h2>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
@@ -142,19 +145,30 @@
                 Refugee
               </label>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-5" name="whereDoYouLive" type="radio" value="foreign">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-5">
-                Frontier worker
-              </label>
-            </div>
           </div>
           </fieldset>
           </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  Frontier worker
+                </h2>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-5" name="whereDoYouLive" type="radio" value="foreign">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-5">
+                  Frontier worker
+                </label>
+              </div>
+            </div>
+            </fieldset>
+            </div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h2 class="govuk-fieldset__heading">
                 Afghan, Ukraine and transnational marriage abandonment scheme
               </h2>
