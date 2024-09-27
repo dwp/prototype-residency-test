@@ -31,78 +31,104 @@ Presence exemption
 <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Which exemption from being present in Great Britain applies to them?</h1>
+ 
           <!-- <span class="govuk-caption-l">Past presence</span> -->
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-
-      <h1 class="govuk-heading-l">
-        Which exemption from being present in Great Britain applies to them?
-      </h1>
-      
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  Genuine and sufficient link to UK
+                </h2>
+              </legend>
+ 
     <div class="govuk-radios" data-module="govuk-radios">
-
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-5" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-5">
+        <input class="govuk-radios__input" id="exemption-1" name="exemptions" type="radio" value="true" >
+        <label class="govuk-label govuk-radios__label" for="exemption-1">
           Claiming while in the European Economic Area (EAA) or Switzerland and can show genuine and sufficient link to UK
         </label>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="exemption-6" name="exemptions" type="radio" value="true" >
-        <label class="govuk-label govuk-radios__label" for="exemption-6">
-          Temporarily absent abroad for up to 13 weeks (26 weeks for qualifying medical treatment)
-        </label>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="profession" name="exemptions" type="radio" value="true" data-aria-controls="conditional-profession">
-        <label class="govuk-label govuk-radios__label" for="profession">
-          Working abroad (includes armed forces)
-        </label>
+      </fieldset>
       </div>
-      <div class="govuk-radios__conditional" id="conditional-profession">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend">
-          <h1 class="govuk-fieldset__heading">
-            <b>Select exemption</b>
-          </h1>
-        </legend>
-        <div class="govuk-form-group">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h2 class="govuk-fieldset__heading">
+              Temporarily absent abroad
+            </h2>
+          </legend>
+
+<div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="exemption-2" name="exemptions" type="radio" value="true" >
+    <label class="govuk-label govuk-radios__label" for="exemption-2">
+      Temporarily absent abroad for up to 13 weeks (26 weeks for qualifying medical treatment)
+    </label>
+  </div>
+  </div>
+  </fieldset>
+  </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h2 class="govuk-fieldset__heading">
+              Working or serving abroad
+            </h2>
+          </legend>
+
+<div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="exemption-1" name="whereDoYouLive" type="radio" value="airmen">
+            <input class="govuk-radios__input" id="exemption-1" name="exemptions" type="radio" value="airmen">
             <label class="govuk-label govuk-radios__label" for="exemption-1">
               Airmen
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="exemption-2" name="whereDoYouLive" type="radio" value="armed-forces">
+            <input class="govuk-radios__input" id="exemption-2" name="exemptions" type="radio" value="armed-forces">
             <label class="govuk-label govuk-radios__label" for="exemption-2">
               Armed forces or family member
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="exemption-3" name="whereDoYouLive" type="radio" value="continental-shelf-worker">
+            <input class="govuk-radios__input" id="exemption-3" name="exemptions" type="radio" value="continental-shelf-worker">
             <label class="govuk-label govuk-radios__label" for="exemption-3">
               Continental shelf workers
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="exemption-4" name="whereDoYouLive" type="radio" value="mariners">
+            <input class="govuk-radios__input" id="exemption-4" name="exemptions" type="radio" value="mariners">
             <label class="govuk-label govuk-radios__label" for="exemption-4">
               Mariners
             </label>
           </div>
         </div>
+        </fieldset>
       </div>
-      <div class="govuk-radios__divider">or</div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h2 class="govuk-fieldset__heading">
+              No exemption
+            </h2>
+          </legend>
+
+<div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="exemption-7" name="exemptions" type="radio" value="true" >
         <label class="govuk-label govuk-radios__label" for="exemption-7">
-          None
+          No exemption
         </label>
       </div>
+      </div>
+    </fieldset>
     </div>
-  </fieldset>
-</div>
 
              <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
   Continue
@@ -113,13 +139,13 @@ Presence exemption
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v10/outcome/evidence-decision-maker.html"
+                href: "/agent/hrt-v10/filtering/exemptions.html"
               }) }}
 
               {{ govukButton({
                 text: "Save and come back later",
                 classes: "govuk-button--secondary",
-                href: "/agent/hrt-v10/progress-saved-dm.html"
+                href: "/agent/hrt-v10/progress-saved.html"
               }) }}
             </div>
 
