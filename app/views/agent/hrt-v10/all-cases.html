@@ -35,24 +35,27 @@ HRT cases awaiting decision
         All cases
       </h1>
 
-      <div class="govuk-form-group">
-      <h2 class="govuk-heading-s">Benefit line: Personal Independence Payment</h2>
-      <p class="govuk-body"><a class="govuk-link" href="#">Change</a></p>
-      </div>
+<div class="govuk-button-group">
+  <h2 class="govuk-heading-s">Benefit line: Personal Independence Payment</h2>
+  <a class="govuk-link" style="margin-left: 15px;" href="#">Change</a>
+</div>
 
       <label class="govuk-label" for="sort">
-        Filter by status
+        Filter by stage and status
       </label>
       <select class="govuk-select" id="sort" name="sort">
-        <option value="published">Recently published</option>
-        <option value="updated" selected>Recently updated</option>
-        <option value="views">Most views</option>
-        <option value="comments">Most comments</option>
+        <option value="published" selected>All</option>
+        <option value="updated">Gather - In progress</option>
+        <option value="views">Decision - To do</option>
+        <option value="comments">Decision - In progress</option>
+        <option value="comments">Decision - Completed</option>
       </select>
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <button type="submit" class="govuk-button govuk-button--secondary" style="margin-left: 10px;" data-module="govuk-button">
         Apply
       </button>
 
+      <br>
+      <br>
 
     <h2 class="govuk-heading-s">Showing 1-10 of 150 cases</h2>
 
@@ -60,12 +63,12 @@ HRT cases awaiting decision
         Sort by
       </label>
       <select class="govuk-select" id="sort" name="sort">
-        <option value="published">Recently published</option>
-        <option value="updated" selected>Updated, oldest to newest</option>
-        <option value="views">Most views</option>
-        <option value="comments">Most comments</option>
+        <option value="published" selected>Updated (newest)</option>
+        <option value="updated">Updated (oldest)</option>
+        <option value="views">Created (newest)</option>
+        <option value="comments">Created (oldest)</option>
       </select>
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <button type="submit" class="govuk-button govuk-button--secondary" style="margin-left: 10px;" data-module="govuk-button">
         Update sort
       </button>
         
