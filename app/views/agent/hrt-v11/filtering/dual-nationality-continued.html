@@ -1,13 +1,15 @@
-{% extends "layout-agent-hrt-v9-with-back.html" %}
+{% extends "layout-agent-hrt-v11-with-back.html" %}
 
 {% block pageTitle %}
-   Nationality
+   Dual nationality
 {% endblock %}
 
 {% block beforeContent %}
 
     {{ super() }}
-    
+
+   
+
 {% endblock %}
 
 {% block content %}
@@ -18,45 +20,31 @@
         
 <div class="govuk-form-group">
       <h1 class="govuk-heading-l">
-        What is their nationality?
+        What is their other nationality?
       </h1>
 
     <div class="govuk-form-group">
       <label class="govuk-label" for="nationality">
-        Enter their nationality
+        Enter their other nationality
       </label>
       <input class="govuk-input govuk-!-width-two-thirds" id="nationality" name="nationality" type="text" autocomplete="nationality">
     </div>
 
 </div>
 
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-
-{{ govukDetails({
-  summaryText: "If they have dual nationality or citizenship",
-  text: "Enter the nationality on the identity documents you are using to process this case. You can add their other nationality later."
-}) }}
-
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-
-{{ govukDetails({
-  summaryText: "If they are stateless",
-  text: "If they are not considered a national of any state, enter their nationality as Stateless."
-}) }}
-
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v9/filtering/dual-nationality.html"
+                href: "/agent/hrt-v11/filtering/visa-status.html"
 
               }) }}
 
               {{ govukButton({
                 text: "Save and come back later",
                 classes: "govuk-button--secondary",
-                href: "/agent/hrt-v9/progress-saved.html"
+                href: "/agent/hrt-v11/progress-saved.html"
               }) }}
             </div>
 
