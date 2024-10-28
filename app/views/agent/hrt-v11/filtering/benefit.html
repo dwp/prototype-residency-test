@@ -1,4 +1,4 @@
-{% extends 'layout-agent-hrt-v9-with-back.html' %}
+{% extends 'layout-agent-hrt-v11-with-back.html' %}
 
 {% block pageTitle %}
    Benefit claim details
@@ -7,6 +7,8 @@
 {% block beforeContent %}
 
     {{ super() }}
+
+   
 
 {% endblock %}
 
@@ -102,14 +104,14 @@
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v9/filtering/nationality.html"
+                href: "/agent/hrt-v11/filtering/nationality.html"
 
               }) }}
 
               {{ govukButton({
                 text: "Save and come back later",
                 classes: "govuk-button--secondary",
-                href: "/agent/hrt-v9/progress-saved.html"
+                href: "/agent/hrt-v11/progress-saved.html"
               }) }}
             </div>
 

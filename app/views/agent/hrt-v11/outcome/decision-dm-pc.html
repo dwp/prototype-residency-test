@@ -1,0 +1,131 @@
+{% extends 'layout-agent-hrt-v11-with-back.html' %}
+
+{% block pageTitle %}
+Record your decisions
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    
+    
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Record your decisions
+          </h1>
+        </legend>
+        <div id="changedName-hint" class="govuk-hint">
+          You must base your decisions on the reviewed information and evidence.
+        </div>
+        </fieldset>
+        </div>
+  
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+<h1 class="govuk-heading-m">
+  Does the customer have the right to reside?
+</h1>
+
+<div class="govuk-radios govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="yes" name="reside" type="radio" value="true">
+    <label class="govuk-label govuk-radios__label" for="yes">
+      Yes
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="no" name="reside" type="radio" value="false">
+    <label class="govuk-label govuk-radios__label" for="no">
+      No
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="more-info" name="reside" type="radio" value="more-info">
+    <label class="govuk-label govuk-radios__label" for="more-info">
+      I need more information
+    </label>
+  </div>
+</div>
+
+</fieldset>
+
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+      <h1 class="govuk-heading-m">
+        Does the customer meet the presence condition?
+      </h1>
+  
+      <div class="govuk-radios govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="yes-1" name="presence" type="radio" value="true">
+          <label class="govuk-label govuk-radios__label" for="yes-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no-1" name="presence" type="radio" value="false">
+          <label class="govuk-label govuk-radios__label" for="no-1">
+            No
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="more-info-1" name="presence" type="radio" value="more-info">
+          <label class="govuk-label govuk-radios__label" for="more-info-1">
+            I need more information
+          </label>
+        </div>
+      </div>
+
+  </fieldset>
+  </div>
+
+<div class="govuk-button-group">
+
+  <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button>
+
+{{ govukButton({
+text: "Save and come back later",
+classes: "govuk-button--secondary",
+href: "/agent/hrt-v11/progress-saved-dm.html"
+}) }}
+</div>
+
+  </div>
+
+  <script>
+    function check() {
+      console.log('in function')
+      var radios = document.getElementsByName("reside");
+      var hasSelection = false
+      for (var i = 0, len = radios.length; i < len; i++) {
+        if (radios[i].checked) {
+          hasSelection = true;
+        }
+      }
+      if (!hasSelection) {
+        window.location.href = "/agent/hrt-v11/outcome/decision-error.html";
+      } else {
+        if (document.getElementById("yes").checked) {
+          window.location.href = "/agent/hrt-v11/outcome/hab-res.html"
+        } else {
+          window.location.href = "/agent/hrt-v11/outcome/more-information.html"
+        }}}
+  </script>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}

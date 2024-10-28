@@ -1,12 +1,14 @@
-{% extends 'layout-agent-hrt-v9-with-back.html' %}
+dwp-res-prototype{% extends 'layout-agent-hrt-v11-with-back.html' %}
 
 {% block pageTitle %}
-   Benefit claim details
+Immigration status dates
 {% endblock %}
 
 {% block beforeContent %}
 
     {{ super() }}
+
+   
 
 {% endblock %}
 
@@ -15,108 +17,110 @@
 <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-two-thirds">
-          <!-- <span class="govuk-caption-l">Claim details</span> -->
-
+          <!-- <span class="govuk-caption-l">Right to reside</span> -->
+        
 <div class="govuk-form-group">
+
       <h1 class="govuk-heading-l">
-       Benefit claim details
+        Immigration status dates
       </h1>
 
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
-        Which benefit are they applying for?
+        Status valid from
       </h2>
     </legend>
     
-    <div class="govuk-radios govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefit" name="nationality" type="radio" value="AA">
-        <label class="govuk-label govuk-radios__label" for="benefit">
-          Attendance Allowance
-        </label>
+    <div id="visa-validity-hint" class="govuk-hint">
+      For example, 27 3 2023.
+    </div>
+    <div class="govuk-date-input" id="visa-validity">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="visa-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="visa-day" name="visa-day" type="text" inputmode="numeric">
+        </div>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefit-2" name="nationality" type="radio" value="CA">
-        <label class="govuk-label govuk-radios__label" for="benefit-2">
-          Carer’s Allowance
-        </label>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="visa-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="visa-month" name="visa-month" type="text" inputmode="numeric">
+        </div>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefit-4" name="nationality" type="radio" value="PC">
-        <label class="govuk-label govuk-radios__label" for="benefit-4">
-          Pension Credit
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefit-5" name="nationality" type="radio" value="PIP">
-        <label class="govuk-label govuk-radios__label" for="benefit-5">
-          Personal Independence Payment
-        </label>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="visa-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="visa-year" name="visa-year" type="text" inputmode="numeric">
+        </div>
       </div>
     </div>
-
   </fieldset>
 </div>
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-       Date of claim
-      </h1>
+      <h2 class="govuk-fieldset__heading">
+        Status expiry date
+      </h2>
     </legend>
-    <div id="passport-issued-hint" class="govuk-hint">
+    <div id="visa-expiry-hint" class="govuk-hint">
       For example, 27 3 2023.
     </div>
-    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input" id="visa-expiry">
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          <label class="govuk-label govuk-date-input__label" for="visa-day">
             Day
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="visa-day" name="visa-day" type="text" inputmode="numeric">
         </div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          <label class="govuk-label govuk-date-input__label" for="visa-month">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="visa-month" name="visa-month" type="text" inputmode="numeric">
         </div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          <label class="govuk-label govuk-date-input__label" for="visa-year">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="visa-year" name="visa-year" type="text" inputmode="numeric">
         </div>
       </div>
     </div>
   </fieldset>
 </div>
 
+             <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
+  Continue
+</button> -->
+
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v9/filtering/nationality.html"
-
+                href: "/agent/hrt-v11/filtering/share-code.html"
               }) }}
 
               {{ govukButton({
                 text: "Save and come back later",
                 classes: "govuk-button--secondary",
-                href: "/agent/hrt-v9/progress-saved.html"
+                href: "/agent/hrt-v11/progress-saved.html"
               }) }}
             </div>
 
-             <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
-  Continue
-</button> -->
-           
 </form>
             <script>
           function check() {
@@ -135,7 +139,11 @@
         window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/presence.html"
       } else {
         window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html"
-      }}}
+      }
+
+  
+    }
+  }
               </script>
 
         </div>

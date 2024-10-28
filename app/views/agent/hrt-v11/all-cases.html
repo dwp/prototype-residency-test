@@ -1,0 +1,369 @@
+{% extends 'layout-agent-no-details-hrt.html' %}
+
+{% block pageTitle %}
+HRT cases awaiting decision
+{% endblock %}
+
+{% block beforeContent %}
+
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+{% endblock %}
+
+  {% block content %}
+
+  {% if data['nationality'] == 'other' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html' | redirect | safe }}
+{% endif %}
+
+{% if data['nationality'] == '' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2_error.html' | redirect | safe }}
+
+  {% endif %}
+
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        All cases
+      </h1>
+
+<div class="govuk-button-group">
+  <h2 class="govuk-heading-s">Benefit line: Personal Independence Payment</h2>
+  <!-- <a class="govuk-link" style="margin-left: 15px;" href="#">Change</a> -->
+</div>
+
+      <label class="govuk-label" for="sort">
+        Filter by stage and status
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected>All</option>
+        <option value="updated">Gather - In progress</option>
+        <option value="views">Decision - To do</option>
+        <option value="comments">Decision - In progress</option>
+        <option value="comments">Decision - Completed</option>
+      </select>
+      <button type="submit" class="govuk-button govuk-button--secondary" style="margin-left: 10px;" data-module="govuk-button">
+        Apply
+      </button>
+
+      <br>
+      <br>
+
+    <h2 class="govuk-heading-s">Showing 1-10 of 150 cases</h2>
+
+      <label class="govuk-label" for="sort">
+        Sort by
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected>Updated (newest)</option>
+        <option value="updated">Updated (oldest)</option>
+        <option value="views">Created (newest)</option>
+        <option value="comments">Created (oldest)</option>
+      </select>
+      <button type="submit" class="govuk-button govuk-button--secondary" style="margin-left: 10px;" data-module="govuk-button">
+        Update sort
+      </button>
+        
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Created</th>
+          <th scope="col" class="govuk-table__header">Updated</th>
+          <th scope="col" class="govuk-table__header">Stage</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 Mar 2024</td>
+          <td class="govuk-table__cell">24 Mar 2024</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--pink">
+             To do
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/saved-details.html">Start</a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">23 Jan 2024</td>
+          <td class="govuk-table__cell">20 Feb 2024</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+
+            <strong class="govuk-tag govuk-tag--pink">
+              To do
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">Start</a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">15 Oct 2023</td>
+          <td class="govuk-table__cell">30 Nov 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--pink">
+              To do
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">Start</a></td>
+
+
+        </tr>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 Jul 2023</td>
+          <td class="govuk-table__cell">17 Sept 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">Resume</a></td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1 Jan 2023</td>
+          <td class="govuk-table__cell">4 Mar 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">View</a></td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 Mar 2024</td>
+          <td class="govuk-table__cell">24 Mar 2024</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--pink">
+             To do
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/saved-details.html">Start</a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">23 Jan 2024</td>
+          <td class="govuk-table__cell">20 Feb 2024</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">Resume</a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">15 Oct 2023</td>
+          <td class="govuk-table__cell">30 Nov 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--pink">
+              To do
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">Start</a></td>
+
+
+        </tr>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 Jul 2023</td>
+          <td class="govuk-table__cell">17 Sept 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">Resume</a></td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1 Jan 2023</td>
+          <td class="govuk-table__cell">4 Mar 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--pink">
+              To do
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view-pc.html">Start</a></td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 Mar 2024</td>
+          <td class="govuk-table__cell">24 Mar 2024</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">View</a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">23 Jan 2024</td>
+          <td class="govuk-table__cell">20 Feb 2024</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">Resume</a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">15 Oct 2023</td>
+          <td class="govuk-table__cell">30 Nov 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">View</a></td>
+
+
+        </tr>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 Jul 2023</td>
+          <td class="govuk-table__cell">17 Sept 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">Resume</a></td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1 Jan 2023</td>
+          <td class="govuk-table__cell">4 Mar 2023</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">View</a></td>
+
+        </tr>
+       
+      </tbody>
+    </table>
+
+  </fieldset>
+
+  <nav class="govuk-pagination" aria-label="Pagination">
+    <ul class="govuk-pagination__list">
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+          1
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          2
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+          3
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-pagination__next">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        <span class="govuk-pagination__link-title">
+          Next<span class="govuk-visually-hidden"> page</span>
+        </span>
+        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+ 
+  <div class="govuk-button-group">
+    <a class="govuk-link" href="/agent/hrt-v11/identification/all-dm.html">Search for a customer</a>
+  </div>
+
+</div>
+                
+<!-- <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+  Continue
+</button>
+            </form>
+
+<script>
+function check1() {
+  console.log('in function')
+  var radios = document.getElementsByName("presence");
+  var hasSelection = false
+  for (var i = 0, len = radios.length; i < len; i++) {
+    if (radios[i].checked) {
+      hasSelection = true;
+    }
+  }
+  if (!hasSelection) {
+    window.location.href = "/agent/hrt-v4/filtering/presence-error.html";
+  } else {
+      if (document.getElementById("presence-yes").checked) {
+        window.location.href = "/agent/hrt-v4/filtering/abroad-6months-3years.html"
+      } else {
+        window.location.href = "/agent/hrt-v4/outcome/check-outside-UK.html"
+      }}}
+</script> -->
+
+
+        </div>
+
+</div>
+
+{% endblock %}

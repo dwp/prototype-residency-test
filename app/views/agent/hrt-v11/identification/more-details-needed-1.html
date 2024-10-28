@@ -1,0 +1,58 @@
+{% extends 'layout-agent-no-details-hrt.html' %}
+
+{% block pageTitle %}
+    More details needed
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/citizen/habitual_residency_test/simple_hrt_v8a/fuzzy_logic.html" class="form">
+            <!-- <span class="govuk-caption-l">Identification</span> -->
+
+                <h1 class="govuk-heading-l">More details needed</h1>
+
+                <p>We need more details to find the right customer.</p>
+
+                <h2 class="govuk-heading-m">Enter the postcode of one of the customer's previous addresses</h2>
+                <div id="postcode-hint" class="govuk-hint">
+                  For example, AA3 1AB.
+            </div>
+
+                <div class="govuk-form-group">
+                  <input class="govuk-input govuk-input--width-5" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
+                </div>
+       
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Find customer",
+    href: "/agent/hrt-v11/hrt-test-cases.html"
+  }) }}
+           
+          </div>
+          </form>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

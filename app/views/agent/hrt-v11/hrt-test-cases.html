@@ -1,4 +1,4 @@
-{% extends 'layout-agent-hrt-v9-with-back.html' %}
+{% extends 'layout-agent-hrt-v11-with-back.html' %}
 
 {% block pageTitle %}
 Habitual residence cases
@@ -6,11 +6,22 @@ Habitual residence cases
 
 {% block beforeContent %}
 
+
     {{ super() }}
 
 {% endblock %}
 
   {% block content %}
+
+  {% if data['nationality'] == 'other' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html' | redirect | safe }}
+{% endif %}
+
+{% if data['nationality'] == '' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2_error.html' | redirect | safe }}
+
+  {% endif %}
+
 
 <div class="govuk-grid-row">
 
@@ -33,7 +44,8 @@ Habitual residence cases
           <th scope="col" class="govuk-table__header">Created</th>
           <th scope="col" class="govuk-table__header">Updated</th>
           <th scope="col" class="govuk-table__header">Benefit line</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+          <th scope="col" class="govuk-table__header">Stage</th>
+          <th scope="col" class="govuk-table__header">Status</th>
           <th scope="col" class="govuk-table__header">Action</th>
 
         </tr>
@@ -44,13 +56,14 @@ Habitual residence cases
           <td class="govuk-table__cell">24 Mar 2024</td>
 
           <td class="govuk-table__cell">Personal Independence Payment</td>
+          <td class="govuk-table__cell">Gather</td>
 
           <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--yellow">
-              Details incomplete
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v9/saved-details.html">Resume</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/saved-details.html">Resume</a></td>
 
         </tr>
         <tr class="govuk-table__row">
@@ -58,6 +71,7 @@ Habitual residence cases
           <td class="govuk-table__cell">20 Feb 2024</td>
 
           <td class="govuk-table__cell">Personal Independence Payment</td>
+          <td class="govuk-table__cell">Decision</td>
 
           <td class="govuk-table__cell">
 
@@ -65,7 +79,7 @@ Habitual residence cases
               Completed
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v9/view.html">View</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view.html">View</a></td>
 
         </tr>
         <tr class="govuk-table__row">
@@ -73,10 +87,12 @@ Habitual residence cases
           <td class="govuk-table__cell">30 Nov 2023</td>
 
           <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">Decision</td>
+
 
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--light-blue">
-              Decision in progress
+             In progress
             </strong>
           </td>
           <td class="govuk-table__cell"></td>
@@ -90,13 +106,15 @@ Habitual residence cases
 
 
           <td class="govuk-table__cell">Attendance Allowance</td>
+          <td class="govuk-table__cell">Decision</td>
+
 
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--pink">
-              Decision needed
+              To do
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
+          <td class="govuk-table__cell"></td>
 
         </tr>
 
@@ -105,14 +123,16 @@ Habitual residence cases
           <td class="govuk-table__cell">4 Mar 2023</td>
 
 
-          <td class="govuk-table__cell">Carer’s Allowance</td>
+          <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">Decision</td>
+
 
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--green">
               Completed
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11/view-pc.html">View</a></td>
 
         </tr>
        
@@ -120,12 +140,11 @@ Habitual residence cases
     </table>
 
   </fieldset>
-  <br>
 
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Start a new case",
-      href: "/agent/hrt-v9/filtering/benefit.html"
+      href: "/agent/hrt-v11/filtering/benefit.html"
   
     }) }}
 
