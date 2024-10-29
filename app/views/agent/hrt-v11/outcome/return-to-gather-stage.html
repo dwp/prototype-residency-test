@@ -19,21 +19,29 @@ dwp-res-prototype{% extends 'layout-agent-hrt-v11-with-back.html' %}
             <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Do you want to update the case details yourself?
+                  Are you sure you want to return this case to the Gather stage?
                 </h1>
               </legend>
+
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  You cannot undo this action.
+                </strong>
+              </div>
   
               <div class="govuk-radios govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="yes" name="reside" type="radio" value="true">
                   <label class="govuk-label govuk-radios__label" for="yes">
-                    Yes
+                    Yes, return case to Gather stage
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="more-ino" name="reside" type="radio" value="more-info">
                   <label class="govuk-label govuk-radios__label" for="more-info">
-                    No, send the case back to a caseworker
+                    No, cancel and go back
                   </label>
                 </div>
               </div>
@@ -43,7 +51,7 @@ dwp-res-prototype{% extends 'layout-agent-hrt-v11-with-back.html' %}
 
 <div class="govuk-button-group">
 
-  <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Continue</button>
+  <button class="govuk-button" value= "true" data-module="govuk-button" onclick="check()">Confirm and submit</button>
 
 </div>
 
@@ -60,12 +68,12 @@ dwp-res-prototype{% extends 'layout-agent-hrt-v11-with-back.html' %}
         }
       }
       if (!hasSelection) {
-        window.location.href = "/agent/hrt-v11/outcome/update-error.html";
+        window.location.href = "/agent/hrt-v11/outcome/return-error.html";
       } else {
         if (document.getElementById("yes").checked) {
-          window.location.href = "/agent/hrt-v11/outcome/update-details.html"
+          window.location.href = "/agent/hrt-v11/outcome/case-updated.html"
         } else {
-          window.location.href = "/agent/hrt-v11/outcome/return-to-gather-stage.html"
+          window.location.href = "/agent/hrt-v11/outcome/do-you-want-to-update-details.html"
         }}}
   </script>
 
