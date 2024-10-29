@@ -60,46 +60,34 @@ Presence
   </fieldset>
 </div>
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
-  <div class="govuk-button-group">
-    {{ govukButton({
-      text: "Continue",
-      href: "/agent/hrt-v11/filtering/exemptions-presence.html"
-  
-    }) }}
-  
-    {{ govukButton({
-      text: "Save and come back later",
-      classes: "govuk-button--secondary",
-      href: "/agent/hrt-v11/progress-saved.html"
-    }) }}
-  </div>
-                
-<!-- <button class="govuk-button" data-module="govuk-button" onclick="check1()">
-  Continue
-</button>
-            </form>
-
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+    Continue
+  </button>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save and come back later
+  </button>
+</div>
+              
 <script>
-function check1() {
-  console.log('in function')
-  var radios = document.getElementsByName("presence");
-  var hasSelection = false
-  for (var i = 0, len = radios.length; i < len; i++) {
-    if (radios[i].checked) {
-      hasSelection = true;
+  function check1() {
+    console.log('in function')
+    var radios = document.getElementsByName("presence");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
     }
-  }
-  if (!hasSelection) {
-    window.location.href = "/agent/hrt-v4/filtering/presence-error.html";
-  } else {
+    if (!hasSelection) {
+      window.location.href = "/agent/hrt-v11/filtering/presence-error.html";
+    } else {
       if (document.getElementById("presence-yes").checked) {
-        window.location.href = "/agent/hrt-v4/filtering/abroad-6months-3years.html"
-      } else {
-        window.location.href = "/agent/hrt-v4/outcome/check-outside-UK.html"
-      }}}
-</script> -->
+          window.location.href = "/agent/hrt-v11/filtering/exemptions.html"
+        } else {
+          window.location.href = "/agent/hrt-v11/filtering/exemptions-presence.html"
+        }}}
+  </script>
 
 
         </div>

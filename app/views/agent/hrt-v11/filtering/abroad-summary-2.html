@@ -227,40 +227,34 @@ Past presence summary
               </fieldset>
         </div> 
 
-              {% from "govuk/components/button/macro.njk" import govukButton %}
-
-            <div class="govuk-button-group">
-              {{ govukButton({
-                text: "Continue",
-                href: "/agent/hrt-v11/outcome/select-evidence-required.html"
-               }) }}
-
-              {{ govukButton({
-                text: "Save and come back later",
-                classes: "govuk-button--secondary",
-                href: "/agent/hrt-v11/progress-saved.html"
-              }) }}
-            </div>
-      
-
-<script>
-function check1() {
-  console.log('in function')
-  var radios = document.getElementsByName("presence");
-  var hasSelection = false
-  for (var i = 0, len = radios.length; i < len; i++) {
-    if (radios[i].checked) {
-      hasSelection = true;
-    }
-  }
-  if (!hasSelection) {
-    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/continue_application_error.html";
-  } else {
-    window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/confirm_residence.html"
-
-  }
-}
-</script>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+            Continue
+          </button>
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Save and come back later
+          </button>
+        </div>
+                      
+        <script>
+          function check1() {
+            console.log('in function')
+            var radios = document.getElementsByName("add-another");
+            var hasSelection = false
+            for (var i = 0, len = radios.length; i < len; i++) {
+              if (radios[i].checked) {
+                hasSelection = true;
+              }
+            }
+            if (!hasSelection) {
+              window.location.href = "/agent/hrt-v11/filtering/abroad-error.html";
+            } else {
+              if (document.getElementById("add-another").checked) {
+                  window.location.href = "/agent/hrt-v11/filtering/country-2.html"
+                } else {
+                  window.location.href = "/agent/hrt-v11/outcome/select-evidence-required.html"
+                }}}
+          </script>
 
         </div>
 
