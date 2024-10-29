@@ -1,0 +1,195 @@
+{% extends 'layout-agent-hrt-v11-with-back.html' %}
+
+{% block pageTitle %}
+Presence exemption
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">
+                Check the following and make any changes needed:</p>
+                <ul class="govuk-list govuk-list--bullet">
+               
+                  <li>Exemption from being present in Great Britain</li>
+          
+                </ul>
+              <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
+            </div>
+          </div>
+
+      <h1 class="govuk-heading-l">Which exemption from being present in Great Britain applies to them?</h1>
+ 
+          <!-- <span class="govuk-caption-l">Past presence</span> -->
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  Genuine and sufficient link to UK
+                </h2>
+              </legend>
+ 
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="exemption-1" name="exemptions" type="radio" value="true" >
+        <label class="govuk-label govuk-radios__label" for="exemption-1">
+          Claiming while in the European Economic Area (EAA) or Switzerland and can show genuine and sufficient link to UK
+        </label>
+      </div>
+      </div>
+      </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h2 class="govuk-fieldset__heading">
+              Temporarily absent abroad
+            </h2>
+          </legend>
+
+<div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="exemption-2" name="exemptions" type="radio" value="true" >
+    <label class="govuk-label govuk-radios__label" for="exemption-2">
+      Temporarily absent abroad for up to 13 weeks (26 weeks for qualifying medical treatment)
+    </label>
+  </div>
+  </div>
+  </fieldset>
+  </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h2 class="govuk-fieldset__heading">
+              Working or serving abroad
+            </h2>
+          </legend>
+
+<div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="exemption-1" name="exemptions" type="radio" value="airmen">
+            <label class="govuk-label govuk-radios__label" for="exemption-1">
+              Airmen
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="exemption-2" name="exemptions" type="radio" value="armed-forces">
+            <label class="govuk-label govuk-radios__label" for="exemption-2">
+              Armed forces or family member
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="exemption-3" name="exemptions" type="radio" value="continental-shelf-worker">
+            <label class="govuk-label govuk-radios__label" for="exemption-3">
+              Continental shelf workers
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="exemption-4" name="exemptions" type="radio" value="mariners">
+            <label class="govuk-label govuk-radios__label" for="exemption-4">
+              Mariners
+            </label>
+          </div>
+        </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h2 class="govuk-fieldset__heading">
+              No exemption or I do not know
+            </h2>
+          </legend>
+
+<div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="exemption-7" name="exemptions" type="radio" value="true" >
+        <label class="govuk-label govuk-radios__label" for="exemption-7">
+          No exemption
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="exemption-8" name="exemptions" type="radio" value="true" >
+        <label class="govuk-label govuk-radios__label" for="exemption-8">
+          I do not know
+        </label>
+      </div>
+      </div>
+    </fieldset>
+    </div>
+
+             <!-- <button class="govuk-button" data-module="govuk-button" onclick="check()">
+  Continue
+</button> -->
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href: "/agent/hrt-v11/filtering/exemptions.html"
+              }) }}
+
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "/agent/hrt-v11/progress-saved.html"
+              }) }}
+            </div>
+
+</form>
+            <script>
+          function check() {
+    console.log('in function')
+    var radios = document.getElementsByName("nationality");
+    var hasSelection = false
+    for (var i = 0, len = radios.length; i < len; i++) {
+      if (radios[i].checked) {
+        hasSelection = true;
+      }
+    }
+    if (!hasSelection) {
+      window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_1_error.html";
+    } else {
+      if (document.getElementById("nationality").checked || (document.getElementById("nationality-2").checked )) {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/presence.html"
+      } else {
+        window.location.href = "/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html"
+      }
+
+  
+    }
+  }
+              </script>
+
+        </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}
