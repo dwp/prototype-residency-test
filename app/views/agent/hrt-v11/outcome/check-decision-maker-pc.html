@@ -20,7 +20,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Case details</h1>
-      <h2 class="govuk-heading-m">Claim details</h2>
+      <h2 class="govuk-heading-m">Benefit claim details</h2>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -56,6 +56,16 @@
               French
             </dd>
            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Has dual nationality
+            </dt>
+            
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+    
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -233,24 +243,58 @@
           </div>
       </dl> 
 
-            <div class="govuk-button-group">
-              {{ govukButton({
-                text: "Continue",
-                href: "/agent/hrt-v11/outcome/eu-treaty-rights-merged.html"
-            
-              }) }}
-            
-              {{ govukButton({
-                text: "Save and come back later",
-                classes: "govuk-button--secondary",
-                href: "/agent/hrt-v11/progress-saved-dm.html"
-              }) }}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Are these case details correct?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="details" name="details" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+                Yes
+              </label>
             </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="details-2" name="details" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="details-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-            <!-- <div>
-              <a href="/agent/hrt-v4/outcome/evidence-dm.html" class="govuk-body-m">Evidence provided
-            </a>
-            </div> -->
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+          Continue
+        </button>
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and come back later
+        </button>
+      </div>
+                    
+      <script>
+        function check1() {
+          console.log('in function')
+          var radios = document.getElementsByName("details");
+          var hasSelection = false
+          for (var i = 0, len = radios.length; i < len; i++) {
+            if (radios[i].checked) {
+              hasSelection = true;
+            }
+          }
+          if (!hasSelection) {
+            window.location.href = "/agent/hrt-v11/filtering/case-details-error.html";
+          } else {
+            if (document.getElementById("details").checked) {
+                window.location.href = "/agent/hrt-v11/outcome/eu-treaty-rights-merged.html"
+              } else {
+                window.location.href = "/agent/hrt-v11/outcome/incorrect-information.html"
+              }}}
+        </script>
 
     </div>
 </div>

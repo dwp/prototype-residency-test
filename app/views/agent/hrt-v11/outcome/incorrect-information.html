@@ -28,13 +28,19 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="proof" name="proof" type="checkbox" value="france">
               <label class="govuk-label govuk-checkboxes__label" for="proof">
-                Date of claim
+                Benefit claim details
               </label>
             </div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="proof-1" name="proof" type="checkbox" value="portugal">
               <label class="govuk-label govuk-checkboxes__label" for="proof-1">
                 Nationality
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="proof-2" name="proof" type="checkbox" value="portugal">
+              <label class="govuk-label govuk-checkboxes__label" for="proof-2">
+               Dual nationality
               </label>
             </div>
             <div class="govuk-checkboxes__item">
@@ -52,7 +58,13 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="proof-4" name="proof" type="checkbox" value="other">
               <label class="govuk-label govuk-checkboxes__label" for="proof-4">
-                Share code details 
+                Immigration status dates
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="proof-4" name="proof" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="proof-4">
+                Share code 
               </label>
             </div>
             <div class="govuk-checkboxes__item">
@@ -74,21 +86,21 @@
               </label>
             </div>
             <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="proof-7" name="proof" type="checkbox" value="spain">
+              <label class="govuk-label govuk-checkboxes__label" for="proof-7">
+                Been abroad for more than 4 weeks at a time
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="proof-8" name="proof" type="checkbox" value="none" data-behaviour="exclusive">
               <label class="govuk-label govuk-checkboxes__label" for="none">
-                Trip abroad
+                Trips abroad
               </label>
             </div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="proof-9" name="proof" type="checkbox" value="none" data-behaviour="exclusive">
               <label class="govuk-label govuk-checkboxes__label" for="none">
                 Evidence required
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="proof-10" name="proof" type="checkbox" value="none" data-behaviour="exclusive">
-              <label class="govuk-label govuk-checkboxes__label" for="none">
-                Trip abroad
               </label>
             </div>
           </div>
@@ -100,7 +112,7 @@
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue",
-                href: "/agent/hrt-v11/outcome/check.html"
+                href: "/agent/hrt-v11/outcome/do-you-want-to-update-details.html"
               }) }}
 
               {{ govukButton({
