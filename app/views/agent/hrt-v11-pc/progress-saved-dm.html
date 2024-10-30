@@ -1,0 +1,92 @@
+{% extends 'layout-agent-hrt-v11.html' %}
+
+{% block pageTitle %}
+Progress saved
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+{% endblock %}
+
+  {% block content %}
+
+  {% if data['nationality'] == 'other' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html' | redirect | safe }}
+{% endif %}
+
+{% if data['nationality'] == '' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2_error.html' | redirect | safe }}
+
+  {% endif %}
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Success
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <h3 class="govuk-notification-banner__heading">
+                Your progress has been saved
+              </h3>
+              <p class="govuk-body">You can resume this case at any time.</p>
+              <p class="govuk-body">To return later or start another case, <a class="govuk-notification-banner__link" href="/agent/hrt-v11-pc/identification/all-dm.html">search for a customer</a>.</p>
+            </div>
+          </div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="test-cases-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Habitual residence cases
+      </h1>
+    </legend>
+        
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Created</th>
+          <th scope="col" class="govuk-table__header">Updated</th>
+          <th scope="col" class="govuk-table__header">Benefit line</th>
+          <th scope="col" class="govuk-table__header">Stage</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 Jan 2024</td>
+          <td class="govuk-table__cell">17 Apr 2024</td>
+          <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">Decision</td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/agent/hrt-v11-pc/saved-details-dm.html">Resume</a></td>
+
+        </tr>
+       
+      </tbody>
+    </table>
+
+  </fieldset>
+
+</div>
+
+
+        </div>
+
+</div>
+
+{% endblock %}

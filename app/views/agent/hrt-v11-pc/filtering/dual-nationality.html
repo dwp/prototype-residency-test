@@ -1,0 +1,90 @@
+{% extends 'layout-agent-hrt-v11-with-back.html' %}
+
+{% block pageTitle %}
+Dual nationality
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+{% endblock %}
+
+  {% block content %}
+
+  {% if data['nationality'] == 'other' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2.html' | redirect | safe }}
+{% endif %}
+
+{% if data['nationality'] == '' %}
+  {{ '/citizen/habitual_residency_test/simple_hrt_v8a/nationality_question_2_error.html' | redirect | safe }}
+
+  {% endif %}
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <!-- <span class="govuk-caption-l">Right to reside</span> -->
+
+<div class="govuk-form-group">
+ 
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Do they have dual nationality?
+        </h1>
+      </legend>
+
+
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="yes" name="answer" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="no" name="answer" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="no">
+          No
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" onclick="check1()">
+      Continue
+    </button>
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Save and come back later
+    </button>
+  </div>
+                
+  <script>
+    function check1() {
+      console.log('in function')
+      var radios = document.getElementsByName("answer");
+      var hasSelection = false
+      for (var i = 0, len = radios.length; i < len; i++) {
+        if (radios[i].checked) {
+          hasSelection = true;
+        }
+      }
+      if (!hasSelection) {
+        window.location.href = "/agent/hrt-v11-pc/filtering/dual-nationality-error.html";
+      } else {
+        if (document.getElementById("yes").checked) {
+            window.location.href = "/agent/hrt-v11-pc/filtering/dual-nationality-continued.html"
+          } else {
+            window.location.href = "/agent/hrt-v11-pc/filtering/visa-status.html"
+          }}}
+    </script>
+
+        </div>
+
+</div>
+
+{% endblock %}
