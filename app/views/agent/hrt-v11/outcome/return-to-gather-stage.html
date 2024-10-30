@@ -41,7 +41,7 @@ dwp-res-prototype{% extends 'layout-agent-hrt-v11-with-back.html' %}
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="more-ino" name="reside" type="radio" value="more-info">
                   <label class="govuk-label govuk-radios__label" for="more-info">
-                    No, cancel and go back
+                    No, cancel and go back to case details
                   </label>
                 </div>
               </div>
@@ -73,7 +73,7 @@ dwp-res-prototype{% extends 'layout-agent-hrt-v11-with-back.html' %}
         if (document.getElementById("yes").checked) {
           window.location.href = "/agent/hrt-v11/outcome/case-updated.html"
         } else {
-          window.location.href = "/agent/hrt-v11/outcome/do-you-want-to-update-details.html"
+          window.location.href = "/agent/hrt-v11/outcome/check-decision-maker.html"
         }}}
   </script>
 
