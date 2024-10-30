@@ -252,58 +252,21 @@
           </div>
       </dl> 
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
-              Are these case details correct?
-            </h1>
-          </legend>
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="details" name="details" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="changedName">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="details-2" name="details" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="details-2">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      <div class="govuk-button-group">
-        <button class="govuk-button" data-module="govuk-button" onclick="check1()">
-          Continue
-        </button>
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Save and come back later
-        </button>
-      </div>
-                    
-      <script>
-        function check1() {
-          console.log('in function')
-          var radios = document.getElementsByName("details");
-          var hasSelection = false
-          for (var i = 0, len = radios.length; i < len; i++) {
-            if (radios[i].checked) {
-              hasSelection = true;
-            }
-          }
-          if (!hasSelection) {
-            window.location.href = "/agent/hrt-v11/filtering/case-details-error.html";
-          } else {
-            if (document.getElementById("details").checked) {
-                window.location.href = "/agent/hrt-v11/outcome/evidence-decision-maker.html"
-              } else {
-                window.location.href = "/agent/hrt-v11/outcome/incorrect-information.html"
-              }}}
-        </script>
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href: "/agent/hrt-v11/outcome/evidence-decision-maker.html"
+
+              }) }}
+
+              {{ govukButton({
+                text: "Save and come back later",
+                classes: "govuk-button--secondary",
+                href: "/agent/hrt-v11/progress-saved-dm.html"
+              }) }}
+            </div>
 
     </div>
 </div>
